@@ -1,33 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import '../src/styles/App.css';
+import NavBar from './components/navbar/Navbar';
+import '../src/styles/navbar.css';
+import { Route, Routes } from 'react-router-dom';
+// import { Home, Men, Women, Kids } from './components/pages/index' // remember to move all folders into index.js to lean up the code
+import Home from './components/pages/Home';
+import Men from './components/pages/Men';
+import Women from './components/pages/Women';
+import Kids from './components/pages/Kids';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <NavBar />
+    <Routes>
+      <Route path='/home' element={<Home />}/>
+      <Route path='/men' element={<Men />}/>
+      <Route path='/woman' element={<Women />}/>
+      <Route path='/kids' element={<Kids />}/>
+    </Routes>
     </>
   )
 }
