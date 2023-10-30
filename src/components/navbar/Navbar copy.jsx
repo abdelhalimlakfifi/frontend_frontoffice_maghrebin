@@ -1,33 +1,22 @@
 import { Link } from 'react-router-dom';
 import MyLogo from '../../assets/Maghrebin_logo.svg';
+import links from './links';
 
 function NavBar() {
+  
   return (
     <div className="flex m-6">
       {/* Menu div */}
       <div className="flex">
         <nav>
           <ul className="flex justify-start p-4">
-            <li>
-              <Link to="/home" className="text-neutral-900 hover:text-neutral-800 uppercase font-medium m-0">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/men" className="text-neutral-900 hover:text-neutral-800 uppercase font-medium m-0">
-                Men
-              </Link>
-            </li>
-            <li>
-              <Link to="/woman" className="text-neutral-900 hover:text-neutral-800 uppercase font-medium m-0">
-                Woman
-              </Link>
-            </li>
-            <li>
-              <Link to="/kids" className="text-neutral-900 hover:text-neutral-800 uppercase font-medium m-0">
-                Kids
-              </Link>
-            </li>
+            {links.map(link => (
+              <li key={link.name}>
+                <Link to={link.path} className="text-neutral-900 hover:text-neutral-800 uppercase font-medium m-0">
+                  {link.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
