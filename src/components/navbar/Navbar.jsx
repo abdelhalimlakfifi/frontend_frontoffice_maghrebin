@@ -11,7 +11,7 @@ function NavBar() {
         <ul className="flex justify-between overflow-hidden w-72 p-4">
           {links.map(link => (
             <li className="w-fit" key={link.name}>
-              <Link to={link.path} className="text-neutral-900 hover:text-neutral-800 uppercase font-medium m-0">
+              <Link to={link.path} className="text-neutral-900 uppercase font-normal m-0">
                 {link.name}
               </Link>
             </li>

@@ -1,9 +1,8 @@
 import '../src/styles/App.css';
 import NavBar from './components/navbar/Navbar';
-import '../src/styles/navbar.css';
 import { Route, Routes } from 'react-router-dom';
 import handleRoutes from './routes/routes';
-import Footer from './components/footer/Footer';
+import SignUpForm from './components/forms/SignUpForm';
 
 function App() {
   return (
@@ -14,9 +13,12 @@ function App() {
           <Route key={key} path={path} element={element} />
         ))}
       </Routes>
-      {/* <Footer /> */}
+      <SignUpForm />
     </>
   );
 }
 
 export default App;
+
+
+

@@ -1,7 +1,7 @@
-import Home from '../components/pages/Home';
-import Kids from '../components/pages/Kids';
-import Men from '../components/pages/Men';
-import Women from '../components/pages/Women';
+import Home from '../components/views/Home';
+import Kids from '../components/views/Kids';
+import Men from '../components/views/Men';
+import Women from '../components/views/Women';
 
 export default [
   {
