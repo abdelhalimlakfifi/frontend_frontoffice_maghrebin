@@ -1,8 +1,7 @@
-import '../src/styles/App.css';
 import NavBar from './components/navbar/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import handleRoutes from './routes/routes';
-import SignUpForm from './components/forms/SignUpForm';
+import SignUpForm from './components/forms/SignUp/SignUpForm';
 
 function App() {
   return (

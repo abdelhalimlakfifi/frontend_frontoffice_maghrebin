@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import MyLogo from '../../assets/Maghrebin_logo.svg';
+import MyLogo from '../../assets/Icons/Maghrebin_logo.svg';
 import links from './links';
 import iconLinks from './iconLinks';
 
 function NavBar() {
   return (
-    <div className="flex m-6">
+    <div className="flex justify-between m-6 w-">
       {/* Menu div */}
       <nav className="flex justify-center">
         <ul className="flex justify-between overflow-hidden w-72 p-4">
