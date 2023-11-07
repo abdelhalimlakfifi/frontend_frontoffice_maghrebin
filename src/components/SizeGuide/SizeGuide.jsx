@@ -1,5 +1,9 @@
 import heightSections from './heightSectionsData';
 import SizeImg from '../../assets/SizeGuideImg/SizeImg-Scroped.jpg';
+import womenSpecialLengths from './womenSpecialLengthsData';
+import PinImg from '../../assets/SizeGuideImg/PinIcon.svg';
+
+import DynamicColumnsDemo from './DynamicColumnsDemo';
 
 export default function SizeGuide() {
   return (
@@ -18,7 +22,7 @@ export default function SizeGuide() {
 
         {/* Middle Section */}
         <div className="flex justify-center ">
-          <ul className="w-[70%] h-[700px]">
+          <ul className="w-[70%] h-[500px]">
             {heightSections.map((section, index) => (
               <li key={index} className="uppercase mb-6">
                 <h1 className="font-semibold text-xl px-12">{section.title}</h1>
@@ -30,6 +34,27 @@ export default function SizeGuide() {
             <img src={SizeImg} />
           </div>
         </div>
+
+        {/* Pre table section */}
+        <section>
+          <h1 className="mb-8 uppercase font-semibold text-xl">Special lengths for women</h1>
+          <div className="flex justify-around mb-8">
+            {womenSpecialLengths.flatMap((item, index) => [
+              <div key={index} className="w-[400px] ml-6">
+                <h1 className="mb-3 uppercase font-semibold">{item.title}</h1>
+                {item.description.map((desc, idx) => (
+                  <p key={idx}>{desc}</p>
+                ))}
+              </div>,
+              index !== womenSpecialLengths.length - 1 && <div key={`divider-${index}`} className="bg-black w-[2px] h-[100px]"></div>,
+            ])}
+          </div>
+          <div className="flex items-center space-x-2 ">
+            <img src={PinImg} className="h-[34px] w-auto" />
+            <p className="uppercase">Tip: If your measurements fall between two sizes, always order the larger size.</p>
+          </div>
+        </section>
+        <DynamicColumnsDemo />
       </div>
     </section>
   );

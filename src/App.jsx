@@ -1,10 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import handleRoutes from './routes/routes';
-
 import NavBar from './components/navbar/Navbar';
 import SizeGuide from './components/SizeGuide/SizeGuide';
 import LandingPage from './components/views/LandingPage';
-import Footer from './components/footer/Footer'
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -16,7 +15,9 @@ function App() {
         ))}
       </Routes>
       {/* <LandingPage /> */}
+
       <SizeGuide />
+
       <Footer />
       {/* <SignUpForm /> */}
       {/* <Login /> */}
@@ -26,6 +27,3 @@ function App() {
 }
 
 export default App;
-
-
-
