@@ -1,8 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import handleRoutes from './routes/routes';
+
 import NavBar from './components/navbar/Navbar';
-import SignUpForm from './components/forms/SignUp/SignUpForm';
-// import Login from './components/forms/login/Login';
+import SizeGuide from './components/SizeGuide/SizeGuide';
+import LandingPage from './components/views/LandingPage';
 import Footer from './components/footer/Footer'
 
 function App() {
@@ -14,7 +15,10 @@ function App() {
           <Route key={key} path={path} element={element} />
         ))}
       </Routes>
-      <SignUpForm />
+      {/* <LandingPage /> */}
+      <SizeGuide />
+      <Footer />
+      {/* <SignUpForm /> */}
       {/* <Login /> */}
       {/* <Footer /> */}
     </>
