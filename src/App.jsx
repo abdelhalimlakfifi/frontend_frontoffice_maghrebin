@@ -1,7 +1,9 @@
-import NavBar from './components/navbar/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import handleRoutes from './routes/routes';
+import NavBar from './components/navbar/Navbar';
 import SignUpForm from './components/forms/SignUp/SignUpForm';
+// import Login from './components/forms/login/Login';
+import Footer from './components/footer/Footer'
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         ))}
       </Routes>
       <SignUpForm />
+      {/* <Login /> */}
+      {/* <Footer /> */}
     </>
   );
 }
