@@ -1,23 +1,30 @@
-
+import { Link } from 'react-router-dom';
 import { inputsConfig } from '../SignUp/formInputsConfig';
-import SignUpFields from '../SignUp/SignUpFields';
+import LoginUpFields from '../login/LoginUpFields';
+
+// Prime react Imports
+import React, { useState } from 'react';
+import { InputSwitch } from 'primereact/inputswitch';
 
 const Login = () => {
-  // Filter the inputsConfig array to only include email and password inputs
-  const filteredInputsConfig = inputsConfig.filter(
-    (input) => input.type === 'email' || input.type === 'password'
-  );
+  const [checked, setChecked] = useState(false);
 
   return (
     <div className="h-[78vh] flex justify-center items-center mx-auto w-9/12 sm:w-6/12 md:w-10/12 xl:w-8/12">
       <form className="my-auto w-full sm:w-10/12 md:w-8/12 lg:w-6/12">
-        <h2 className="tracking-wider font-sans text-3xl uppercase mb-10 font-thin">
-          Log In to your account
-        </h2>
+        <h2 className="tracking-wider font-sans text-3xl uppercase mb-10 font-thin">Log In to your account</h2>
+        <LoginUpFields inputsConfig={inputsConfig} />
 
-        {/* Pass the filtered inputsConfig array to SignUpFields */}
-        <SignUpFields inputsConfig={filteredInputsConfig} />
-
+        {/* Forgot Password Link */}
+        <div className="flex justify-between">
+        <Link>
+        <p className='text-center'>Have you forgotten your password?</p>
+        </Link>
+          <div className="card flex justify-content-center">
+            <InputSwitch checked={checked} onChange={e => setChecked(e.value)} />
+          </div>
+        </div>
+        
         {/* Log In Button */}
         <div className="flex justify-center items-center mt-10 border border-solid border-gray-500 mx-auto py-2 px-5 cursor-pointer w-full">
           <button className="border-none uppercase">Log In</button>
@@ -28,8 +35,6 @@ const Login = () => {
 };
 
 export default Login;
-
-
 
 // export default function Login() {
 //   return (

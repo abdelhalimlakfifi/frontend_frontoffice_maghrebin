@@ -22,8 +22,8 @@ function App() {
       {/* <LandingPage /> */}
       
       {/* <SizeGuide /> */}
-      <SignUpForm />
-      {/* <Login /> */}
+      {/* <SignUpForm /> */}
+      <Login />
       {/* <Footer /> */}
     </>
   );
