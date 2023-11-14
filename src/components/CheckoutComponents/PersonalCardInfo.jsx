@@ -19,7 +19,7 @@ const PersonalCardInfo = (props) => {
   ];
 
   return (
-    <div className="md:w-3/5 w-full md:pl-28 md:pr-20 px-8 border-r-[3px] border-blackV">
+    <div className="lg:w-3/5 w-full lg:pl-28 lg:pr-20 px-8 lg:border-r-[3px] border-blackV">
       <div>
         <div className="w-full md:border-0 border-b border-blackV mb-6">
           <h2 className="pb-1 md:border-b-[3px] border-blackV inline-block font-medium text-xl pr-4">

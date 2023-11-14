@@ -4,6 +4,7 @@ import MainCategorie from "../components/CategorieComponents/MainCategorie"
 const CategoriePage = () => {
   return (
     <>
+    <h1></h1>
       <MainCategorie />
     </>
   );
