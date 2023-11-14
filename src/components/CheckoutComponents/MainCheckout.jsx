@@ -4,7 +4,7 @@ import Review from "./Review";
 
 const MainCheckout = () => {
   return (
-    <section className="flex flex-col lg:flex-row w-full lg:px-20 py-7 px-12">
+    <section className="flex flex-col lg:flex-row w-full lg:px-20 py-7 px-12 my-14">
       <PersonalCardInfo />
       <Review
         imagePath="your-image-path.jpg"

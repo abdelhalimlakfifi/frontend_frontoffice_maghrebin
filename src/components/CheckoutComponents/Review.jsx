@@ -1,10 +1,11 @@
 import React from "react";
+import BtnGlobal from '../GlobalComponents/BtnGlobal';
 
 const Review = ({ imagePath, productTitle, productPrice, shippingCost, totalPrice }) => {
   return (
-    <div className="lg:w-2/5 lg:pl-20 w-full px-8 my-6">
+    <div className="lg:w-2/5 lg:pl-20 w-full px-8 my-8">
       <div className="w-full md:border-0 border-b border-blackV mb-6">
-        <h2 className="pb-1 md:border-b-[3px] border-blackV inline-block font-medium text-xl pr-4">
+        <h2 className="uppercase pb-1 md:border-b-[2px] border-blackV inline-block font-medium text-lg pr-4">
           Review
         </h2>
       </div>
@@ -12,7 +13,7 @@ const Review = ({ imagePath, productTitle, productPrice, shippingCost, totalPric
         <div className="w-full">
           <div className="bg-slate-500 lg:h-64 h-60 lg:w-52 w-52">
             <img
-              src={imagePath}
+              src="https://via.placeholder.com/208x240"
               alt="Product Image"
               className="w-full h-full object-cover"
             />
@@ -38,6 +39,7 @@ const Review = ({ imagePath, productTitle, productPrice, shippingCost, totalPric
           <span>${totalPrice}</span>
         </div>
       </div>
+      <BtnGlobal className="w-full border border-gray-500 p-3 my-6" content="SAVE AND CONTINUE" />
     </div>
   );
 };
