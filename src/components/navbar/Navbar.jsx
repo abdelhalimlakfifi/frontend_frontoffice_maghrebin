@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import MyLogo from '../../assets/Icons/Maghrebin_logo.svg';
+import MyLogo from '../../assets/Icons/NewLogo.svg';
 import iconLinks from './iconLinks';
 import links from './links';
 

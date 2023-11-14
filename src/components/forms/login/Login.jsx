@@ -26,8 +26,8 @@ const Login = () => {
         </div>
         
         {/* Log In Button */}
-        <div className="flex justify-center items-center mt-10 border border-solid border-gray-500 mx-auto py-2 px-5 cursor-pointer w-full">
-          <button className="border-none uppercase">Log In</button>
+        <div className="flex justify-center items-center mt-10 bg-[#655445] mx-auto py-2 px-5 cursor-pointer w-full">
+          <button className="border-none uppercase text-white">Log In</button>
         </div>
       </form>
     </div>
