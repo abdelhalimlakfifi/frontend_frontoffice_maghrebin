@@ -2,7 +2,7 @@ import React from "react";
 
 const Review = ({ imagePath, productTitle, productPrice, shippingCost, totalPrice }) => {
   return (
-    <div className="md:w-2/5 md:pl-20 w-full px-8">
+    <div className="lg:w-2/5 lg:pl-20 w-full px-8 my-6">
       <div className="w-full md:border-0 border-b border-blackV mb-6">
         <h2 className="pb-1 md:border-b-[3px] border-blackV inline-block font-medium text-xl pr-4">
           Review
@@ -10,7 +10,7 @@ const Review = ({ imagePath, productTitle, productPrice, shippingCost, totalPric
       </div>
       <div className="flex justify-between items-start w-full">
         <div className="w-full">
-          <div className="bg-slate-500 md:h-64 h-52 md:w-52 w-40">
+          <div className="bg-slate-500 lg:h-64 h-60 lg:w-52 w-52">
             <img
               src={imagePath}
               alt="Product Image"
