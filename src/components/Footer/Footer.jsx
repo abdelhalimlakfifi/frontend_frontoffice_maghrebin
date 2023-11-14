@@ -16,10 +16,7 @@ const Footer = () => {
         <div className="flex flex-col item-start py-10">
           <h1 className="w-2/5 text-xl uppercase mb-4">About</h1>
           <p className="text-sm mb-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled.
+            Maghrebin Moments: Stay Styled With Our Latest Fashion Chronicles!
           </p>
           <div className="flex space-around gap-2">
             <img src={igIcon} className="h-8 w-8" alt="Instagram" />
