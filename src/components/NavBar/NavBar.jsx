@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import MyLogo from "/Icons/Maghrebin_logo.svg";
-import iconLinks from "./iconLinks";
 
 //import icons
 import searchIcon from '../../assets/icons/searchIcon.svg'
@@ -30,13 +29,6 @@ function NavBar() {
     },
   ]
 
-  // const iconLinks = [
-  //   { path: '#', icon: '/src/assets/Icons/searchIcon.svg', alt: 'searchIcon' },
-  //   { path: '#', icon: '/src/assets/Icons/favIcon.svg', alt: 'favIcon' },
-  //   { path: '#', icon: '/src/assets/Icons/cartIcon.svg', alt: 'cartIcon' },
-  //   { path: '#', icon: '/src/assets/Icons/navLine_divider.svg', alt:'divider' },
-  //   { path: '#', icon: '/src/assets/Icons/userIcon.svg', alt:'userIcon' },
-  // ]
   return (
     <div className="mx-3 lg:mx-28 flex justify-between">
       <div className="flex items-center lg:hidden ">
