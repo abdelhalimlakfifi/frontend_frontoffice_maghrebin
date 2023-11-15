@@ -71,16 +71,14 @@ const Footer = () => {
           
       
     </section>
-    <section>
-        {/* Copyright Section md:visible */}
-      <div className="hidden md:flex justify-center border-blackV border-t-2">
-        <p className="text-sm my-1">@{currentYear} MAGHREBIN</p>
-      </div>
+    <section className="mb-60">
+       
         {/* Copyright Section md:hidden */}
-      <div className="h-4 flex justify-center border-blackV border-t-2 md:hidden">
+      <div className="h-9  flex justify-center border-blackV border-t-2 `">
         <p className="my-2 text-sm">@{currentYear} MAGHREBIN</p>
       </div>
     </section>
+    
   </>
   );
 };
