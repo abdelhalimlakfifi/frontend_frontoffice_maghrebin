@@ -11,7 +11,7 @@ import CategoriePage from "./Pages/CategoriePage";
 import CheckoutPage from "./Pages/CheckoutPage";
 import MyCartPage from "./Pages/MyCartPage";
 import SizeGuidePage from "./Pages/SizeGuidePage";
-import Footer from "./components/Footer/Footer";
+// import Footer from "./components/Footer/Footer";
 import Layout from "./components/Layout/Layout"
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
 
-        <Route path="/Home" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
 
         <Route path="/product" element={<ProductDetailPage />} />
         <Route path="/categories" element={<CategoriePage />} /> 
