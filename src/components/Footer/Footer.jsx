@@ -4,52 +4,40 @@ import NavMenu from "../../components/NavBar/links";
 import MyLogo from "/Icons/Maghrebin_logo.svg";
 import igIcon from "/Icons/igIcon.svg";
 import fbIcon from "/Icons/fbIcon.svg";
-import xIcon from "/Icons/xIcon.png";
+import xIcon from "/public/Icons/xIcon.svg";
+import BtnGlobal from "../GlobalComponents/BtnGlobal"
+import InputField from "../GlobalComponents/InputField";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date() .getFullYear();
 
   return (
-    <section className="w-full mt-8">
-      <div className="grid grid-cols-3 gap-x-24 border border-x-0 border-black h-96 p-20">
-        {/* About Section */}
-        <div className="flex flex-col item-start py-10">
-          <h1 className="w-2/5 text-xl uppercase mb-4">About</h1>
-          <p className="text-sm mb-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled.
-          </p>
-          <div className="flex space-around gap-2">
-            <img src={igIcon} className="h-8 w-8" alt="Instagram" />
-            <img src={fbIcon} className="h-8 w-8" alt="Facebook" />
-            <img src={xIcon} className="h-8 w-8" alt="X Icon" />
-          </div>
-        </div>
-
-        {/* Contact Section */}
-        <div className="flex flex-col item-start py-10">
-          <h1 className="text-xl uppercase mb-4">Contact</h1>
-          <p className="uppercase text-sm">
-            <Link to="mailto:maghrebin@contact.ma">maghrebin@contact.ma</Link>
-          </p>
-          <p className="text-sm">
-            <Link to="tel:+212537534235">+212 537 534 235</Link>
-          </p>
+  <>
+    <section className="mx-12 my-6 flex flex-col lg:flex-row justify-between items-center lg:mx-44">
+        {/* Stay in touch Section */}
+        <div className=" lg:order-2">
+            <div>
+              <h1 className="flex justify-start uppercase text-left font-bold text-lg">
+                Stay in touch
+              </h1>
+              <p className='text-sm'>
+              Maghrebin Moments: Stay Styled with Our Latest Fashion Chronicles!
+              </p> 
+            </div>
+            <InputField placeholder="E-mail" className="my-3 border-b-[2px]"/>
         </div>
 
         {/* Logo and Navigation Section */}
-        <div className="w-2/5 flex flex-col items-start py-10">
+        <div className="x-12 my-3 flex flex-col items-center md:order-1">
           <Link to="/">
-            <img src={MyLogo} className="w-[200px]" alt="Maghrebin Logo" />
+            <img src={MyLogo} className="w-[225px]" alt="Maghrebin Logo" />
           </Link>
-          <ul className="flex flex-col overflow-hidden w-72 p-4">
+          <ul className="flex justify-center space-x-4">
             {NavMenu.map((link) => (
-              <li className="w-fit hover:underline" key={link.name}>
+              <li className="w-fit  hover:underline" key={link.name}>
                 <Link
                   to={link.path}
-                  className="text-neutral-900 uppercase font-normal m-0"
+                  className="text-neutral-900 uppercase font-normal text-sm"
                 >
                   {link.name}
                 </Link>
@@ -57,14 +45,45 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-      </div>
+        {/* let's connect */}
+        <div className="md:flex flex-col justify-start order-3">
+      
+          <h1 className="hidden lg:block text-left font-bold text-lg uppercase mb-2">
+            Let's connect
+          </h1>
 
-      {/* Copyright Section */}
-      <div className="h-14 flex items-center">
-        <p className="pl-24">@{currentYear} MAGHREBIN</p>
+          <div className="hidden lg:block flex-col items-start">
+            <Link to="#" className="text-left"><h3 >maghrebin@contact.ma</h3></Link>
+            <Link to="#"><h3 className="text-left">+212 537 534 235</h3></Link>
+          </div>
+
+          <div className="flex justify-center space-x-4 my-8 md:my-5 md:flex md:justify-start">
+            <Link to="#">
+              <img src={igIcon} alt="igIcon" className="w-8"/>
+            </Link>
+            <Link to="#">
+              <img src={xIcon} alt="xIcon" className="w-8" />
+            </Link>
+            <Link to="#">
+              <img src={fbIcon} alt="fbIcon" className="w-8" />
+            </Link>
+          </div>
+        </div>
+          
+      
+    </section>
+    <section>
+        {/* Copyright Section md:visible */}
+      <div className="hidden h-4 md:flex justify-center border-blackV border-t-2">
+        <p className="my-2 text-sm">@{currentYear} MAGHREBIN</p>
+      </div>
+        {/* Copyright Section md:hidden */}
+      <div className="h-4 flex justify-center border-blackV border-t-2 md:hidden">
+        <p className="my-2 text-sm">@{currentYear} MAGHREBIN</p>
       </div>
     </section>
+  </>
   );
 };
 
-export default Footer;
+export default Footer

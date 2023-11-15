@@ -24,13 +24,12 @@ const App = () => {
         <Route path="/Home" element={<LandingPage />} />
 
         <Route path="/product" element={<ProductDetailPage />} />
-        {/* categories Merged with landing page */}
         <Route path="/categories" element={<CategoriePage />} /> 
         <Route path="/Checkout" element={<CheckoutPage />} />
         <Route path="/MyCart" element={<MyCartPage />} />
         <Route path="/SizeGuide" element={<SizeGuidePage />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
