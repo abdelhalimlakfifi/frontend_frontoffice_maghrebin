@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NavMenu from "../../components/NavBar/links";
 import MyLogo from "/Icons/Maghrebin_logo.svg";
-import igIcon from "/Icons/igIcon.svg";
-import fbIcon from "/Icons/fbIcon.svg";
-import xIcon from "/public/Icons/xIcon.svg";
+import igIcon from "../../assets/icons/igIcon.svg";
+import fbIcon from "../../assets/icons/fbIcon.svg";
+import xIcon from "../../assets/icons/xIcon.svg";
 import BtnGlobal from "../GlobalComponents/BtnGlobal"
 import InputField from "../GlobalComponents/InputField";
 
@@ -32,7 +31,7 @@ const Footer = () => {
           <Link to="/">
             <img src={MyLogo} className="w-[225px]" alt="Maghrebin Logo" />
           </Link>
-          <ul className="flex justify-center space-x-4">
+          {/* <ul className="flex justify-center space-x-4">
             {NavMenu.map((link) => (
               <li className="w-fit  hover:underline" key={link.name}>
                 <Link
@@ -43,7 +42,7 @@ const Footer = () => {
                 </Link>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
         {/* let's connect */}
         <div className="md:flex flex-col justify-start order-3">
