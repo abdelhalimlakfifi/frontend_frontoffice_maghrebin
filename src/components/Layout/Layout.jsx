@@ -14,6 +14,9 @@ function Layout() {
         <div className='w-full h-auto border-blackV border-t-2 '>
         <Footer/>
         </div>
+        {/* <div className="lg:hidden bg-red-900 h-12 md:h-11 fixed bottom-0 left-0 w-full">
+
+        </div> */}
 
     </div>
     
