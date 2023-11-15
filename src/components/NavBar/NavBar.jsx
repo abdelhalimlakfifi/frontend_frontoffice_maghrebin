@@ -5,7 +5,7 @@ import iconLinks from "./iconLinks";
 
 function NavBar() {
   return (
-    <div className="flex justify-around my-0 w-full">
+    <>
       {/* Menu div */}
       <nav className="md:mx-6 lg:mx-0 md:visible">
         {/* <ul className="flex justify-between md:w-72 p-4">
@@ -27,7 +27,7 @@ function NavBar() {
         <Link
           to="/home"
         >
-          <img src={MyLogo} alt="MyLogo" className="h-[55px]" />
+          <img src={MyLogo} alt="MyLogo" className="h-12 my-1" />
         </Link>
       </div>
 
@@ -43,7 +43,7 @@ function NavBar() {
           </Link>
         ))}
       </div> */}
-    </div>
+    </>
   );
 }
 
