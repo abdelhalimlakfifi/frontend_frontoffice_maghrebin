@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import MyLogo from "/Icons/Maghrebin_logo.svg";
 import iconLinks from "./iconLinks";
-import links from "./links";
+// import links from "./links";
 
 function NavBar() {
   return (
     <div className="flex justify-around my-0 w-full">
       {/* Menu div */}
       <nav className="md:mx-6 lg:mx-0 md:visible">
-        <ul className="flex justify-between md:w-72 p-4">
+        {/* <ul className="flex justify-between md:w-72 p-4">
           {links.map((link) => (
             <li className="w-fit hover:underline" key={link.name}>
               <Link
@@ -19,7 +19,7 @@ function NavBar() {
               </Link>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </nav>
 
       {/* Logo div */}
@@ -32,7 +32,7 @@ function NavBar() {
       </div>
 
       {/* Icons div */}
-      <div className="flex justify-center items-center space-x-3  md:mx-6">
+      {/* <div className="flex justify-center items-center space-x-3  md:mx-6">
         {iconLinks.map((iconLink, index) => (
           <Link key={index} to={iconLink.path}>
             <img
@@ -42,7 +42,7 @@ function NavBar() {
             />
           </Link>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
