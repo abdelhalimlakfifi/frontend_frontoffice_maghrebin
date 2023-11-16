@@ -6,16 +6,17 @@ import Men from "../components/LandingComponents/SectionTwo/SectionMen/Men"
 import Kids from "../components/LandingComponents/SectionTwo/SectionKids/Kids"
 
 import Video from "../components/LandingComponents/SectionThree/Video"
+import Layout from "../components/Layout/Layout";
 
 const LandingPage = () => {
   return (
-    <>
+    <Layout>
       <SectionPub />
       <Women />
       <Men />
       <Kids />
       <Video />
-    </>
+    </Layout>
   );
 };
 
