@@ -15,7 +15,7 @@ import { Mousewheel, Pagination } from 'swiper/modules';
 export default function ProductsSwiper() {
   return (
     //h-[38rem] w-[10rem]
-    <div className="h-[21rem] lg:h-[38rem] w-[10rem] lg:w-[10rem]">
+    <div className="h-[21rem] w-[10rem] lg:h-[38rem] lg:w-[10rem] md:h-[37rem]">
       <Swiper
         direction={'vertical'}
         //* scroll controllers
