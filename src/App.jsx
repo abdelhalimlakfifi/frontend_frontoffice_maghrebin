@@ -12,6 +12,7 @@ import CheckoutPage from "./Pages/CheckoutPage";
 import MyCartPage from "./Pages/MyCartPage";
 import SizeGuidePage from "./Pages/SizeGuidePage";
 import Footer from "./components/Footer/Footer";
+import MainProductDetail from "./components/ProductDetail/MainProductDetail";
 
 const App = () => {
   return (
@@ -28,8 +29,9 @@ const App = () => {
         <Route path="/Checkout" element={<CheckoutPage />} />
         <Route path="/MyCart" element={<MyCartPage />} />
         <Route path="/SizeGuide" element={<SizeGuidePage />} />
+        <Route path="/productDetail" element={<MainProductDetail />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
