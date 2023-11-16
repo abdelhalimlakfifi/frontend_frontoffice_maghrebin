@@ -12,19 +12,21 @@ const iconLinks = [
     { path: '#', icon: '/src/assets/Icons/userIcon.svg', alt: 'userIcon' },
   ]
 
-function Layout() {
+function Layout({children}) {
     
   return (
     <div className='w-full h-screen'>
         <div className='w-full border-blackV border-b-2 '>
          <NavBar />
         </div>
-
+        
+        {/* lhofra */}
         <div className='lg:hidden' >
 
         </div>
 
-        <div className='bg-red-200  h-4/5 my-4 mx-4'>children</div>
+        {/* call all child components */}
+        <div className=''>{children}</div>
 
         <div className='w-full h-auto   border-blackV border-t-2 '>
         <Footer/>
