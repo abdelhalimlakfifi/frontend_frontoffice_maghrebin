@@ -27,16 +27,16 @@ const Product = ({ title, price, description, color }) => {
 
   return (
     <>
-      <div className="w-full">
-        <h2 className="text-3xl font-bold mb-8">{title}</h2>
+      <div className="w-full my-10">
+        <h2 className="text-3xl font-bold my-8">{title}</h2>
         <p className="text-sm text-gray-600 mb-8">{price}</p>
         <p className="text-base mt-2 mb-8">{description}</p>
         <div className="text-base mb-8 flex items-center">
-          <span className="mr-2">COLOR:</span>
+          <span className="mr-2 text-sm">COLOR:</span>
           <span className="flex items-center">{colors}</span>
         </div>
         <div className="flex items-center mt-2 mb-8">
-          <label htmlFor="sizeInput" className="mr-2">
+          <label htmlFor="sizeInput" className="mr-2 text-sm">
             SIZE:
           </label>
           <select
