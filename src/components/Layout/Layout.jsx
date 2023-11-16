@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import NavBar from '../NavBar/NavBar'
-import Footer from '../Footer/Footer'
+import NavBar from './NavBar'
+import Footer from './Footer'
 
 
 
@@ -13,15 +13,24 @@ const iconLinks = [
   ]
 
 function Layout() {
+    
   return (
     <div className='w-full h-screen'>
         <div className='w-full border-blackV border-b-2 '>
-         <NavBar/>
+         <NavBar />
         </div>
-        <div className='bg-red-600  h-4/5 my-4 mx-4'>children</div>
-        <div className='w-full h-auto border-blackV border-t-2 '>
+
+        <div className='lg:hidden' >
+
+        </div>
+
+        <div className='bg-red-200  h-4/5 my-4 mx-4'>children</div>
+
+        <div className='w-full h-auto   border-blackV border-t-2 '>
         <Footer/>
         </div>
+
+        {/* bottom navMenu */}
         <div className="flex justify-between items-center  lg:hidden h-12 px-4 md:px-7 md:h-11 fixed bottom-0 left-0 w-full bg-white  border-blackV border-t-2  ">
         {iconLinks.map((iconLink, index) => (
           <Link key={index} to={iconLink.path} className="w-8">
