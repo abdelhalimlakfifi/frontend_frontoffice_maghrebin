@@ -9,7 +9,9 @@ import navLineDivider from '../../assets/icons/navLine_divider.svg'
 import userIcon from '../../assets/icons/userIcon.svg'
 import burgerMenu from '../../assets/icons/Bugermenu.svg'
 
-function NavBar({handleMenuClick}) {
+function NavBar() {
+
+  // const [open, setOpen] = useState
   
   const links = [
     {
@@ -32,8 +34,7 @@ function NavBar({handleMenuClick}) {
 
   return (
     <div className="mx-3 lg:mx-28 flex justify-between">
-      <div className="flex items-center lg:hidden " 
-      >
+      <div className="flex items-center lg:hidden">
           <img
               src={burgerMenu}
               alt='Menu'
