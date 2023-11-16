@@ -27,7 +27,7 @@ const Product = ({ title, price, description, color }) => {
 
   return (
     <>
-      <div className="w-full my-10">
+      <div className="w-full lg:my-10 order-1 lg:order-auto">
         <h2 className="text-3xl font-bold my-8">{title}</h2>
         <p className="text-sm text-gray-600 mb-8">{price}</p>
         <p className="text-base mt-2 mb-8">{description}</p>
