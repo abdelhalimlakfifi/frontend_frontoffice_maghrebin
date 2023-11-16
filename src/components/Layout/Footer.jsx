@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
   <>
-    <section className="mx-12 my-6 flex flex-col lg:flex-row justify-between items-center lg:mx-44">
+    <section className="mx-12 my-6 flex flex-col lg:flex-row justify-between items-center lg:mx-44 bg-white">
         {/* Stay in touch Section */}
         <div className=" lg:order-2">
             <div>
@@ -77,7 +77,7 @@ const Footer = () => {
       <div className="h-9  flex justify-center border-blackV border-t-2 `">
         <p className="my-2 text-sm">@{currentYear} MAGHREBIN</p>
       </div>
-      <div className=" h-12">
+      <div className="lg:hidden h-12">
 
       </div>
     </section>
