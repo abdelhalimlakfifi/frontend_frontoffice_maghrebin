@@ -4,21 +4,19 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 
-import NavBar from "./components/Layout/NavBar";
 import LandingPage from "./Pages/LandingPage";
 import ProductDetailPage from "./Pages/ProductDetailPage";
 import CategoriePage from "./Pages/CategoriePage";
 import CheckoutPage from "./Pages/CheckoutPage";
 import MyCartPage from "./Pages/MyCartPage";
 import SizeGuidePage from "./Pages/SizeGuidePage";
-// import Footer from "./components/Footer/Footer";
 import Layout from "./components/Layout/Layout"
 
 const App = () => {
   return (
     <>
-      {/* <NavBar /> */}
-      <Routes>
+    
+     <Routes>
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
 
@@ -32,7 +30,6 @@ const App = () => {
         <Route path="/Layout" element={<Layout />} />
 
       </Routes>
-      {/* <Footer /> */}
     </>
   );
 };
