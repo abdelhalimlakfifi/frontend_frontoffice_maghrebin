@@ -10,7 +10,7 @@ const MainProductDetail = () => {
   return (
     // test data
     <>
-      <div className="mb-4 lg:px-20 px-12 mt-8">
+      <div className="mb-6 lg:px-20 px-12 mt-8">
         <BreadCrum items={items} />
       </div>
       <section className="w-full lg:px-20 px-12 pb-7 flex lg:flex-row lg:gap-12 flex-col justify-between">
