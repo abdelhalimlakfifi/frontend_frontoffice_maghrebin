@@ -14,7 +14,6 @@ const MainProductDetail = () => {
         <BreadCrum items={items} />
       </div>
       <section className="w-full lg:px-20 px-12 pb-7 flex lg:flex-row gap-12 flex-col justify-between">
-        <ProductsSwiper />
         <Product
           title="Product Title"
           price="$00.00"
