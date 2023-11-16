@@ -16,7 +16,7 @@ function Layout({children}) {
     
   return (
     <div className='w-full h-screen'>
-        <div className='w-full border-blackV border-b-2 '>
+        <div className='w-full border-blackV border-b-2 fixed bg-white'>
          <NavBar />
         </div>
         
