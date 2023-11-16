@@ -1,8 +1,13 @@
 import React from "react";
 import MainCheckout from "../components/CheckoutComponents/MainCheckout";
+import Layout from "../components/Layout/Layout";
 
-const CheckoutPage = () => {
-  return <MainCheckout />;
+const CheckoutPage = ({children}) => {
+  return(
+    <Layout>
+      <MainCheckout />
+    </Layout>
+  ) 
 };
 
 export default CheckoutPage;

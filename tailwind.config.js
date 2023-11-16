@@ -14,7 +14,8 @@ export default {
     extend: {
       colors: {
         "custom-purple": "#655445",
-        "blackV": "#3B3B3B"
+        "blackV": "#3B3B3B",
+        "black-border": "#2B2B2B"
       },
     },
   },
