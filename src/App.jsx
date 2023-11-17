@@ -11,6 +11,7 @@ import CheckoutPage from "./Pages/CheckoutPage";
 import MyCartPage from "./Pages/MyCartPage";
 import SizeGuidePage from "./Pages/SizeGuidePage";
 import MainProductDetail from "./components/ProductDetail/MainProductDetail";
+import WishListPage from "./Pages/WishListPage";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/MyCart" element={<MyCartPage />} />
         <Route path="/SizeGuide" element={<SizeGuidePage />} />
         <Route path="/productDetail" element={<MainProductDetail />} />
+        <Route path="/wish-list" element={<WishListPage />} />
 
       </Routes>
     </>
