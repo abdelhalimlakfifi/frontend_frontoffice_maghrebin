@@ -3,8 +3,11 @@ import ProductsSwiper from "./ProductsSwiper";
 
 const ProductImage = () => {
   return (
-    <div className="w-full lg:flex hidden">
-      <div className="border mr-3 w-9/12"><img src="https://via.placeholder.com/552x616" alt="" /></div>
+    <div className="w-full lg:flex flex lg:order-2">
+      <div className="border mr-3 lg:w-9/12">
+        <img src="https://via.placeholder.com/552x616" alt="" />
+      </div>
+
       <ProductsSwiper />
     </div>
   );

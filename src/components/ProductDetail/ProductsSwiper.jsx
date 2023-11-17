@@ -9,20 +9,21 @@ import 'swiper/css/pagination';
 import '../../swiperStyle.css';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Mousewheel } from 'swiper/modules';
+// import { Navigation } from 'swiper/modules';
 
 export default function ProductsSwiper() {
   return (
-    <div className=' h-[38rem] w-[10rem]'>
+    //h-[38rem] w-[10rem]
+    <div className="h-[21rem] w-[10rem] lg:h-[38rem] lg:w-[10rem] md:h-[37rem]">
       <Swiper
         direction={'vertical'}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
+        //* scroll controllers
         slidesPerView={3}
         spaceBetween={10}
+        mousewheel={true}
+        modules={[Mousewheel]}
+        className="mySwiper"
       >
         <SwiperSlide>Image 1</SwiperSlide>
         <SwiperSlide>Image 2</SwiperSlide>
@@ -37,8 +38,6 @@ export default function ProductsSwiper() {
     </div>
   );
 }
-
-
 
 // old img swiper
 // import React, { useState, useEffect } from "react";
@@ -98,8 +97,6 @@ export default function ProductsSwiper() {
 //     </section>
 //   );
 // }
-
-
 
 // ignore
 // export default function ProductsSwiper() {

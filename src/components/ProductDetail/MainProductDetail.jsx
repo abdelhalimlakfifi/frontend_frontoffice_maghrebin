@@ -3,17 +3,18 @@ import Product from "./Product";
 import ProductImage from "./ProductImage";
 import BreadCrum from "../GlobalComponents/BreadCrum";
 import ProductsSwiper from "./ProductsSwiper";
+import Layout from "../Layout/Layout";
 
 const MainProductDetail = () => {
   // BreadCrum
   const items = [{ label: "Men" }, { label: "Djelaba" }];
   return (
     // test data
-    <>
-      <div className="mb-4 lg:px-20 px-12 mt-8">
+    <Layout>
+      <div className="mb-6 lg:px-20 px-12 mt-8">
         <BreadCrum items={items} />
       </div>
-      <section className="w-full lg:px-20 px-12 pb-7 flex lg:flex-row gap-12 flex-col justify-between">
+      <section className="w-full lg:px-20 px-12 flex lg:flex-row lg:gap-12 flex-col justify-between">
         <Product
           title="Product Title"
           price="$00.00"
@@ -22,7 +23,7 @@ const MainProductDetail = () => {
         />
         <ProductImage />
       </section>
-    </>
+    </Layout>
   );
 };
 
