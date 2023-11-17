@@ -17,6 +17,9 @@ export default {
         "blackV": "#3B3B3B",
         "black-border": "#2B2B2B"
       },
+      fontFamily: {
+        NewYork: ['newyork', 'sans-serif'],
+      },
     },
   },
   plugins: [],
