@@ -17,7 +17,7 @@ function Layout({children}) {
   return (
     <div className='w-full h-screen'>
         <div className='w-full border-blackV border-b-2 '>
-         <NavBar />
+          <NavBar />
         </div>
         
         {/* lhofra */}
