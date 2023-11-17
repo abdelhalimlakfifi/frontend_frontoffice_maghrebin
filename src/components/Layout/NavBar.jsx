@@ -48,7 +48,7 @@ function NavBar({updateMenuClick, menuClick}) {
   return (
     <>
     {/* className="h-6 w-8" */}
-      <div className="mx-3 lg:mx-28 flex justify-between">
+      <div className="mx-3 my-3 lg:mx-28 flex justify-between">
       <div className="flex items-center lg:hidden"    onClick={handleMenuClick}>
         {menuClick ? <span className="pi pi-times w-5 text-xl"></span> : <span className="pi pi-bars w-5 text-xl"></span>
           }
