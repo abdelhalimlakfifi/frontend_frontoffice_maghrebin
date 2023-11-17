@@ -1,5 +1,9 @@
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import MyLogo from "/Icons/Maghrebin_logo.svg";
+import { InputText } from "primereact/inputtext";
+import 'primeicons/primeicons.css';
+
 
 //import icons
 import searchIcon from '../../assets/icons/searchIcon.svg'
@@ -7,11 +11,20 @@ import favIcon from '../../assets/icons/favIcon.svg'
 import cartIcon from '../../assets/icons/cartIcon.svg'
 import navLineDivider from '../../assets/icons/navLine_divider.svg'
 import userIcon from '../../assets/icons/userIcon.svg'
-import burgerMenu from '../../assets/icons/Bugermenu.svg'
+// import burgerMenu from '../../assets/icons/Bugermenu.svg'
+// import closeMenu from '../../assets/icons/closeMenu.svg'
 
-function NavBar() {
+function NavBar({updateMenuClick, menuClick}) {
+    const [searchClick, setSearchClick] = useState(false)
 
-  // const [open, setOpen] = useState
+  const handleSearchClick = () => {
+    setSearchClick(!searchClick)
+  }
+
+  const handleMenuClick = () => {
+    updateMenuClick((menuClick) => !menuClick);
+  };
+
   
   const links = [
     {
@@ -33,13 +46,13 @@ function NavBar() {
   ]
 
   return (
-    <div className="mx-3 lg:mx-28 flex justify-between">
-      <div className="flex items-center lg:hidden">
-          <img
-              src={burgerMenu}
-              alt='Menu'
-              className="h-6 w-8"
-            />
+    <>
+    {/* className="h-6 w-8" */}
+      <div className="mx-3 lg:mx-28 flex justify-between">
+      <div className="flex items-center lg:hidden"    onClick={handleMenuClick}>
+        {menuClick ? <span className="pi pi-times w-5 text-xl"></span> : <span className="pi pi-bars w-5 text-xl"></span>
+          }
+          
       </div>
       <div className="hidden lg:block ">
          {/* Menu div */}
@@ -56,6 +69,8 @@ function NavBar() {
           ))}
         </ul>
       </div>
+
+      
       
       {/* Logo div */}
         <Link
@@ -69,11 +84,12 @@ function NavBar() {
       {/* Icons div */}
       <div className="flex items-center lg:space-x-3  ">
         
-          <Link to='/'>
+          <Link to=''>
             <img
               src={searchIcon}
               alt='searchIcon'
               className="h-6 w-8"
+              onClick={handleSearchClick}
             />
           </Link>
           <Link to='/'>
@@ -106,7 +122,16 @@ function NavBar() {
           </Link>
       
       </div>
-    </div>
+    </div> 
+
+    {searchClick && <div className="h-14 border-blackV border-t-2 bg-white w-full">
+    <span className="p-input-icon-left mx-3 ease-in-out">
+      <i className="pi pi-search " />
+      <InputText placeholder="Search..." className='outline-none w-full border-0 mx-2 rounded-none !shadow-none' />
+    </span>
+    </div>}
+    </>
+    
   );
 }
 

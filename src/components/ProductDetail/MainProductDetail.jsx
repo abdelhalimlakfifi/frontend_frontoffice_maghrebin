@@ -3,13 +3,14 @@ import Product from "./Product";
 import ProductImage from "./ProductImage";
 import BreadCrum from "../GlobalComponents/BreadCrum";
 import ProductsSwiper from "./ProductsSwiper";
+import Layout from "../Layout/Layout";
 
 const MainProductDetail = () => {
   // BreadCrum
   const items = [{ label: "Men" }, { label: "Djelaba" }];
   return (
     // test data
-    <>
+    <Layout>
       <div className="mb-6 lg:px-20 px-12 mt-8">
         <BreadCrum items={items} />
       </div>
@@ -22,7 +23,7 @@ const MainProductDetail = () => {
         />
         <ProductImage />
       </section>
-    </>
+    </Layout>
   );
 };
 
