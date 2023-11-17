@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 import '../../swiperStyle.css';
 
 // import required modules
-import { Mousewheel, Pagination } from 'swiper/modules';
+import { Mousewheel } from 'swiper/modules';
 // import { Navigation } from 'swiper/modules';
 
 export default function ProductsSwiper() {
@@ -22,10 +22,6 @@ export default function ProductsSwiper() {
         slidesPerView={3}
         spaceBetween={10}
         mousewheel={true}
-        Pagination={{
-          clickable: true,
-        }}
-        // navigation={true}
         modules={[Mousewheel]}
         className="mySwiper"
       >
