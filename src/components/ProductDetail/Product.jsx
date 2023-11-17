@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import BtnGlobal from "../GlobalComponents/BtnGlobal";
 
 const Product = ({ title, price, description, color }) => {
   let colors = [];
+  const [selectedColor, setSelectedColor] = useState();
+
 
   // If multiple colors are provided, split them and create color circles for each
   if (color.includes(",")) {
@@ -38,12 +40,12 @@ const Product = ({ title, price, description, color }) => {
         {productColors.map((currentColor, index) => (
         <BtnGlobal
           key={index}
-          className="mr-2 text-sm border-[0.5px] border-black p-3 font-NewYork"
+          className={`mr-2 text-sm ${currentColor == selectedColor ? '!border-2' : ''} border-[0.5px] border-black p-3 font-NewYork`}
           content={currentColor}
-          // onClick={}
+          onClick={() => setSelectedColor(currentColor)}
         />
       ))}
-      </div>
+      </div>  
 
         <div className="flex items-center mt-2 mb-8">
           <label htmlFor="sizeInput" className="mr-2 text-sm">
