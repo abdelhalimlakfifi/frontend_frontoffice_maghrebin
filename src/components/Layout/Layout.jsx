@@ -21,6 +21,8 @@ function Layout({ children }) {
 
   return (
     <div className="w-full h-screen">
+      {/* Desktop Navbar */}
+
       <div className="w-full border-blackV border-b-2 ">
         <NavBar updateMenuClick={updateMenuClick} menuClick={menuClick}/>
       </div>
@@ -29,7 +31,7 @@ function Layout({ children }) {
 
       {menuClick ? (
           <div className="w-full h-full">
-           <MobileMenu/>
+          <MobileMenu/>
           </div>
       ) : (
         <div className="">
