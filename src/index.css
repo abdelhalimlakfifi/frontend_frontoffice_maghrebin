@@ -15,3 +15,9 @@ body {
   overflow: auto;
   overflow-x: hidden; 
 }
+
+@font-face {
+  font-family: "newyork", sans-serif ;
+  src: url("./assets/fonts/newyork.otf") format("opentype");
+  
+}
