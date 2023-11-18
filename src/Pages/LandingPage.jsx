@@ -13,9 +13,6 @@ const LandingPage = () => {
     <Layout>
       <MainCategorie />
       <Women />
-      <Men />
-      <Kids />
-      <Video />
     </Layout>
   );
 };
