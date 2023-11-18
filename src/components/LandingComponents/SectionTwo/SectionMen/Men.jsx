@@ -1,5 +1,4 @@
 import React from 'react'
-import MainSection from "../MainSection"
 
 const Men = () => {
   const cardData = [
@@ -17,9 +16,7 @@ const Men = () => {
     },
   ];
 
-  return (
-    <MainSection title="NEWLY ARRIVED MEN'S ITEMS" cardData={cardData} />
-  );
+  return 
 }
 
 export default Men;
