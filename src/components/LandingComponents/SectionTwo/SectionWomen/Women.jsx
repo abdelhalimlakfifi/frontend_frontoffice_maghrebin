@@ -1,48 +1,13 @@
 import React from "react";
-import MainSection from "../MainSection";
+import Cards from "../Cards";
 
 const Women = () => {
-  const cardData = [
-    {
-      imageUrl: "LandingPage/Jelalebs/jelab.jpg",
-      altText: "Alt Text 1",
-      price: "$99.XX",
-      // buttonText: "Button Text 1",
-    },
-    {
-      imageUrl: "LandingPage/Jelalebs/jelaba.webp",
-      altText: "Alt Text 2",
-      price: "$88.YY",
-      // buttonText: "Button Text 2",
-    },
-    {
-      imageUrl: "LandingPage/Jelalebs/jelaba.jpg",
-      altText: "Alt Text 1",
-      price: "$77.XX",
-      // buttonText: "Button Text 1",
-    },
-    {
-      imageUrl: "LandingPage/Jelalebs/jelabaa.webp",
-      altText: "Alt Text 2",
-      price: "$YY.YY",
-      // buttonText: "Button Text 2",
-    },
-    {
-      imageUrl: "LandingPage/Jelalebs/jelaba.jpg",
-      altText: "Alt Text 1",
-      price: "$XX.XX",
-      // buttonText: "Button Text 1",
-    },
-    {
-      imageUrl: "LandingPage/Jelalebs/jelabaa.webp",
-      altText: "Alt Text 2",
-      price: "$YY.YY",
-      // buttonText: "Button Text 2",
-    },
-  ];
-
   return (
-    <MainSection title="NEWLY ARRIVED WOMEN'S ITEMS" cardData={cardData} />
+    <div className="flex flex-col">
+        <h1 className="text-3xl font-medium flex justify-center my-5">New In Women Wear</h1>
+        <Cards />
+    </div>
+    
   );
 };
 
