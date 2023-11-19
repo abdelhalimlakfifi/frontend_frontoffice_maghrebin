@@ -6,15 +6,17 @@ import "swiper/css/pagination";
 import { FreeMode, Pagination } from "swiper/modules";
 //import card image
 import Kaftan1 from "../../../../assets/Kaftan1.jpg";
+import Kaftan2 from "../../../../assets/Kaftan2.jpg";
+
 import { Card } from "../../../GlobalComponents/ProductCard";
 
 const WomenCards = () => {
   // Example data for three cards
   const cardData = [
-    { title: "Product 1", price: "20.00$", imageSrc: Kaftan1 },
-    { title: "Product 2", price: "25.00$", imageSrc: Kaftan1 },
-    { title: "Product 3", price: "30.00$", imageSrc: Kaftan1 },
-    { title: "Product 4", price: "20.00$", imageSrc: Kaftan1 },
+    { title: "Product 1", price: "20.00$", mainImg: Kaftan1, secondaryImg:Kaftan2 },
+    { title: "Product 2", price: "25.00$", mainImg: Kaftan1, secondaryImg:Kaftan2 },
+    { title: "Product 3", price: "30.00$", mainImg: Kaftan1, secondaryImg:Kaftan2 },
+    { title: "Product 4", price: "20.00$", mainImg: Kaftan1, secondaryImg:Kaftan2 },
   ];
 
   return (

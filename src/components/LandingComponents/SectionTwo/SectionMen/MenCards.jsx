@@ -6,15 +6,16 @@ import "swiper/css/pagination";
 import { FreeMode, Pagination } from "swiper/modules";
 //import card image
 import Man1 from "../../../../assets/Man1.jpg";
+import Man2 from "../../../../assets/Man2.jpg"
 import { Card } from "../../../GlobalComponents/ProductCard";
 
 const MenCards = () => {
   // Example data for three cards
   const cardData = [
-    { title: "Product 1", price: "20.00$", imageSrc: Man1 },
-    { title: "Product 2", price: "25.00$", imageSrc: Man1 },
-    { title: "Product 3", price: "30.00$", imageSrc: Man1 },
-    { title: "Product 4", price: "20.00$", imageSrc: Man1 },
+    { title: "Product 1", price: "20.00$", mainImg: Man1, secondaryImg:Man2},
+    { title: "Product 2", price: "25.00$", mainImg: Man1 , secondaryImg:Man2},
+    { title: "Product 3", price: "30.00$", mainImg: Man1 , secondaryImg:Man2},
+    { title: "Product 4", price: "20.00$", mainImg: Man1 , secondaryImg:Man2},
   ];
 
   return (
