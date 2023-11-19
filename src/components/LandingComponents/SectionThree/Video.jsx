@@ -1,10 +1,9 @@
 import React from "react";
 import TrailerMaghrebin from "../../../assets/MoroccoArise.mp4"
-import WhiteZlija from "../../../assets/ZlijaGoldShadow.svg"
 
 const Video = () => {
   return (
-    <section className="mt-20  w-full border-2 border-black flex justify-center items-center h-auto relative ">
+    <section className="  w-full border-t-2 border-b-2 border-black flex justify-center items-center h-auto  ">
       <video controls className="w-full" >
         <source src={TrailerMaghrebin} type="video/mp4" />
         Sorry, your browser doesn't support videos.
