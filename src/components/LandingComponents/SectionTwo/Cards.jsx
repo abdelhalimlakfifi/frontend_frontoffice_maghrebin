@@ -20,32 +20,37 @@ const Cards = () => {
   return (
     <>
       {/* Show swiper in mobile */}
-      {/* <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
+      <div className="">
+      <Swiper
+        slidesPerView={2}
+        spaceBetween={50}
         freeMode={true}
         pagination={{
           clickable: true,
         }}
         modules={[FreeMode, Pagination]}
-        className="mySwiper lg:hidden "
-
+        className="lg:hidden"
+   
       >
-        <section className="flex flex-row flex-wrap justify-center mx-10">
+        <section className="">
           {cardData.map((card, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} className="swiper-background ">
               <Card {...card} />
             </SwiperSlide>
           ))}
         </section>
-      </Swiper> */}
+      </Swiper>
+      </div>
+      
       
       {/* Show in Web without swiper */}
-      <section className="flex flex-row flex-wrap justify-center mx-10">
+      <div className="hidden lg:block">
+      <section className="flex flex-row flex-wrap justify-center mx-10 ">
         {cardData.map((card, index) => (
           <Card key={index} {...card} />
         ))}
       </section>
+      </div>
     </>
   );
 };
