@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import BtnGlobal from "./BtnGlobal";
 
+const Card = ({ title, price, mainImg, secondaryImg }) => {
+  const [isHovered, setIsHovered] = useState(false);
 
-const Card = ({ title, price, imageSrc }) => {
   return (
-    <div className="flex flex-col w-[13rem] md:w-[25rem] lg:w-[18rem] mx-4 my-9 ">
+    <div
+      className="flex flex-col w-[13rem] md:w-[25rem] lg:w-[18rem] mx-4 my-9 "
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="relative">
-        <img src={imageSrc} alt={title} className="border-blackV border-2" />
+        <img
+          src={isHovered ? secondaryImg : mainImg}
+          alt={title}
+          className="border-blackV border-2"
+        />
         <div className="absolute top-3 right-4 bg-white rounded-full h-7 w-7 flex justify-center items-center">
           <i className="pi pi-heart text-blackV hover:text-pink-600 text-lg mt-1"></i>
         </div>
@@ -29,5 +38,4 @@ const Card = ({ title, price, imageSrc }) => {
   );
 };
 
-export {Card}
-
+export { Card };
