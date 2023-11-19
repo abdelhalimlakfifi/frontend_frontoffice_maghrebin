@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BtnGlobal from "./BtnGlobal";
 
-const Card = ({ title, price, mainImg, secondaryImg }) => {
+const Card = ({ id,title, price, mainImg, secondaryImg }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

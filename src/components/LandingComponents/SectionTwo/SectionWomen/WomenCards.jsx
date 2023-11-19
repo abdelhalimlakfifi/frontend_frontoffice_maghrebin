@@ -13,10 +13,10 @@ import { Card } from "../../../GlobalComponents/ProductCard";
 const WomenCards = () => {
   // Example data for three cards
   const cardData = [
-    { title: "Product 1", price: "20.00$", mainImg: Kaftan1, secondaryImg:Kaftan2 },
-    { title: "Product 2", price: "25.00$", mainImg: Kaftan1, secondaryImg:Kaftan2 },
-    { title: "Product 3", price: "30.00$", mainImg: Kaftan1, secondaryImg:Kaftan2 },
-    { title: "Product 4", price: "20.00$", mainImg: Kaftan1, secondaryImg:Kaftan2 },
+    {id:1 ,title: "Product 1", price: "20.00$", mainImg: Kaftan1, secondaryImg:Kaftan2 },
+    {id:2 ,title: "Product 2", price: "25.00$", mainImg: Kaftan1, secondaryImg:Kaftan2 },
+    {id:3 ,title: "Product 3", price: "30.00$", mainImg: Kaftan1, secondaryImg:Kaftan2 },
+    {id:4 ,title: "Product 4", price: "20.00$", mainImg: Kaftan1, secondaryImg:Kaftan2 },
   ];
 
   return (
