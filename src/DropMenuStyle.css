@@ -8,13 +8,56 @@
 }
 
 .p-dropdown:hover {
-  background-color: #f0f0f0; /* Adjust the shade of gray as needed */
+  background-color: rgba(240, 240, 240, 0.5);
 }
 
+/* Dropdown text */
+.p-dropdown-label	{
+  color: black;
+  font-size: small;
+}
 
-/* checkbox */
+/* Dropdown panel */
+.p-dropdown-panel{
+  background: #fff;
+  border-radius: 0px;
+}
+
+.p-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/********* checkbox *********/
 
 .p-checkbox {
   background: none;
 }
 
+.p-checkbox-icon {
+  color: white;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  color: black;
+  background: #EEF2FF;
+}
+
+
+.p-checkbox .p-checkbox-box {
+  border: 1px solid black;
+  background: #ffffff;
+  width: 18px;
+  height: 18px;
+  color: black;
+  border-radius: 0px;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+
+.p-checkbox .p-checkbox-box.p-highlight {
+  border: none;
+  background: black;
+  border-radius: 0px;
+}
