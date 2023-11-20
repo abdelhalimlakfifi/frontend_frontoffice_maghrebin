@@ -60,6 +60,18 @@ function WishListPage() {
         <h1 className="text-2xl font-semibold text-blackV">Your Wish List</h1>
       </div>
 
+      <div className="flex justify-center w-full">
+      <BtnGlobal
+          className="w-1/2 border-2 border-blackV bg-blackV text-white hover:bg-white hover:text-blackV p-2 mx-4  font-medium"
+
+          content=" Add All To Cart"
+        />
+        <BtnGlobal
+          className=" w-1/2  border-2 border-blackV bg-blackV text-white hover:bg-white hover:text-blackV p-2 mx-4  font-medium"
+          content="Remove All"
+        />
+      </div>
+
       <div className=" ">
         <section className="flex flex-row flex-wrap justify-center mx-10 ">
           {wishlist.map((product, index) => (
