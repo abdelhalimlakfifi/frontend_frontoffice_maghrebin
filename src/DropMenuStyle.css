@@ -1,0 +1,20 @@
+.p-dropdown	{
+  background: white;
+  border: none;
+  border-radius: 0px;
+  width: 1OOpx;
+  border: 1px 0px solid #2B2B2B;
+  cursor: default
+}
+
+.p-dropdown:hover {
+  background-color: #f0f0f0; /* Adjust the shade of gray as needed */
+}
+
+
+/* checkbox */
+
+.p-checkbox {
+  background: none;
+}
+
