@@ -26,36 +26,36 @@ export default function DropMenu() {
 
   return (
     <div className="flex justify-around items-center h-[50px] w-full border-y-[1px] border-blackV">
-      <section className="flex justify-start tracking-widest text-[#2B2B2B]">
+      <section className="flex justify-start tracking-widest text-black">
         <Dropdown
           value={selectedSize}
-          onChange={e => setSelectedSize(e.value)}
+          onChange={(e) => setSelectedSize(e.value)}
           options={Sizes}
           optionLabel="name"
           placeholder="Size"
-          className="w-26 md:w-10rem uppercase"
+          className="w-40 uppercase" // Set a fixed width (adjust as needed)
           itemTemplate={customItemTemplate}
         />
-
+  
         <Dropdown
           value={selectedColor}
-          onChange={e => setSelectedColor(e.value)}
+          onChange={(e) => setSelectedColor(e.value)}
           options={Colors}
           optionLabel="name"
           placeholder="Color"
-          className="w-26 mx-6 md:w-10rem uppercase"
+          className="w-40 mx-6 uppercase" // Set a fixed width (adjust as needed)
           itemTemplate={customItemTemplate}
         />
       </section>
-
-      <section className="tracking-widest text-[#2B2B2B]">
+  
+      <section className="tracking-widest">
         <Dropdown
           value={selectedFilter}
-          onChange={e => setSelectedFilter(e.value)}
+          onChange={(e) => setSelectedFilter(e.value)}
           options={Filter}
           optionLabel="name"
           placeholder="Filter"
-          className="w-26 md:w-10rem uppercase text-sm"
+          className="w-40 uppercase text-sm" // Set a fixed width (adjust as needed)
           itemTemplate={customItemTemplate}
         />
       </section>
