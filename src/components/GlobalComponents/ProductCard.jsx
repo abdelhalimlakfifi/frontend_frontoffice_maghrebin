@@ -3,48 +3,38 @@ import BtnGlobal from "./BtnGlobal";
 
 const Card = ({ id, title, price, mainImg, secondaryImg }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [wishlist, setWishlist] = useState(() => {
-    try {
-      const storedWishlist = localStorage.getItem("wishlist");
-      return storedWishlist ? JSON.parse(storedWishlist) : [];
-    } catch (error) {
-      console.warn(error);
-      return [];
-    }
-  });
-
-  useEffect(() => {
-    try {
-      const storedWishlist = localStorage.getItem("wishlist");
-      if (storedWishlist) {
-        setWishlist(JSON.parse(storedWishlist));
-      }
-    } catch (error) {
-      console.warn(error);
-    }
-  }, []); // Run this effect only once during component mount
-
-  const addProductToStorage = (newWishlist) => {
-    try {
-      localStorage.setItem("wishlist", JSON.stringify(newWishlist));
-    } catch (error) {
-      console.error("Error saving to localStorage:", error);
-    }
-  };
 
   
-  const handleHeartClick = () => {
+  const getInitialWishlist = () => {
+    const storedWishlist = JSON.parse(localStorage.getItem("wishlist"));
+    return storedWishlist || [];
+  };
+
+  const [wishlist, setWishlist] = useState(getInitialWishlist);
+
+  const addProductToStorage = () => {
+    console.log("Adding product to storage", id, title, price, mainImg);
+
+    // Check if the product is already in the wishlist
     const isProductInWishlist = wishlist.some((product) => product.id === id);
 
     if (!isProductInWishlist) {
-      const newWishlist = [...wishlist, { id, title, price, mainImg }];
-      setWishlist(newWishlist);
-      addProductToStorage(newWishlist);
-      alert("Product added to wishlist!");
-    } else {
-      alert("Product is already in the wishlist!");
+      // Update the state as a callBack Function
+      setWishlist((prevWishlist) => [
+        ...prevWishlist,
+        { id, title, price, mainImg },
+      ]);
+
+      // Update localStorage only if the product's id is not already present
+      if (!getInitialWishlist().some((product) => product.id === id)) {
+        localStorage.setItem(
+          "wishlist",
+          JSON.stringify([...getInitialWishlist(), { id, title, price, mainImg }])
+        );
+      }
     }
   };
+
   return (
     <div
       className="flex flex-col w-[13rem] md:w-[25rem] lg:w-[18rem] mx-4 my-9 "
@@ -59,7 +49,7 @@ const Card = ({ id, title, price, mainImg, secondaryImg }) => {
         />
         <div
           className="absolute top-3 right-4 bg-white rounded-full h-7 w-7 flex justify-center items-center"
-          onClick={handleHeartClick}
+          onClick={addProductToStorage}
         >
           <i className="pi pi-heart text-blackV hover:text-pink-600 text-lg mt-1"></i>
         </div>
