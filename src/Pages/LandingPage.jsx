@@ -16,7 +16,10 @@ const LandingPage = () => {
       <Women />
       <Men />
       <Kids />
+      <div className="w-screen relative overflow-hidden">
       <LogoSlider/>
+
+      </div>
       <Video />
     </Layout>
   );
