@@ -16,45 +16,37 @@ const FormLogin = () => {
   };
 
   return (
-    <div className="h-[78vh] flex justify-center items-center mx-auto w-9/12 sm:w-6/12 md:w-10/12 xl:w-8/12">
-      <form className="my-auto w-full sm:w-10/12 md:w-8/12 lg:w-6/12">
-        <h2 className="tracking-wider font-sans text-3xl uppercase mb-10 font-thin">
-          LOG IN TO YOUR ACCOUNT
-        </h2>
+    <div className="h-[78vh] flex justify-center items-center mx-auto w-full sm:w-6/12 md:w-10/12 xl:w-8/12">
+      <form className="my-auto w-full md:w-8/12 lg:w-6/12">
+        <h2 className="tracking-wider font-sans text-3xl uppercase mb-10 font-thin">LOG IN TO YOUR ACCOUNT</h2>
         <InputField
-          // className="border-b border-solid border-gray-500 pb-2 mb-8 outline-none w-full border-0 rounded-none"
-          placeholder="Enter your email"
+          className="pb-2 mb-8 outline-none w-full border-0 rounded-none"
+          placeholder="E-mail"
           id="email"
           type="email"
           value={email}
-          onChange={(e) => handleInputChange(e, setEmail)}
+          onChange={e => handleInputChange(e, setEmail)}
         />
         <InputField
-          // className="border-b border-solid border-gray-500 pb-2 mb-8 outline-none w-full border-0 rounded-none"
-          placeholder="Enter your password"
+          className="pb-2 mb-8 outline-none w-full border-0 rounded-none"
+          placeholder="Password"
           id="password"
           type="password"
           value={password}
-          onChange={(e) => handleInputChange(e, setPassword)}
+          onChange={e => handleInputChange(e, setPassword)}
         />
 
         <div className="flex justify-between">
           <Link to="#">
-            <p className="text-center">Have you forgotten your password?</p>
+            <p className="text-left text-sm">Have you forgotten your password?</p>
           </Link>
-          <div className="card flex justify-content-center">
-            <p className="mr-2">Remember Me</p>
-            <InputSwitch
-              checked={checked}
-              onChange={(e) => setChecked(e.value)}
-            />
+          <div className="card flex justify-content lg:flex lg:items-center">
+            <p className="mr-2 text-sm">Remember Me</p>
+            <InputSwitch checked={checked} onChange={e => setChecked(e.value)} />
           </div>
         </div>
 
-        <BtnGlobal
-          className="w-full border border-gray-500 p-2 mt-4"
-          content="LOG IN"
-        />
+        <BtnGlobal className="w-full border border-gray-500 p-2 mt-8" content="LOG IN" />
       </form>
     </div>
   );
