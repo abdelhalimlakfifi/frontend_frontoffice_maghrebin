@@ -7,6 +7,7 @@ import Kids from "../components/LandingComponents/SectionTwo/SectionKids/Kids"
 
 import Video from "../components/LandingComponents/SectionThree/Video"
 import Layout from "../components/Layout/Layout";
+import LogoSlider from "../components/LandingComponents/SectionThree/LogoSlider";
 
 const LandingPage = () => {
   return (
@@ -15,6 +16,10 @@ const LandingPage = () => {
       <Women />
       <Men />
       <Kids />
+      <div className="w-screen relative overflow-hidden">
+      <LogoSlider/>
+
+      </div>
       <Video />
     </Layout>
   );
