@@ -74,7 +74,7 @@ function NavBar({updateMenuClick, menuClick}) {
       
       {/* Logo div */}
         <Link
-          to="/home"
+          to="/"
           className=""
         >
           <img src={MyLogo} alt="MyLogo" className="h-12 my-1 " />
