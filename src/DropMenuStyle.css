@@ -1,0 +1,78 @@
+.p-dropdown	{
+  background: white;
+  border: none;
+  border-radius: 0px;
+  width: 1OOpx;
+  border: 1px 0px solid #2B2B2B;
+  cursor: default;
+}
+
+.p-dropdown:hover {
+  background-color: rgba(240, 240, 240, 0.5);
+}
+
+/* Dropdown text */
+.p-dropdown-label	{
+  color: black;
+  font-size: small;
+  font-family: "newyork";
+}
+
+/* Dropdown panel */
+.p-dropdown-panel{
+  background: #fff;
+  border-radius: 0px;
+}
+
+/* Arrow icon */
+.p-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: black;
+  margin-right: 20px;
+}
+
+/********* checkbox *********/
+
+.p-checkbox {
+  background: none;
+}
+
+.p-checkbox-icon {
+  color: white;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  margin: 0;
+  padding: 0.75rem 1.25rem;
+  border: 0 none;
+  color: #495057;
+  background: transparent;
+  transition: box-shadow 0.2s;
+  border-radius: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  color: black;
+  background: #EEF2FF;
+}
+
+.p-checkbox .p-checkbox-box {
+  border: 1px solid black;
+  background: #ffffff;
+  width: 18px;
+  height: 18px;
+  color: black;
+  border-radius: 0px;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+
+.p-checkbox .p-checkbox-box.p-highlight {
+  border: none;
+  background: black;
+  border-radius: 0px;
+}
+

@@ -16,7 +16,6 @@ import WishListPage from "./Pages/WishListPage";
 const App = () => {
   return (
     <>
-    
      <Routes>
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
