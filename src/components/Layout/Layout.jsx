@@ -41,7 +41,7 @@ function Layout({ children }) {
           </div>
 
           {/* bottom navMenu */}
-          <div className="flex justify-between items-center  lg:hidden h-12 px-4 md:px-7 md:h-11 fixed bottom-0 left-0 w-full bg-white  border-blackV border-t-2  ">
+          <div className="flex justify-between items-center  lg:hidden h-12 px-4 md:px-7 md:h-11 fixed bottom-0 left-0 w-full bg-white  border-blackV border-t-2  z-50">
             {iconLinks.map((iconLink, index) => (
               <Link key={index} to={iconLink.path} className="w-8">
                 <img

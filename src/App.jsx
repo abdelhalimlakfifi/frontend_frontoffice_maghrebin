@@ -11,11 +11,12 @@ import CheckoutPage from "./Pages/CheckoutPage";
 import MyCartPage from "./Pages/MyCartPage";
 import SizeGuidePage from "./Pages/SizeGuidePage";
 import MainProductDetail from "./components/ProductDetail/MainProductDetail";
+import UserProfile from "./components/UserProfile/UserProfile";
+import WishListPage from "./Pages/WishListPage";
 
 const App = () => {
   return (
     <>
-    
      <Routes>
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
@@ -28,7 +29,9 @@ const App = () => {
         <Route path="/MyCart" element={<MyCartPage />} />
         <Route path="/SizeGuide" element={<SizeGuidePage />} />
         <Route path="/productDetail" element={<MainProductDetail />} />
+        <Route path="/userProfile" element={<UserProfile />} />
 
+        <Route path="/wish-list" element={<WishListPage />} />
       </Routes>
     </>
   );
