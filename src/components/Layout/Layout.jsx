@@ -34,7 +34,7 @@ function Layout({ children }) {
       ) : (
         <div className="">
           {/* call all child components */}
-          <div className="mx-24">{children}</div>
+          <div className="w-full">{children}</div>
 
           <div className="w-full h-auto   border-blackV border-t ">
             <Footer />
