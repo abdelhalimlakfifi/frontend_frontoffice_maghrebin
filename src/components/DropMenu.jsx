@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Dropdown } from 'primereact/dropdown';
 import { Checkbox } from 'primereact/checkbox';
 
@@ -15,10 +15,11 @@ export default function DropMenu() {
   const Colors = [{ name: 'Blue' }, { name: 'Cream' }, { name: 'Light-blue' }, { name: 'Lime' }];
   const Filter = [{ name: 'Men' }, { name: 'Women' }, { name: 'Kids' }];
 
+  const sizeRef = useRef()
   const customItemTemplate = option => {
     return (
       <div className="flex items-center">
-        <Checkbox onChange={e => setChecked(e.checked)} checked={checked}></Checkbox>
+        <Checkbox onChange={e => setChecked(e.checked)} name={option.name} checked={checked}></Checkbox>
         <span className="ml-2">{option.name}</span>
       </div>
     );
@@ -27,15 +28,18 @@ export default function DropMenu() {
   return (
     <div className="flex justify-around items-center h-[50px] w-full border-y-[1px] border-blackV">
       <section className="flex justify-start tracking-widest text-black">
-        <Dropdown
-          value={selectedSize}
-          onChange={(e) => setSelectedSize(e.value)}
-          options={Sizes}
-          optionLabel="name"
-          placeholder="Size"
-          className="w-40 uppercase" // Set a fixed width (adjust as needed)
-          itemTemplate={customItemTemplate}
-        />
+        <form action="" ref={sizeRef}>
+          <Dropdown
+            value={selectedSize}
+            onChange={(e) => setSelectedSize(e.value)}
+            options={Sizes}
+            optionLabel="name"
+            placeholder="Size"
+            className="w-40 uppercase" // Set a fixed width (adjust as needed)
+            itemTemplate={customItemTemplate}
+          />
+
+        </form>
   
         <Dropdown
           value={selectedColor}

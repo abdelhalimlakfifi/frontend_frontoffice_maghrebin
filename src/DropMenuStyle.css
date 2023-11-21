@@ -15,6 +15,7 @@
 .p-dropdown-label	{
   color: black;
   font-size: small;
+  font-family: "newyork";
 }
 
 /* Dropdown panel */
@@ -23,10 +24,13 @@
   border-radius: 0px;
 }
 
+/* Arrow icon */
 .p-dropdown-trigger {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  color: black;
+  margin-right: 20px;
 }
 
 /********* checkbox *********/
