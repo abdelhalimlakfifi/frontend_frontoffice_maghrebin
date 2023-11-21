@@ -56,7 +56,7 @@ function NavBar({updateMenuClick, menuClick}) {
       </div>
       <div className="hidden lg:block ">
          {/* Menu div */}
-         <ul className="flex justify-between items-center md:w-72 p-4">
+        <ul className="flex justify-between items-center md:w-72 p-4">
           {links.map((link) => (
             <li className="w-fit hover:underline" key={link.name}>
               <Link
