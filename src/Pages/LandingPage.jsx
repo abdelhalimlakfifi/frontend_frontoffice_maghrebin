@@ -7,14 +7,23 @@ import Kids from "../components/LandingComponents/SectionTwo/SectionKids/Kids"
 
 import Video from "../components/LandingComponents/SectionThree/Video"
 import Layout from "../components/Layout/Layout";
+import LogoSlider from "../components/LandingComponents/SectionThree/LogoSlider";
 
+// import Filter from "../components/Filter/Filter";
+import DropMenu from "../components/DropMenu";
 const LandingPage = () => {
   return (
     <Layout>
       <SectionPub />
+      {/* <Filter /> */}
+      <DropMenu />
       <Women />
       <Men />
       <Kids />
+      <div className="w-screen relative overflow-hidden">
+      <LogoSlider/>
+
+      </div>
       <Video />
     </Layout>
   );

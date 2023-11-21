@@ -1,17 +1,14 @@
-import React from 'react';
+import React from "react";
+import TrailerMaghrebin from "../../../assets/MoroccoArise.mp4"
 
 const Video = () => {
   return (
-    <section className="mt-20 w-full border border-black flex justify-center items-center"  style={{ height: "550px" }}>
-      <h1 className=''> Your video content</h1>
-      <img src="/LandingPage/jlija.svg"  style={{
-          width: "200px",
-          height: "200px",
-          position: "absolute",
-          top: "2924px",
-          left: "209px",
-          transform: "translate(-50%, -50%)",
-        }}/>
+    <section className="  w-full border-t-2 border-b-2 border-black flex justify-center items-center h-auto  ">
+      <video controls className="w-full" >
+        <source src={TrailerMaghrebin} type="video/mp4" />
+        Sorry, your browser doesn't support videos.
+      </video>
+
     </section>
   );
 };

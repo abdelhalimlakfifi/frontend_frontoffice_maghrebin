@@ -1,25 +1,14 @@
-import React from 'react'
-import MainSection from "../MainSection"
+import React from "react";
+import MenCards from "./MenCards";
 
 const Men = () => {
-  const cardData = [
-    {
-      imageUrl: "LandingPage/Jelalebs/jelaba.jpg",
-      altText: "Alt Text 1",
-      price: "$XX.XX",
-      // buttonText: "Button Text 1",
-    },
-    {
-      imageUrl: "LandingPage/Jelalebs/jelabaa.webp",
-      altText: "Alt Text 2",
-      price: "$YY.YY",
-      // buttonText: "Button Text 2",
-    },
-  ];
-
   return (
-    <MainSection title="NEWLY ARRIVED MEN'S ITEMS" cardData={cardData} />
+    <div className="flex flex-col">
+        <h1 className="text-3xl font-medium flex justify-center my-5">New In Men Wear</h1>
+        <MenCards />
+    </div>
+    
   );
-}
+};
 
 export default Men;
