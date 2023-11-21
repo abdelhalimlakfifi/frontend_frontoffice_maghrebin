@@ -28,8 +28,7 @@ const Product = ({ title, price, description, color }) => {
   const productColors = ["Green", "Blue", "Yellow", "violet"]
 
   return (
-    <>
-      <div className="w-full lg:my-10 order-2 lg:order-1 flex flex-col justify-between">
+      <div className="w-full  order-2 lg:order-1 flex flex-col justify-between">
         <h2 className="font-NewYork text-3xl font-bold my-8">{title}</h2>
         <p className="font-NewYork text-sm text-gray-600 mb-8">{price}</p>
         <p className="font-NewYork text-base mt-2 mb-8">{description}</p>
@@ -62,11 +61,10 @@ const Product = ({ title, price, description, color }) => {
         </div>
 
         <BtnGlobal
-          className="w-full border border-black-border p-3 mt-4 mb-8 font-semibold text-base uppercase"
+          className="w-full border border-black-border p-3 mt-28  font-semibold text-base uppercase"
           content=" Add to cart"
         />
       </div>
-    </>
   );
 };
 
