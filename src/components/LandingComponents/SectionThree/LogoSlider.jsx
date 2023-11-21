@@ -7,7 +7,7 @@ import Logo from "../../../assets/icons/Logo.svg"
 const LogoSlider = () => {
     
     return (
-        <div className="my-9 h-22 flex justify-center items-center w-full">
+        <div className="my-9 h-22 flex justify-center items-center w-full relative overflow-hidden">
             <Slider
             duration={25}
             toRight={false}
