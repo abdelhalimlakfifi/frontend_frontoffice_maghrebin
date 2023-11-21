@@ -100,7 +100,7 @@ const FormSign = () => {
   };
 
   return (
-    <div className="h-[78vh] flex justify-center items-center mx-auto w-9/12 sm:w-6/12 md:w-10/12 xl:w-8/12">
+    <div className="h-[78vh] flex justify-center items-center mx-auto w-full md:w-10/12 xl:w-8/12">
       <form
         className="my-auto w-full sm:w-10/12 md:w-8/12 lg:w-6/12"
         onSubmit={handleFormSubmit}
@@ -140,6 +140,7 @@ const FormSign = () => {
         ))}
 
         <PassField
+          placeholder="Password"
           className="border-b border-solid border-gray-500 mb-6 w-full"
           value={formFields.password}
           onChange={(e) => handleInputChange(e, "password")}
