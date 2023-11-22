@@ -14,7 +14,7 @@ export default function SizeGuide() {
           <h1 className="uppercase main-black text-2xl lg:text-4xl font-semibold">SIZE GUIDE</h1>
           <h1 className="uppercase main-black lg:text-2xl font-semibold">Take your measurements carefully!</h1>
 
-          <div className="main-black text-left text-sm mt-6 mx-5 lg:mx-10 lg:px-12">
+          <div className="lg:uppercase main-black text-left text-sm mt-6 mx-5 lg:mx-10 lg:px-12">
             For accurate sizing, follow these steps: Position the tape measure as close to your body as possible, without applying pressure.
             Take measurements over lightweight clothing, like underwear, while standing straight and relaxed. If you want more precise
             measurements, consider enlisting the help of a third party.
