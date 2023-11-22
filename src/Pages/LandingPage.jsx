@@ -12,6 +12,7 @@ import LogoSlider from "../components/LandingComponents/SectionThree/LogoSlider"
 // import Filter from "../components/Filter/Filter";
 import DropMenu from "../components/DropMenu";
 import MainCategorie from "../components/CategorieComponents/MainCategorie";
+import MainCards from "../components/MainSubCategories/MainCards";
 const LandingPage = () => {
   return (
     <Layout>
@@ -22,6 +23,7 @@ const LandingPage = () => {
       <Women />
       <Men />
       <Kids />
+      <MainCards/>
       <LogoSlider/>
       <Video />
     </Layout>
