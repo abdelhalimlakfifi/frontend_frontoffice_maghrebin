@@ -6,7 +6,7 @@ import Layout from '../components/Layout/Layout';
 const SizeGuidePage = () => {
   return (
     <Layout>
-    <SizeGuide />
+      <SizeGuide />
     </Layout>
   )
 }
