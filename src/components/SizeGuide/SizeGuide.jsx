@@ -5,7 +5,7 @@ import PinImg from '/SizeGuideImg/PinIcon.svg';
 
 import DynamicColumnsDemo from './DynamicColumnsDemo';
 
-export default function bSizeGuide() {
+export default function SizeGuide() {
   return (
     <section className="w-full flex justify-center">
       <div className="w-[80%]">
