@@ -11,12 +11,14 @@ import LogoSlider from "../components/LandingComponents/SectionThree/LogoSlider"
 
 // import Filter from "../components/Filter/Filter";
 import DropMenu from "../components/DropMenu";
+import MainCategorie from "../components/CategorieComponents/MainCategorie";
 const LandingPage = () => {
   return (
     <Layout>
-      <SectionPub />
+      <MainCategorie/>
+      {/* <SectionPub /> */}
       {/* <Filter /> */}
-      <DropMenu />
+      {/* <DropMenu /> */}
       <Women />
       <Men />
       <Kids />
