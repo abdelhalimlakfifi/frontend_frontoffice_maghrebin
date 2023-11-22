@@ -21,7 +21,7 @@ export default function DynamicColumnsDemo() {
   };
 
   return (
-    <div className="mt-8">
+    <div className="my-10">
       <DataTable value={products} className="min-w-50 bg-gray-300">
         {columns.map((col, i) => (
           <Column key={col.field} field={col.field} header={col.header} className={`h-[50px] ${rowColor(i)}`} />
