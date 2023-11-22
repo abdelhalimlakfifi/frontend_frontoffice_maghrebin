@@ -10,10 +10,11 @@ export default function SizeGuide() {
     <section className="w-full flex justify-center">
       <div className="w-[80%]">
         {/* Upper Section... */}
-        <div className=" h-[290px] uppercase py-14">
-          <h1 className="main-black text-4xl font-semibold">SIZE GUIDE</h1>
-          <h1 className="main-black text-2xl font-semibold">Take your measurements carefully!</h1>
-          <div className="main-black mt-6 mx-10 px-12">
+        <div className="h-[100px] lg:h-[290px] py-14">
+          <h1 className="uppercase main-black text-2xl lg:text-4xl font-semibold">SIZE GUIDE</h1>
+          <h1 className="uppercase main-black lg:text-2xl font-semibold">Take your measurements carefully!</h1>
+
+          <div className="main-black text-left text-sm mt-6 mx-5 lg:mx-10 lg:px-12">
             For accurate sizing, follow these steps: Position the tape measure as close to your body as possible, without applying pressure.
             Take measurements over lightweight clothing, like underwear, while standing straight and relaxed. If you want more precise
             measurements, consider enlisting the help of a third party.
@@ -21,7 +22,7 @@ export default function SizeGuide() {
         </div>
 
         {/* Middle Section */}
-        <div className="flex justify-center ">
+        {/* <div className="flex justify-center ">
           <ul className="w-[70%] h-[500px]">
             {heightSections.map((section, index) => (
               <li key={index} className="uppercase mb-6">
@@ -33,10 +34,10 @@ export default function SizeGuide() {
           <div className="w-[30%] h-[500px]">
             <img src={SizeImg} />
           </div>
-        </div>
+        </div> */}
 
         {/* Pre table section */}
-        <section>
+        {/* <section>
           <h1 className="mb-8 uppercase font-semibold text-xl">Special lengths for women</h1>
           <div className="flex justify-around mb-8">
             {womenSpecialLengths.flatMap((item, index) => [
@@ -53,8 +54,8 @@ export default function SizeGuide() {
             <img src={PinImg} className="h-[34px] w-auto" />
             <p className="uppercase">Tip: If your measurements fall between two sizes, always order the larger size.</p>
           </div>
-        </section>
-        <DynamicColumnsDemo />
+        </section> */}
+        {/* <DynamicColumnsDemo /> */}
       </div>
     </section>
   );
