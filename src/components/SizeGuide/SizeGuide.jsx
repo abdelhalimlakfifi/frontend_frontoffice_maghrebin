@@ -5,16 +5,16 @@ import PinImg from '/SizeGuideImg/PinIcon.svg';
 
 import DynamicColumnsDemo from './DynamicColumnsDemo';
 
-export default function SizeGuide() {
+export default function bSizeGuide() {
   return (
     <section className="w-full flex justify-center">
       <div className="w-[80%]">
         {/* Upper Section... */}
         <div className="h-[100px] lg:h-[290px] py-14">
-          <h1 className="uppercase main-black text-2xl lg:text-4xl font-semibold">SIZE GUIDE</h1>
-          <h1 className="uppercase main-black lg:text-2xl font-semibold">Take your measurements carefully!</h1>
+          <h1 className="uppercase main-black text-2xl md:text-3xl lg:text-4xl font-semibold">SIZE GUIDE</h1>
+          <h1 className="uppercase main-black md:text-xl lg:text-2xl font-semibold">Take your measurements carefully!</h1>
 
-          <div className="lg:uppercase main-black text-left text-sm mt-6 mx-5 lg:mx-10 lg:px-12">
+          <div className="main-black text-left text-sm md:text-base mt-6 mx-5 lg:mx-10 lg:px-12 lg:uppercase">
             For accurate sizing, follow these steps: Position the tape measure as close to your body as possible, without applying pressure.
             Take measurements over lightweight clothing, like underwear, while standing straight and relaxed. If you want more precise
             measurements, consider enlisting the help of a third party.
@@ -22,40 +22,40 @@ export default function SizeGuide() {
         </div>
 
         {/* Middle Section */}
-        {/* <div className="flex justify-center ">
-          <ul className="w-[70%] h-[500px]">
+        <div className="flex flex-col lg:flex lg:justify-center lg:flex-row">
+          <ul className="h-[500px] order-2 lg:order-1 lg:w-[70%]">
             {heightSections.map((section, index) => (
-              <li key={index} className="uppercase mb-6">
-                <h1 className="font-semibold text-xl px-12">{section.title}</h1>
-                <p className="font-regular text-sm px-12 ml-10 w-[70%]">{section.content}</p>
+              <li key={index} className="mb-6">
+                <h1 className="font-semibold text-xl lg:px-12">{section.title}</h1>
+                <p className="font-regular text-sm md:text-base md:tex lg:px-12 ml-10 w-[70%]">{section.content}</p>
               </li>
             ))}
           </ul>
-          <div className="w-[30%] h-[500px]">
+          <div className="h-2/4 w-2/4 lg:w-[30%] lg:h-[500px] order-1 lg:order-2 mx-auto mt-44 mb-5 lg:mt-0 lg:mb-0">
             <img src={SizeImg} />
           </div>
-        </div> */}
+        </div>
 
         {/* Pre table section */}
-        {/* <section>
-          <h1 className="mb-8 uppercase font-semibold text-xl">Special lengths for women</h1>
+        <section className="mt-20 md:14 lg:my-0">
+          <h1 className="my-8 lg:mb-8 uppercase font-semibold text-xl">Special lengths for women</h1>
           <div className="flex justify-around mb-8">
             {womenSpecialLengths.flatMap((item, index) => [
-              <div key={index} className="w-[400px] ml-6">
+              <div key={index} className="w-[400px] ml-2 lg:ml-6">
                 <h1 className="mb-3 uppercase font-semibold">{item.title}</h1>
                 {item.description.map((desc, idx) => (
                   <p key={idx}>{desc}</p>
                 ))}
               </div>,
-              index !== womenSpecialLengths.length - 1 && <div key={`divider-${index}`} className="bg-black w-[2px] h-[100px]"></div>,
+              index !== womenSpecialLengths.length - 1 && <div key={`divider-${index}`} className="bg-black w-[3px] lg:w-[2px] mx-2"></div>,
             ])}
           </div>
           <div className="flex items-center space-x-2 ">
             <img src={PinImg} className="h-[34px] w-auto" />
             <p className="uppercase">Tip: If your measurements fall between two sizes, always order the larger size.</p>
           </div>
-        </section> */}
-        {/* <DynamicColumnsDemo /> */}
+        </section>
+        <DynamicColumnsDemo />
       </div>
     </section>
   );
