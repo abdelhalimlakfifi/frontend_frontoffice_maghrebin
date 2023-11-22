@@ -6,7 +6,6 @@ import SignUp from "./Pages/SignUp";
 
 import LandingPage from "./Pages/LandingPage";
 import ProductDetailPage from "./Pages/ProductDetailPage";
-import CategoriePage from "./Pages/CategoriePage";
 import CheckoutPage from "./Pages/CheckoutPage";
 import MyCartPage from "./Pages/MyCartPage";
 import SizeGuidePage from "./Pages/SizeGuidePage";
@@ -24,7 +23,6 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
 
         <Route path="/product" element={<ProductDetailPage />} />
-        <Route path="/categories" element={<CategoriePage />} /> 
         <Route path="/Checkout" element={<CheckoutPage />} />
         <Route path="/MyCart" element={<MyCartPage />} />
         <Route path="/SizeGuide" element={<SizeGuidePage />} />
