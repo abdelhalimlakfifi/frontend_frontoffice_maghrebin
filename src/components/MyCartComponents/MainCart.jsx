@@ -1,12 +1,12 @@
-import React from 'react'
-import Cart from "./Cart"
+import React from 'react';
+import Cart from './Cart';
 
 const MainCart = () => {
   return (
-    <section className="flex flex-col md:flex-row w-full md:px-20 py-7">
+    <section className="flex mx-10 flex-col md:flex-row w-full lg:w-[90vw] py-7">
       <Cart />
-  </section>
-  )
-}
+    </section>
+  );
+};
 
 export default MainCart;
