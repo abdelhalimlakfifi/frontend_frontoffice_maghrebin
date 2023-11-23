@@ -2,8 +2,11 @@ import heightSections from './heightSectionsData';
 // import SizeImg from '/SizeGuideImg/SizeImg-Scroped.jpg';
 import womenSpecialLengths from './womenSpecialLengthsData';
 import PinImg from '/SizeGuideImg/PinIcon.svg';
+import zelijaRight from "../../assets/Zelija-Size-R.svg"
+import zelijaLeft from "../../assets/Zelija-Size-L.svg"
 
 import DynamicColumnsDemo from './DynamicColumnsDemo';
+import LogoSlider from '../LandingComponents/SectionThree/LogoSlider';
 
 export default function SizeGuide() {
   return (
@@ -32,7 +35,9 @@ export default function SizeGuide() {
             ))}
           </ul>
           <div className="h-10/12 w-10/12 lg:flex lg:items-center md:mt-26 md:mb-26 md:h-10/12 md:w-10/12 lg:w-[60%] lg:h-[550px] order-1 lg:order-2 mx-auto mt-52 mb-5 lg:mt-0 lg:mb-0">
+            <img src={zelijaLeft} className='hidden h-20 absolute lg:block lg:top-[365px] lg:left-[855px]'></img>
             <img src="https://images.unsplash.com/photo-1610359028422-e5a6fa73cf91?q=80&w=3430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <img src={zelijaRight} className='hidden h-20 absolute lg:block lg:top-[805px] lg:left-[1474px]'></img>
           </div>
         </div>
         
@@ -56,6 +61,8 @@ export default function SizeGuide() {
               index !== womenSpecialLengths.length - 1 && <div key={`divider-${index}`} className="bg-black w-[3px] lg:w-[2px] mx-2"></div>,
             ])}
           </div>
+
+            {/* <LogoSlider className=" absolute"/> */}
 
           {/* Mobile view */}
           <div className="flex flex-col mb-6 md:hidden lg:hidden uppercase">
