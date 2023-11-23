@@ -13,6 +13,7 @@ import LogoSlider from "../components/LandingComponents/SectionThree/LogoSlider"
 import DropMenu from "../components/DropMenu";
 import MainCategorie from "../components/CategorieComponents/MainCategorie";
 import MainCards from "../components/MainSubCategories/MainCards";
+import OurStory from "../components/OurStory/OurStory";
 const LandingPage = () => {
   return (
     <Layout>
@@ -24,6 +25,7 @@ const LandingPage = () => {
       <Men />
       <Kids />
       <MainCards/>
+      <OurStory/>
       <LogoSlider/>
       <Video />
     </Layout>
