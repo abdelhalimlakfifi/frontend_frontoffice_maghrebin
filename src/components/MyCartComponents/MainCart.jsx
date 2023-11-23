@@ -3,7 +3,7 @@ import Cart from './Cart';
 
 const MainCart = () => {
   return (
-    <section className="flex mx-10 flex-col md:flex-row w-full lg:w-[90vw] py-7">
+    <section className="flex flex-col mx-10 md:flex-row lg:w-[90vw] py-7">
       <Cart />
     </section>
   );
