@@ -19,6 +19,7 @@ export default {
       },
       fontFamily: {
         NewYork: ['newyork', 'sans-serif'],
+        DIN: ['din', 'sans-serif'],
       },
     },
   },
