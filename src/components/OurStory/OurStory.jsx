@@ -6,25 +6,19 @@ function OurStory() {
   return (
     <div className="w-full h-[50rem]  md:h-[40rem] lg:h-[50rem]  xl:h-[60rem] flex items-center">
       <div className="w-full h-3/4 border-t-2 border-b-2 border-blackV relative flex justify-center items-center">
-        {/* <h1 className="text-3xl font-medium font-NewYork text-blackV bg-white w-44 absolute -top-5 left-7  md:left-10 lg:left-40 flex justify-center">
-          Our Story
-        </h1> */}
+       
         <img src={FullLogo} alt="Maghrebin" className="bg-white w-48 px-5 absolute -top-5 left-7  md:left-10 lg:left-40 flex justify-center" />
 
-        <div className=" w-[87%] lg:w-[70%] xl:w-[66%] h-[90%] lg:h-[85%] lx:h-[85%] flex justify-center bg-gray-700 ">
+        <div className=" w-[87%] lg:w-[90%] xl:w-[66%] h-[90%] lg:h-[85%] lx:h-[85%] flex justify-center ">
           <div className=" h-full w-1/2 flex flex-col items-start justify-between">
-            {/* <img
-              src={FullLogo}
-              alt="Maghrebin"
-              className=" w-[50%] h-[40%] "
-            /> */}
-            <div className=" w-[80%] py-11  bg-red-300">
+          
+            <div className="w-[80%] lg:py-5 xl:py-11 ">
            
-            <h1 className="md:text-2xl  xl:text-8xl font-medium font-NewYork">Our Story</h1>
+            <h1 className="lg:text-6xl  xl:text-8xl font-medium font-NewYork">Our Story</h1>
 
             </div>
             
-            <div className="text-base font-medium h-[70%] flex flex-col py-5 pr-14 text-blackV bg-orange-200">
+            <div className="text-base font-medium lg:h-[80%] xl:h-[70%] flex flex-col lg:pr-2 lx:py-5 lx:pr-14 text-blackV ">
               <p>
                 We are <b>Maghrebin</b>, your ultimate destination for
                 exquisite traditional Moroccan clothing. At <b>Maghrebin</b>, we
