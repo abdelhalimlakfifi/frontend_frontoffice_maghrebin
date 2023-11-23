@@ -20,8 +20,12 @@ body {
 
 @font-face {
   font-family: "newyork", sans-serif ;
-  src: url("./assets/fonts/newyork.otf") format("opentype");
-  
+  src: url("./assets/fonts/newyork.otf") format("opentype"); 
+}
+
+@font-face {
+  font-family: "din", sans-serif ;
+  src: url("./assets/fonts/DIN.ttf") format("opentype"); 
 }
 
 

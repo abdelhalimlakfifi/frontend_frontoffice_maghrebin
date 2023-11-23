@@ -18,7 +18,7 @@ function OurStory() {
 
             </div>
             
-            <div className="text-base font-medium lg:h-[80%] xl:h-[70%] flex flex-col lg:pr-2 lx:py-5 lx:pr-14 text-blackV ">
+            <div className="text-base font-medium font-DIN lg:h-[80%] xl:h-[70%] flex flex-col lg:pr-2 lx:py-5 lx:pr-14 text-blackV ">
               <p>
                 We are <b>Maghrebin</b>, your ultimate destination for
                 exquisite traditional Moroccan clothing. At <b>Maghrebin</b>, we
