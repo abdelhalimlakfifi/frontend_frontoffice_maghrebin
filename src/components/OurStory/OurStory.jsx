@@ -9,7 +9,7 @@ function OurStory() {
        
         <img src={FullLogo} alt="Maghrebin" className="bg-white w-48 px-5 absolute -top-5 left-7  md:left-10 lg:left-40 flex justify-center" />
 
-        <div className=" w-[87%] lg:w-[90%] xl:w-[66%] h-[90%] lg:h-[85%] lx:h-[85%] flex justify-center ">
+        <div className=" w-[87%] lg:w-[90%] xl:w-[66%] h-[90%] lg:h-[85%] lx:h-[85%] flex justify-center space-x-10 ">
           <div className=" h-full w-1/2 flex flex-col items-start justify-between">
           
             <div className="w-[80%] lg:py-5 xl:py-11 ">
@@ -18,8 +18,8 @@ function OurStory() {
 
             </div>
             
-            <div className="text-base font-medium font-DIN lg:h-[80%] xl:h-[70%] flex flex-col lg:pr-2 lx:py-5 lx:pr-14 text-blackV ">
-              <p>
+            <div className="text-base font-medium font-DIN lg:h-[80%] xl:h-[70%] flex flex-col lg:pr-2 lx:py-5 lx:pr-14 text-blackV">
+              <p className=" text-justify">
                 We are <b>Maghrebin</b>, your ultimate destination for
                 exquisite traditional Moroccan clothing. At <b>Maghrebin</b>, we
                 take pride in preserving the rich cultural heritage of Morocco
@@ -29,7 +29,7 @@ function OurStory() {
                 experience the elegance and beauty of traditional Moroccan
                 fashion.
               </p>
-              <p className="mt-11">
+              <p className="mt-11 text-justify">
                 We understand the value of traditional craftsmanship and the
                 importance of sustaining local communities. That's why we
                 collaborate with talented artisans, known as <b>Maalam</b> who pour
