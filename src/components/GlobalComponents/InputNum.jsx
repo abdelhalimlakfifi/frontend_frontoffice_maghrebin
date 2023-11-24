@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { InputNumber } from "primereact/inputnumber";
+import '../../InputNumber.css';
 
 export default function InputNum() {
   const [quantity, setQuantity] = useState(0);
