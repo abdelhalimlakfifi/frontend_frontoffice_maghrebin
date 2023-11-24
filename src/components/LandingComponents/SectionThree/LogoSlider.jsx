@@ -1,13 +1,13 @@
 import React from "react";
 import Slider from 'react-infinite-logo-slider'
 
-import Zelija from "../../../assets/Zelija.svg"
-import Logo from "../../../assets/icons/Logo.svg"
+import Zelija from "../../../assets/Zelija-Slider.svg"
+import Logo from "../../../assets/icons/Logo-Slider.svg"
 
 const LogoSlider = () => {
     
     return (
-        <div className="my-9 h-22 flex justify-center items-center w-full relative overflow-hidden">
+        <div className="my-9 h-[60px] flex justify-center items-center w-full relative overflow-hidden bg-blackV">
             <Slider
             duration={25}
             toRight={false}
@@ -16,29 +16,29 @@ const LogoSlider = () => {
             >
 
 
-            <Slider.Slide className='mx-5 flex items-center justify-center' >
-                <img src={Zelija} alt="Maghrebin"  />
+            <Slider.Slide className='flex items-center justify-center' >
+                <img src={Zelija} alt="Maghrebin" className="h-10" />
             </Slider.Slide>
 
 
             <Slider.Slide className='flex items-center justify-center'>
-                <img src={Logo}  alt="Maghrebin"  />
+                <img src={Logo}  alt="Maghrebin" className="h-10" />
             </Slider.Slide>
-            <Slider.Slide className='mx-5 flex items-center justify-center' >
-                <img src={Zelija} alt="Maghrebin"  />
-            </Slider.Slide>
-
-
-            <Slider.Slide className='flex items-center justify-center'>
-                <img src={Logo}  alt="Maghrebin"  />
-            </Slider.Slide>
-            <Slider.Slide className='mx-5 flex items-center justify-center' >
-                <img src={Zelija} alt="Maghrebin"  />
+            <Slider.Slide className='flex items-center justify-center' >
+                <img src={Zelija} alt="Maghrebin" className="h-10" />
             </Slider.Slide>
 
 
             <Slider.Slide className='flex items-center justify-center'>
-                <img src={Logo}  alt="Maghrebin"  />
+                <img src={Logo}  alt="Maghrebin" className="h-10" />
+            </Slider.Slide>
+            <Slider.Slide className='flex items-center justify-center' >
+                <img src={Zelija} alt="Maghrebin" className="h-10" />
+            </Slider.Slide>
+
+
+            <Slider.Slide className='flex items-center justify-center'>
+                <img src={Logo}  alt="Maghrebin" className="h-10" />
             </Slider.Slide>
           
 

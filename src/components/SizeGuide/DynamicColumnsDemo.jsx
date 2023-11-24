@@ -17,11 +17,11 @@ export default function DynamicColumnsDemo() {
   }, []);
 
   const rowColor = index => {
-    return index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200';
+    return index % 2 === 0 ? 'bg-gray-200' : 'bg-gray-300';
   };
 
   return (
-    <div className="mt-8">
+    <div className="my-10 lg:my-10 w-full lg:w-full lg:block flex justify-center">
       <DataTable value={products} className="min-w-50 bg-gray-300">
         {columns.map((col, i) => (
           <Column key={col.field} field={col.field} header={col.header} className={`h-[50px] ${rowColor(i)}`} />

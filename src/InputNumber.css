@@ -1,0 +1,45 @@
+
+.p-inputnumber-button-down {
+  background: black;
+  border: black;
+  height: 1.6rem;
+}
+
+.p-inputnumber-button-up {
+  background: black;
+  border: black;
+  height: 1.6rem;
+
+}
+
+.p-inputnumber-button-icon {
+  background: white;
+}
+
+.pi-minus:before {
+  content: '\e90f';
+  color: white;
+}
+
+.pi-plus:before {
+  content: '\e90d';
+  color: white;
+}
+
+
+.bg-gray-100 {
+  background-color: white;
+}
+
+/* to disable violet focus */
+
+.p-inputtext:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none;
+  border-color: rgb(34, 34, 34);
+}
+
+.p-inputtext:enabled:hover {
+  border-color:black
+}

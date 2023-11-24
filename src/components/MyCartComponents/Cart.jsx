@@ -6,7 +6,7 @@ import CartTrashIcon from "./CartTrashIcon";
 
 const Cart = () => {
   return (
-    <div className="w-full md:pl-28 md:pr-20 px-8">
+    <div className="w-full md:px-28 md:pr-20 px-8">
       {/* Cart Title */}
       <CartTitle />
 
