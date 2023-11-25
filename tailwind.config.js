@@ -12,6 +12,10 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "userProfile": "url(src/assets/MoroccanTexture-01.svg)"
+      },
+
       colors: {
         "custom-purple": "#655445",
         "blackV": "#3B3B3B",
