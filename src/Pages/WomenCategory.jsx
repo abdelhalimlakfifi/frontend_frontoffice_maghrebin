@@ -15,7 +15,7 @@ import JellabaBlue2 from "../assets/ProductImages/jelaba/jellabablue2.webp";
 
 function WomenCategory() {
   const colorTypes = [
-    "yellow-400",
+    "white",
     "red-900",
     "blue-900",
     "green-900",
@@ -43,7 +43,7 @@ function WomenCategory() {
       price: "25.00$",
       mainImg: lavendarJellaba,
       secondaryImg: lavendarJellaba2,
-      color: "purple",
+      color: "purple-700",
     },
     {
       id: 3,
@@ -51,7 +51,7 @@ function WomenCategory() {
       price: "30.00$",
       mainImg: BeigeJellaba,
       secondaryImg: BeigeJellaba2,
-      color: "beige",
+      color: "orange-300",
     },
     {
       id: 4,
@@ -59,7 +59,7 @@ function WomenCategory() {
       price: "20.00$",
       mainImg: JellabaBlue,
       secondaryImg: JellabaBlue2,
-      color: "blue",
+      color: "blue-900",
     },
   ];
 
@@ -110,7 +110,7 @@ function WomenCategory() {
                   key={colorType}
                   className={`bg-${colorType} h-6 w-6 lg:h-5 lg:w-5 border-blackV border hover:shadow-amber-200 hover:shadow-xl`}
                   type={colorType}
-                  onClick={handleColorFilter}
+                  onClick={() => handleColorFilter(colorType)} 
                 ></button>
               ))}
             </div>
