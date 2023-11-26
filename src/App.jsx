@@ -13,10 +13,12 @@ import MainProductDetail from "./components/ProductDetail/MainProductDetail";
 import UserProfile from "./components/UserProfile/UserProfile";
 import WishListPage from "./Pages/WishListPage";
 import WomenCategory from "./Pages/WomenCategory";
+import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
+
 
 const App = () => {
   return (
-    <>
+    <PrimeReactProvider>
      <Routes>
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
@@ -32,7 +34,7 @@ const App = () => {
         <Route path="/women" element={<WomenCategory />} />
         <Route path="/wish-list" element={<WishListPage />} />
       </Routes>
-    </>
+    </PrimeReactProvider>
   );
 };
 
