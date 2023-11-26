@@ -29,43 +29,43 @@ function WomenCategory() {
             </h1>
             <div className="my-3 grid grid-cols-3 lg:grid-cols-5 place-items-center gap-3">
               <button
-                className="bg-yellow-400 h-6 w-6 lg:h-5 lg:w-5 border-blackV border"
+                className="bg-yellow-400 h-6 w-6 lg:h-5 lg:w-5 border-blackV border hover:shadow-amber-200 hover:shadow-xl"
                 type="yellow"
               ></button>
               <button
-                className="bg-red-900 h-6 w-6 lg:h-5 lg:w-5 border-blackV border"
+                className="bg-red-900 h-6 w-6 lg:h-5 lg:w-5 border-blackV border hover:shadow-amber-200 hover:shadow-xl"
                 type="red"
               ></button>
               <button
-                className="bg-blue-900 h-6 w-6 lg:h-5 lg:w-5 border-blackV border"
+                className="bg-blue-900 h-6 w-6 lg:h-5 lg:w-5 border-blackV border hover:shadow-amber-200 hover:shadow-xl"
                 type="blue"
               ></button>
               <button
-                className="bg-green-900  h-6 w-6 lg:h-5 lg:w-5 border-blackV border"
+                className="bg-green-900  h-6 w-6 lg:h-5 lg:w-5 border-blackV border hover:shadow-amber-200 hover:shadow-xl"
                 type="green"
               ></button>
               <button
-                className="bg-pink-400  h-6 w-6 lg:h-5 lg:w-5 border-blackV border"
+                className="bg-pink-400  h-6 w-6 lg:h-5 lg:w-5 border-blackV border hover:shadow-amber-200 hover:shadow-xl"
                 type="pink"
               ></button>
               <button
-                className="bg-orange-600  h-6 w-6 lg:h-5 lg:w-5 border-blackV border"
+                className="bg-orange-600  h-6 w-6 lg:h-5 lg:w-5 border-blackV border hover:shadow-amber-200 hover:shadow-xl"
                 type="orange"
               ></button>
               <button
-                className="bg-purple-700  h-6 w-6 lg:h-5 lg:w-5 border-blackV border"
+                className="bg-purple-700  h-6 w-6 lg:h-5 lg:w-5 border-blackV border hover:shadow-amber-200 hover:shadow-xl"
                 type="purple"
               ></button>
               <button
-                className="bg-rose-800  h-6 w-6 lg:h-5 lg:w-5 border-blackV border"
+                className="bg-rose-800  h-6 w-6 lg:h-5 lg:w-5 border-blackV border hover:shadow-amber-200 hover:shadow-xl"
                 type="rose"
               ></button>
               <button
-                className="bg-orange-300  h-6 w-6 lg:h-5 lg:w-5 border-blackV border"
+                className="bg-orange-300  h-6 w-6 lg:h-5 lg:w-5 border-blackV border hover:shadow-amber-200 hover:shadow-xl"
                 type="beige"
               ></button>
               <button
-                className="bg-stone-950  h-6 w-6 lg:h-5 lg:w-5 border-blackV border"
+                className="bg-stone-950  h-6 w-6 lg:h-5 lg:w-5 border-blackV border hover:shadow-amber-200 hover:shadow-xl"
                 type="black"
               ></button>
             </div>
