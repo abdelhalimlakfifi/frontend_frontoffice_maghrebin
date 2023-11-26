@@ -77,7 +77,6 @@ function WomenCategory() {
 
   const filterProducts = () => {
     return cardData.filter((product) => {
-      // Filter by color
       if (selectedColor && product.color !== selectedColor) {
         return false;
       }
