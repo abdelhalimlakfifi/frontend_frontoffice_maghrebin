@@ -1,0 +1,38 @@
+{
+    "products": [
+      {
+        "ref": "ABC123",
+        "images": [
+          {
+            "main_image_path": "../assets/Kaftan1.jpg",
+            "colors": "White"
+          },
+          {
+            "secondary_image_path": "../assets/Kaftan2.jpg",
+            "colors": "white"
+          }
+        ],
+        "title": "Product 1",
+        "short_description": "Short description for Product 1",
+        "long_description": "Long description for Product 1",
+        "price": 29.99,
+        "reviews": [
+          {
+            "rating": 4.5,
+            "customer": "customerObjectId1"
+          },
+          {
+            "rating": 3.8,
+            "customer": "customerObjectId2"
+          }
+        ],
+        "types": ["typeObjectId1"],
+        "categories_id": "categoryObjectId1",
+        "sub_categorie_id": "subCategoryObjectId1",
+        "tags": ["tagObjectId1", "tagObjectId2"],
+        "sizes": ["XS", "S", "M", "L"],
+        "colors": ["Yellow", "Bleu"]
+      }
+    ]
+  }
+  
