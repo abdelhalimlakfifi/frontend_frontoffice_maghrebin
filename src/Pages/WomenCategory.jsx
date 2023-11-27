@@ -15,16 +15,16 @@ import JellabaBlue2 from "../assets/ProductImages/jelaba/jellabablue2.webp";
 
 function WomenCategory() {
   const colorTypes = [
-    "white",
-    "red-900",
-    "blue-900",
-    "green-900",
-    "pink-400",
-    "orange-600",
-    "purple-700",
-    "rose-800",
-    "orange-300",
-    "stone-950",
+    "bg-[#fff]",
+    "bg-red-900",
+    "bg-blue-900",
+    "bg-green-900",
+    "bg-pink-400",
+    "bg-orange-600",
+    "bg-purple-700",
+    "bg-rose-800",
+    "bg-orange-300",
+    "bg-stone-950",
   ];
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
 
@@ -35,7 +35,9 @@ function WomenCategory() {
       price: "20.00$",
       mainImg: Kaftan1,
       secondaryImg: Kaftan2,
-      color: "white",
+      color: "bg-[#fff]",
+      size: ["S", "M", "L"],
+      stock: "New Selling",
     },
     {
       id: 2,
@@ -43,7 +45,9 @@ function WomenCategory() {
       price: "25.00$",
       mainImg: lavendarJellaba,
       secondaryImg: lavendarJellaba2,
-      color: "purple-700",
+      color: "bg-purple-700",
+      size: ["M", "L", "XL"],
+      stock: "New Selling",
     },
     {
       id: 3,
@@ -51,7 +55,9 @@ function WomenCategory() {
       price: "30.00$",
       mainImg: BeigeJellaba,
       secondaryImg: BeigeJellaba2,
-      color: "orange-300",
+      color: "bg-orange-300",
+      size: ["L", "XL", "XXL"],
+      stock: "Best Selling",
     },
     {
       id: 4,
@@ -59,7 +65,49 @@ function WomenCategory() {
       price: "20.00$",
       mainImg: JellabaBlue,
       secondaryImg: JellabaBlue2,
-      color: "blue-900",
+      color: "bg-blue-900",
+      size: ["XS", "S", "M"],
+      stock: "Old in Stock",
+    },
+    {
+      id: 5,
+      title: "Product 1",
+      price: "20.00$",
+      mainImg: Kaftan1,
+      secondaryImg: Kaftan2,
+      color: "bg-[#fff]",
+      size: ["M", "L", "XL"],
+      stock: "Best Selling",
+    },
+    {
+      id: 2,
+      title: "Product 2",
+      price: "25.00$",
+      mainImg: lavendarJellaba,
+      secondaryImg: lavendarJellaba2,
+      color: "bg-purple-700",
+      size: ["XS", "S", "M"],
+      stock: "old in Stock",
+    },
+    {
+      id: 3,
+      title: "Product 3",
+      price: "30.00$",
+      mainImg: BeigeJellaba,
+      secondaryImg: BeigeJellaba2,
+      color: "bg-orange-300",
+      size: ["M", "L", "XL"],
+      stock: "New in Stock",
+    },
+    {
+      id: 4,
+      title: "Product 4",
+      price: "20.00$",
+      mainImg: JellabaBlue,
+      secondaryImg: JellabaBlue2,
+      color: "bg-blue-900",
+      size: ["XS", "S", "M"],
+      stock: "New in Stock",
     },
   ];
 
@@ -71,8 +119,19 @@ function WomenCategory() {
 
   //Filter Products
   const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedStockStatus, setSelectedStockStatus] = useState(null);
+
   const handleColorFilter = (selectedColor) => {
     setSelectedColor(selectedColor);
+  };
+
+  const handleSizeButtonClick = (size) => {
+    setSelectedSize(size);
+  };
+
+  const handleStockStatusFilter = (e) => {
+    setSelectedStockStatus(e);
   };
 
   const filterProducts = () => {
@@ -80,6 +139,13 @@ function WomenCategory() {
       if (selectedColor && product.color !== selectedColor) {
         return false;
       }
+      if (selectedSize && !product.size.includes(selectedSize)) {
+        return false;
+      }
+      if (selectedStockStatus && product.stock !== selectedStockStatus) {
+        return false;
+      }
+
       return true; // this indicates that Product passed all filters
     });
   };
@@ -107,9 +173,9 @@ function WomenCategory() {
               {colorTypes.map((colorType) => (
                 <button
                   key={colorType}
-                  className={`bg-${colorType} h-6 w-6 lg:h-5 lg:w-5 border-blackV border hover:shadow-amber-200 hover:shadow-xl`}
+                  className={`${colorType} h-6 w-6 lg:h-5 lg:w-5 border-blackV border hover:shadow-amber-200 hover:shadow-xl`}
                   type={colorType}
-                  onClick={() => handleColorFilter(colorType)} 
+                  onClick={() => handleColorFilter(colorType)}
                 ></button>
               ))}
             </div>
@@ -124,6 +190,7 @@ function WomenCategory() {
                 <button
                   key={index}
                   className="lg:h-11 lg:w-11 h-11 w-16 border border-blackV hover:bg-blackV hover:text-white"
+                  onClick={() => handleSizeButtonClick(size)}
                 >
                   {size}
                 </button>
@@ -136,9 +203,24 @@ function WomenCategory() {
               Stock
             </h1>
             <div className="my-2 flex flex-col items-start gap-3 p-3 ">
-              <button className="hover:underline">Best Selling</button>
-              <button className="hover:underline">New in Stock</button>
-              <button className="hover:underline">old in Stock</button>
+              <button
+                className="hover:underline"
+                onClick={() => handleStockStatusFilter("Best Selling")}
+              >
+                Best Selling
+              </button>
+              <button
+                className="hover:underline"
+                onClick={() => handleStockStatusFilter("New in Stock")}
+              >
+                New in Stock
+              </button>
+              <button
+                className="hover:underline"
+                onClick={() => handleStockStatusFilter("Old in Stock")}
+              >
+                Old in Stock
+              </button>
             </div>
           </div>
 
@@ -152,6 +234,7 @@ function WomenCategory() {
 
         <div className=" w-full md:w-full h-full ">
           <div className="m-3 md:hidden flex justify-end ">
+
             <button
               className="w-24 h-9 border-2 border-blackV hover:bg-blackV hover:text-white font-semibold "
               onClick={handleFilterButtonClick}
