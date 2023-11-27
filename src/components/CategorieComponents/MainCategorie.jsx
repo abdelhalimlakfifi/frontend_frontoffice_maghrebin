@@ -6,7 +6,7 @@ import MainWomen from '../../assets/WomenMain.webp'
 
 const MainCategorie = () => {
   return (
-    <section className="w-full flex h-[46rem]" >
+    <section className="w-full flex h-[46rem] font-DIN" >
       <CategorieDiv imgSrc={MainMen} />
       <CategorieDiv imgSrc={MainWomen} />
       <CategorieDiv imgSrc={MainKid} />
