@@ -84,22 +84,22 @@ function NavBar({updateMenuClick, menuClick}) {
       {/* Icons div */}
       <div className="flex items-center lg:space-x-3  ">
         
-          <Link to=''>
+          <button>
             <img
               src={searchIcon}
               alt='searchIcon'
               className="h-6 w-8"
               onClick={handleSearchClick}
             />
-          </Link>
-          <Link to='/'>
+          </button>
+          <Link to='/wish-list'>
             <img
               src={favIcon}
               alt='searchIcon'
               className="h-6 w-8 hidden lg:block"
             />
           </Link>
-          <Link to='/'>
+          <Link to='/my-cart'>
             <img
               src={cartIcon}
               alt='cartIcon'
@@ -113,7 +113,7 @@ function NavBar({updateMenuClick, menuClick}) {
               className="h-6 w-8 hidden lg:block"
             />
           </Link>
-          <Link to='/'>
+          <Link to='/user-profile'>
             <img
               src={userIcon}
               alt='userIcon'
