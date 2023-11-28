@@ -1,4 +1,4 @@
-
+/* Default styles for all screen sizes */
 .p-inputnumber-button-down {
   background: black;
   border: black;
@@ -9,7 +9,6 @@
   background: black;
   border: black;
   height: 1.6rem;
-
 }
 
 .p-inputnumber-button-icon {
@@ -26,13 +25,11 @@
   color: white;
 }
 
-
 .bg-gray-100 {
   background-color: white;
 }
 
 /* to disable violet focus */
-
 .p-inputtext:enabled:focus {
   outline: 0 none;
   outline-offset: 0;
@@ -41,5 +38,61 @@
 }
 
 .p-inputtext:enabled:hover {
-  border-color:black
+  border-color: black;
+}
+
+/* Responsive styles for tablet */
+@media (max-width: 768px) {
+  .p-inputnumber-button-down {
+    height: 1.2rem; /* Adjust as needed for tablet */
+  }
+
+  .p-inputnumber-button-up {
+    height: 1.2rem; /* Adjust as needed for tablet */
+  }
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 425px) {
+
+  /* Selected Items Number Input */
+  .p-inputtext {
+    height: 10px;
+    width: 96px;
+    padding: 11px;
+  }
+
+  .p-inputnumber-button-down {
+    height: 10px;
+    width: 22px;
+    background: #3B3B3B;
+  }
+
+  .p-inputnumber-button-up {
+    height: 10px;
+    width: 22px;
+    background: #3B3B3B;
+  }
+
+  /* (-) button */
+  .pi-minus:before { 
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    content: '\e90f';
+    color: white;
+    font-size: 0.7em;
+    line-height: 1;
+  }
+
+  /* (+) button */
+  .pi-plus:before {
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    content: '\e90d';
+    color: white;
+    font-size: 0.7em;
+    line-height: 1;
+  }
 }
