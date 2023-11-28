@@ -6,11 +6,11 @@ import CartTrashIcon from "./CartTrashIcon";
 
 const Cart = () => {
   return (
-    <div className="w-full md:px-28 md:pr-20 px-8">
+    <div className="w-full md:px-28 md:pr-20">
       {/* Cart Title */}
       <CartTitle />
 
-      <div className="flex mt-8" style={{ height: "300px" }}>
+      <div className="flex lg:block mt-8" style={{ height: "300px" }}>
         {/* First Div with an Image */}
         <CartProductImg />
 
