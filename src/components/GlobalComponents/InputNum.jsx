@@ -14,8 +14,8 @@ export default function InputNum() {
         showButtons
         buttonLayout="horizontal"
         step={1}
-        inputClassName="h-6 lg:h-6 w-32 bg-gray-100 text-black rounded-none text-center"
-        incrementButtonClassName="bg-gray-200 text-black rounded-none h-6 w-12"
+        inputClassName="h-3 lg:h-4 w-32 bg-gray-100 text-black rounded-none text-center"
+        incrementButtonClassName="bg-ray-200 text-black rounded-none h-6 w-12"
         decrementButtonClassName="bg-gray-200 text-black rounded-none h-6 w-12"
         incrementButtonIcon="pi pi-plus"
         decrementButtonIcon="pi pi-minus"
