@@ -37,7 +37,7 @@ const Card = ({ id, title, price, mainImg, secondaryImg }) => {
 
   return (
     <div
-      className="flex flex-col w-[13rem] md:w-[25rem] lg:w-[18rem] mx-4 my-9 "
+      className="flex flex-col w-[10rem] md:w-[12rem] lg:w-[13rem] xl:w-[14rem]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
