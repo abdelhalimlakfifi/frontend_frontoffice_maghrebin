@@ -242,8 +242,8 @@ function WomenCategory() {
               Filter
             </button>
           </div>
-          <div className="w-full h-full">
-            <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 place-items-center">
+          <div className="w-full h-full py-7 px-9">
+            <section className="grid place-items-center gap-7 grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
               {filteredProducts.map((card, index) => (
                 <Card key={index} {...card} />
               ))}
