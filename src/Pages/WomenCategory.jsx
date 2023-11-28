@@ -154,12 +154,12 @@ function WomenCategory() {
 
   return (
     <Layout>
-      <div className="flex h-full font-DIN">
+      <div className="flex font-DIN">
         <div
           className={
             mobileFilter
-              ? ` w-[85%] h-full border-r-2 border-blackV p-5 `
-              : ` hidden md:block md:w-[25%] xl:w-[15%] h-screen border-r-2 border-blackV  md:p-5 xl:p-3`
+              ? `  w-[85%]  border-r-2 border-blackV p-5 `
+              : ` hidden md:block md:w-[25%] xl:w-[15%] border-r-2 border-blackV  md:p-5 xl:p-3`
           }
         >
           <div className="mb-9 lg:mb-11">
