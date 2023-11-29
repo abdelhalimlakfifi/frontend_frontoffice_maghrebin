@@ -37,22 +37,24 @@ const Card = ({ id, title, price, mainImg, secondaryImg }) => {
 
   return (
     <div
-      className="flex flex-col w-[8rem] md:w-[12rem] lg:w-[13rem] xl:w-[14rem]"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className="flex flex-col w-[8rem] md:w-[12rem] lg:w-[13rem] xl:w-[17rem]"
     >
-      <div className="relative">
+      <div className="relative" onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}>
         <img
           src={isHovered ? secondaryImg : mainImg}
           alt={title}
           className="border-blackV border-2"
+          
         />
-        <div
-          className="absolute top-3 right-4 bg-white rounded-full h-7 w-7 flex justify-center items-center"
-          onClick={addProductToStorage}
-        >
-          <i className="pi pi-heart text-blackV hover:text-pink-600 text-lg mt-1"></i>
-        </div>
+        {isHovered && (
+          <button
+            className="absolute p-3 lg:p-5 top-1 lg:top-3 right-1 lg:right-4 bg-white rounded-full h-3 lg:h-1 w-3 lg:w-1 flex justify-center items-center"
+            onClick={addProductToStorage}
+          >
+            <i className="pi pi-heart text-blackV hover:text-pink-600 text-sm lg:text-lg  "></i>
+          </button>
+        )}
       </div>
       <div className="flex flex-start justify-between my-2 text-sm md:text-base  font-medium">
         <h2>{title}</h2>
