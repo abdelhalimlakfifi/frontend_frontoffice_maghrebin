@@ -36,12 +36,12 @@ function Layout({ children }) {
           {/* call all child components */}
           <div className="w-full ">{children}</div>
 
-          <div className="w-full h-auto border-blackV border-t ">
+          <div className="w-full h-auto mt-auto hidden sm:block border-blackV border-t ">
             <Footer />
           </div>
 
           {/* bottom navMenu */}
-          <div className="flex justify-between items-center  lg:hidden h-12 px-4 md:px-7 md:h-11 fixed bottom-0 left-0 w-full bg-white  border-blackV border-t-2  z-50">
+          <div className="flex justify-between items-center mt-auto  sm:hidden h-12 px-4 md:px-7 md:h-11 fixed bottom-0 left-0 w-full bg-white  border-blackV border-t-2  z-50">
             {iconLinks.map((iconLink, index) => (
               <Link key={index} to={iconLink.path} className="w-8">
                 <img src={iconLink.icon} alt={iconLink.alt} className="h-6 md:h-7 m-0 p-0" />
