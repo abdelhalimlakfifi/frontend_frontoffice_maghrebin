@@ -2,25 +2,33 @@ import React, { useState, useRef } from 'react';
 import Layout from '../Layout/Layout';
 import InputField from '../GlobalComponents/InputField';
 import BtnGlobal from '../GlobalComponents/BtnGlobal';
+import arrowIcon from '../../assets/icons/arrowIcon.svg';
 
 export default function UserProfile() {
-  // State to store the selected file
   const [selectedFile, setSelectedFile] = useState(null);
   const fileInputRef = useRef(null);
+  const [isPersonalInfoUnlocked, setIsPersonalInfoUnlocked] = useState(false);
+  const [isSecurityUnlocked, setIsSecurityUnlocked] = useState(false);
+  const [arrowRotation, setArrowRotation] = useState(false);
 
-  // Handle file selection
   const handleFileChange = event => {
     const file = event.target.files[0];
     setSelectedFile(file);
   };
 
-  // Handle click on the displayed image or the "Change Image" button
   const handleImageClick = () => {
-    // Trigger a click on the file input when the image or button is clicked
     fileInputRef.current.click();
   };
 
-  // Define an array of personal information fields
+  const handlePersonalInfoToggle = () => {
+    setIsPersonalInfoUnlocked(!isPersonalInfoUnlocked);
+    setArrowRotation(isPersonalInfoUnlocked ? 0 : 90); // Rotate by 90 degrees when toggled
+  };
+
+  const handleSecurityToggle = () => {
+    setIsSecurityUnlocked(!isSecurityUnlocked);
+  };
+
   const personalInfoFields = [
     { label: 'First Name', placeholder: 'First Name' },
     { label: 'Last Name', placeholder: 'Last Name' },
@@ -44,148 +52,238 @@ export default function UserProfile() {
 
       {/* Main Content */}
       <div className="flex justify-center mx-60 relative">
-        {/* Personal Information Section */}
-        <div className="mb-8 w-8/12 relative">
-          {/* Main title */}
-          <div>
-            <h1 className="uppercase font-medium text-lg mb-6 underline underline-offset-2 ">Personal information</h1>
-          </div>
-
-          {/* Title and inputs */}
-          {personalInfoFields.map((field, index) => (
-            <div key={field.label} className="flex justify-center ml-20">
-              <h2 className="uppercase font-medium w-1/4 text-base mr-3 mt-2">{field.label}</h2>
-              <InputField placeholder={field.placeholder} className="w-3/4 mr-10" />
+        {/* Personal Information and Security Section */}
+        <div className="w-8/12 ml-8">
+          {/* Personal Information Section */}
+          <div className="mb-8 relative">
+            <div className="flex">
+              <img
+                src={arrowIcon}
+                onClick={handlePersonalInfoToggle}
+                alt="arrowIcon"
+                className={`h-5 w-5 mr-3 mt-1 cursor-pointer transition-transform duration-300 transform rotate-${arrowRotation}`}
+                style={{ transform: `rotate(${arrowRotation}deg)` }}
+              />
+              <h1
+                className="uppercase font-medium text-lg mb-6 underline underline-offset-4 cursor-pointer"
+                onClick={handlePersonalInfoToggle}
+              >
+                Personal information
+              </h1>
             </div>
-          ))}
 
-          {/* Save Changes Button */}
-          <div className="flex justify-end pr-[2.6rem]">
-            <BtnGlobal
-              content="Save Changes"
-              className="uppercase font-bold tracking-wider border px-5 py-2 bg-blackV hover:bg-black hover:bg-opacity-90 hover:border-white text-white"
-            />
-          </div>
+            <div
+              className="personal-info-container"
+              style={{
+                maxHeight: isPersonalInfoUnlocked ? '500px' : '0',
+                overflow: 'hidden',
+                transition: 'max-height 0.6s ease-in-out', // Added transition property
+                marginBottom: isPersonalInfoUnlocked ? '20px' : '0', // Add margin-bottom when unlocked
+              }}
+            >
+              {personalInfoFields.map((field, index) => (
+                <div key={field.label} className="flex justify-center ml-20">
+                  <h2 className="uppercase font-medium w-1/4 text-base mr-3 mt-2">{field.label}</h2>
+                  <InputField placeholder={field.placeholder} className="w-3/4 mr-10" />
+                </div>
+              ))}
 
-          {/* -------------- */}
-
-          <div>
-            <h1 className="uppercase font-medium text-base mb-6 underline">Security</h1>
-          </div>
-
-          {/* Title and inputs */}
-          {securityFields.map((field, index) => (
-            <div key={field.label} className="flex justify-center ml-20">
-              <h2 className="uppercase font-medium w-1/4 text-base mr-3 mt-2">{field.label}</h2>
-              <InputField placeholder={field.placeholder} className="w-3/4 mr-10" />
+              <div className="flex justify-end pr-[2.6rem]">
+                <BtnGlobal
+                  content="Save Changes"
+                  className="uppercase font-bold tracking-wider border px-5 py-2 bg-blackV hover:bg-black hover:bg-opacity-90 hover:border-white text-white"
+                />
+              </div>
             </div>
-          ))}
+          </div>
 
-          {/* Save Changes Button */}
-          <div className="flex justify-end pr-[2.6rem]">
-            <BtnGlobal
-              content="Save Password"
-              className="uppercase font-bold tracking-wider border px-5 py-2 bg-blackV hover:bg-black hover:bg-opacity-90 hover:border-white text-white"
-            />
+          {/* Security Section */}
+          <div className="mt-8 relative">
+            <div className="flex">
+              <img
+                src={arrowIcon}
+                onClick={handlePersonalInfoToggle}
+                alt="arrowIcon"
+                className={`h-5 w-5 mr-3 mt-1 cursor-pointer transform rotate-${arrowRotation}`}
+              />
+              <h1 className="uppercase font-medium text-lg mb-6 underline underline-offset-4 cursor-pointer" onClick={handleSecurityToggle}>
+                Security
+              </h1>
+            </div>
+
+            <div
+              className="security-container"
+              style={{
+                maxHeight: isSecurityUnlocked ? '500px' : '0',
+                overflow: 'hidden',
+                transition: 'max-height 0.6s ease-in-out', // Added transition property
+                marginBottom: isSecurityUnlocked ? '20px' : '0', // Add margin-bottom when unlocked
+              }}
+            >
+              {securityFields.map((field, index) => (
+                <div key={field.label} className="flex justify-center ml-20">
+                  <h2 className="uppercase font-medium w-1/4 text-base mr-3 mt-2">{field.label}</h2>
+                  <InputField placeholder={field.placeholder} className="w-3/4 mr-10" />
+                </div>
+              ))}
+
+              <div className="flex justify-end pr-[2.6rem]">
+                <BtnGlobal
+                  content="Save Password"
+                  className="uppercase font-bold tracking-wider border px-5 py-2 bg-blackV hover:bg-black hover:bg-opacity-90 hover:border-white text-white"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Change Picture Section */}
-        <div className="h-96 w-4/12 flex justify-center items-center flex-col">
+        <div className="h-96 w-4/12 flex justify-center items-center flex-col mb-10">
           <div className="uppercase text-2xl h-80 w-80 text-black mb-4" onClick={handleImageClick}>
             <img
-              src={selectedFile ? URL.createObjectURL(selectedFile) : 'your-image.jpg'}
+              // src={selectedFile ? URL.createObjectURL(selectedFile) : 'your-image.jpg'}
+              src="https://via.placeholder.com/208x240"
               alt="Your Image"
               className="h-full w-full object-cover cursor-pointer"
             />
           </div>
-          {/* Button to trigger file input */}
-          <button onClick={handleImageClick} className="px-24 py-3 mx-10 cursor-pointer border border-gray-300 bg-white text-gray-800">
-            Change Image
-          </button>
-          {/* Input for choosing a profile picture */}
           <input type="file" accept="image/*" onChange={handleFileChange} className="p-2 cursor-pointer hidden" ref={fileInputRef} />
+          <BtnGlobal
+            content="CHANGE IMAGE"
+            onClick={handleImageClick}
+            className="font-bold tracking-wider px-[5rem] py-3 mx-10 cursor-pointer border border-gray-300 bg-blackV hover:bg-black hover:bg-opacity-90 hover:border-white text-white"
+          />
         </div>
       </div>
     </Layout>
   );
 }
 
-// import React from 'react';
+
+
+
+
+
+
+
+
+
+// lock icon ------------
+// import React, { useState, useRef } from 'react';
 // import Layout from '../Layout/Layout';
 // import InputField from '../GlobalComponents/InputField';
-// import Container from 'postcss/lib/container';
 // import BtnGlobal from '../GlobalComponents/BtnGlobal';
+// import lockedIcon from '../../assets/icons/lockedIcon.svg';
+// import unlockedIcon from '../../assets/icons/unlockedIcon.svg';
 
 // export default function UserProfile() {
+//   // State to store the selected file
+//   const [selectedFile, setSelectedFile] = useState(null);
+//   const fileInputRef = useRef(null);
+
+//   // Handle file selection
+//   const handleFileChange = event => {
+//     const file = event.target.files[0];
+//     setSelectedFile(file);
+//   };
+
+//   // Handle click on the displayed image or the "Change Image" button
+//   const handleImageClick = () => {
+//     // Trigger a click on the file input when the image or button is clicked
+//     fileInputRef.current.click();
+//   };
+
+//   // Define an array of personal information fields
+//   const personalInfoFields = [
+//     { label: 'First Name', placeholder: 'First Name' },
+//     { label: 'Last Name', placeholder: 'Last Name' },
+//     { label: 'Address', placeholder: 'Address' },
+//     { label: 'E-mail', placeholder: 'E-mail' },
+//   ];
+
+//   const securityFields = [
+//     { label: 'Password', placeholder: 'Password' },
+//     { label: '', placeholder: 'New Password' },
+//     { label: '', placeholder: 'Password confirmation' },
+//   ];
+
 //   return (
 //     <Layout>
-//       <div className="">
-//         {/* Banner Section */}
-//         <div className="flex justify-center items-center h-16 my-8 relative">
-//           <div className="bg-userProfile absolute inset-0 opacity-70"></div>
-//           <h1 className="uppercase font-NewYork text-4xl tracking-wide z-20">Edit profile</h1>
+//       {/* Banner Section */}
+//       <div className="flex justify-center items-center h-16 my-8 relative">
+//         <div className="bg-userProfile absolute inset-0 opacity-70"></div>
+//         <h1 className="uppercase font-NewYork text-4xl tracking-wide z-20">Edit profile</h1>
+//       </div>
+
+//       {/* Main Content */}
+//       <div className="flex justify-center mx-60 relative">
+//         {/* Personal Information Section */}
+//         <div className="mb-8 w-8/12 relative">
+//           {/* Main title */}
+//           <div className="flex">
+//             <h1 className="uppercase font-medium text-lg mb-6 underline underline-offset-4 w-11/12">Personal information</h1>
+//             <img src={unlockedIcon} alt="lock" className="h-7 w-2/12 cursor-pointer" />
+//             <img src={lockedIcon} alt="lock" className="h-7 w-2/12 cursor-pointer" />
+//           </div>
+
+//           {/* Title and inputs */}
+//           {personalInfoFields.map((field, index) => (
+//             <div key={field.label} className="flex justify-center ml-20">
+//               <h2 className="uppercase font-medium w-1/4 text-base mr-3 mt-2">{field.label}</h2>
+//               <InputField placeholder={field.placeholder} className="w-3/4 mr-10" />
+//             </div>
+//           ))}
+
+//           {/* Save Changes Button */}
+//           <div className="flex justify-end pr-[2.6rem]">
+//             <BtnGlobal
+//               content="Save Changes"
+//               className="uppercase font-bold tracking-wider border px-5 py-2 bg-blackV hover:bg-black hover:bg-opacity-90 hover:border-white text-white"
+//             />
+//           </div>
+
+//           {/* -------------- */}
+
+//           <div className="flex mt-8">
+//             <h1 className="uppercase font-medium text-base mb-6 underline underline-offset-4 w-11/12">Security</h1>
+//             <img src={unlockedIcon} alt="lock" className="h-7 w-2/12 cursor-pointer" />
+//             <img src={lockedIcon} alt="lock" className="h-7 w-2/12 cursor-pointer" />
+//           </div>
+
+//           {/* Title and inputs */}
+//           {securityFields.map((field, index) => (
+//             <div key={field.label} className="flex justify-center ml-20">
+//               <h2 className="uppercase font-medium w-1/4 text-base mr-3 mt-2">{field.label}</h2>
+//               <InputField placeholder={field.placeholder} className="w-3/4 mr-10" />
+//             </div>
+//           ))}
+
+//           {/* Save Changes Button */}
+//           <div className="flex justify-end pr-[2.6rem]">
+//             <BtnGlobal
+//               content="Save Password"
+//               className="uppercase font-bold tracking-wider border px-5 py-2 bg-blackV hover:bg-black hover:bg-opacity-90 hover:border-white text-white"
+//             />
+//           </div>
 //         </div>
 
-//         {/* Right Section */}
-//         <div className="flex justify-center mx-24">
-//           <div className="border-[0.5px] border-gray-400 h-96 w-8/12">
-
-//             {/* Main title */}
-//             <div>
-//               <h1 className="uppercase font-medium text-xl mb-6">Personal information</h1>
-//             </div>
-
-//             {/* Title and inputs */}
-//             <div className="flex items-center justify-center ml-20 mb-5">
-//               <h2 className="uppercase font-medium w-1/4 text-lg mr-0">First Name :</h2>
-//               <InputField placeholder="First Name" className="w-3/4 mb-0" />
-//             </div>
-
-//             {/* Save Changes Button */}
-//             <div className="flex flex-1">
-//               <BtnGlobal content="Save Changes" className="border border-blackV px-5 py-2" />
-//             </div>
+//         {/* Change Picture Section */}
+//         <div className="h-96 w-4/12 flex justify-center items-center flex-col">
+//           <div className="uppercase text-2xl h-80 w-80 text-black mb-4" onClick={handleImageClick}>
+//             <img
+//               src={selectedFile ? URL.createObjectURL(selectedFile) : 'your-image.jpg'}
+//               alt="Your Image"
+//               className="h-full w-full object-cover cursor-pointer"
+//             />
 //           </div>
-
-//           {/* Left Section */}
-//           <div className="border-[1px] border-gray-700 h-96 w-4/12 flex justify-center items-center">
-//             <h1 className="uppercase text-2xl text-black">Change picture section </h1>
-//           </div>
+//           {/* Button to trigger file input */}
+//           <button onClick={handleImageClick} className="px-24 py-3 mx-10 cursor-pointer border border-gray-300 bg-white text-gray-800">
+//             Change Image
+//           </button>
+//           {/* Input for choosing a profile picture */}
+//           <input type="file" accept="image/*" onChange={handleFileChange} className="p-2 cursor-pointer hidden" ref={fileInputRef} />
 //         </div>
 //       </div>
 //     </Layout>
 //   );
-// }
-
-// // max-w-[82rem] mx-auto
-// // container mx-auto
-
-// {
-//   /* <div className='max-w-[82rem] mx-auto'>
-//         Edit profile Banner
-//         <section className="flex justify-center items-center h-16 my-8 relative">
-//           <div className="bg-userProfile absolute inset-0 opacity-70"></div>
-//           <h1 className="uppercase font-NewYork text-4xl tracking-wide z-20">Edit profile</h1>
-//         </section>
-
-//         Inputs
-//         <section className="bg-zinc-200 h-72 flex flex-row ">
-//           Settings section
-//           <div className="flex justify-center items-center mb-10 bg-zinc-300 h-56 w-8/12">
-//             <div className="bg-orange-500 h-56 w-6/12">
-//             </div>
-//             <div className=" h-56 w-6/12 ">
-//               <InputField placeholder="First Name" className="mb-2 uppercase"/>
-//               <InputField placeholder="Last Name" className="mb-2 uppercase" />
-//               <InputField placeholder="address" className="mb-2 uppercase"/>
-//             </div>
-//           </div>
-
-//           Userprofile section
-//           <div className="bg-zinc-400 h-56 w-4/12 flex justify-center items-center">
-//             <h1>Here goes Profile Image</h1>
-//             </div>
-//         </section>
-//       </div> */
 // }
