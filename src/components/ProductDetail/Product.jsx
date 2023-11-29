@@ -39,7 +39,6 @@ const Product = ({ title, price, description, color }) => {
           key={index}
           className="mr-2 text-sm border-[0.5px] border-black p-3 "
           content={currentColor}
-          // onClick={}
         />
       ))}
       </div>
