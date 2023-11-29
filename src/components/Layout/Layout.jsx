@@ -21,7 +21,7 @@ function Layout({ children }) {
 
   return (
     <div className="w-full h-screen ">
-      <div className="w-full border-blackV border-b-2 fixed  top-0 left-0 bg-white z-50">
+      <div className="w-full border-blackV border-b-2 fixed  top-0 left-0 bg-white z-[2000]">
         <NavBar updateMenuClick={updateMenuClick} menuClick={menuClick} />
       </div>
 
