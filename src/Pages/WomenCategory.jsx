@@ -160,7 +160,7 @@ function WomenCategory() {
         <div
           className={
             mobileFilter
-              ? `  w-[85%]  border-r-2 border-blackV p-5 `
+              ? `z-40 absolute w-[55%]  border-r-2 border-blackV p-5 bg-white `
               : ` hidden md:block md:w-[25%] xl:w-[15%] border-r-2 border-blackV  md:p-5 xl:p-3`
           }
         >
@@ -234,7 +234,7 @@ function WomenCategory() {
           </div>
         </div>
 
-        <div className=" w-full h-full md:w-full relative ">
+        <div className=" w-full h-screen md:w-full relative ">
           {mobileFilter && (
             <div className="w-full h-full absolute bg-black opacity-70 z-30 duration-500 ease-in-out"></div>
           )}
