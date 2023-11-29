@@ -48,7 +48,7 @@ export default function UserProfile() {
         <div className="mb-8 w-8/12 relative">
           {/* Main title */}
           <div>
-            <h1 className="uppercase font-medium text-lg mb-6 underline">Personal information</h1>
+            <h1 className="uppercase font-medium text-lg mb-6 underline underline-offset-2 ">Personal information</h1>
           </div>
 
           {/* Title and inputs */}
