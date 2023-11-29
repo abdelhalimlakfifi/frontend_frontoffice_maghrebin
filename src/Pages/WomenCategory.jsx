@@ -114,24 +114,29 @@ function WomenCategory() {
 
   const [visible, setVisible] = useState(false);
 
-
- 
-
   //Filter Products
   const [selectedColor, setSelectedColor] = useState(null);
+  const [activeColor, setActiveColor] = useState(null);
+
   const [selectedSize, setSelectedSize] = useState(null);
+  const [activeSize, setActiveSize] = useState(null);
+
   const [selectedStockStatus, setSelectedStockStatus] = useState(null);
+  const [activeStockStatus, setActiveStockStatus] = useState(null);
 
   const handleColorFilter = (selectedColor) => {
     setSelectedColor(selectedColor);
+    setActiveColor(selectedColor);
   };
 
   const handleSizeButtonClick = (size) => {
     setSelectedSize(size);
+    setActiveSize(size);
   };
 
-  const handleStockStatusFilter = (e) => {
-    setSelectedStockStatus(e);
+  const handleStockStatusFilter = (status) => {
+    setSelectedStockStatus(status);
+    setActiveStockStatus(status);
   };
 
   const filterProducts = () => {
@@ -154,21 +159,32 @@ function WomenCategory() {
 
   const filteredProducts = filterProducts();
 
+  const resetFilters = () => {
+    setSelectedColor(null);
+    setSelectedSize(null);
+    setSelectedStockStatus(null);
+  };
+
   return (
     <Layout>
       <div className="flex w-full h-full font-DIN ">
-            <div className="card flex justify-content-center ">
-              <Sidebar visible={visible} position="top" onHide={() => setVisible(false)} style={{ marginTop:"3rem", height:"10rem" }} >
-                <h2>Sidebar</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, con/sectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-              </Sidebar>
-            </div>
-     
+        <div className="card flex justify-content-center ">
+          <Sidebar
+            visible={visible}
+            position="top"
+            onHide={() => setVisible(false)}
+            style={{ marginTop: "3rem", height: "10rem" }}
+          >
+            <h2>Sidebar</h2>
+            <p>
+              Lorem ipsum dolor sit amet, con/sectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </Sidebar>
+        </div>
+
         <div
           className={
             " hidden md:block md:w-[25%] xl:w-[15%] border-r-2 border-blackV  md:p-5 xl:p-3"
@@ -185,7 +201,9 @@ function WomenCategory() {
               {colorTypes.map((colorType) => (
                 <button
                   key={colorType}
-                  className={`${colorType} h-6 w-6 lg:h-5 lg:w-5 border-blackV border hover:shadow-amber-200 hover:shadow-xl`}
+                  className={`${colorType} h-6 w-6 lg:h-5 lg:w-5 border-blackV border hover:shadow-amber-200 hover:shadow-xl ${
+                    activeColor === colorType ? "border-fuchsia-200" : ""
+                  } `}
                   type={colorType}
                   onClick={() => handleColorFilter(colorType)}
                 ></button>
@@ -201,7 +219,9 @@ function WomenCategory() {
               {sizes.map((size, index) => (
                 <button
                   key={index}
-                  className="lg:h-11 lg:w-11 h-11 w-16 border border-blackV hover:bg-blackV hover:text-white"
+                  className={`lg:h-11 lg:w-11 h-11 w-16 border border-blackV hover:bg-blackV hover:text-white ${
+                    activeSize === size ? "bg-blackV text-white" : ""
+                  }`}
                   onClick={() => handleSizeButtonClick(size)}
                 >
                   {size}
@@ -215,24 +235,18 @@ function WomenCategory() {
               Stock
             </h1>
             <div className="my-2 flex flex-col items-start gap-3 p-3 ">
-              <button
-                className="hover:underline"
-                onClick={() => handleStockStatusFilter("Best Selling")}
-              >
-                Best Selling
-              </button>
-              <button
-                className="hover:underline"
-                onClick={() => handleStockStatusFilter("New in Stock")}
-              >
-                New in Stock
-              </button>
-              <button
-                className="hover:underline"
-                onClick={() => handleStockStatusFilter("Old in Stock")}
-              >
-                Old in Stock
-              </button>
+              {["Best Selling", "New in Stock", "Old in Stock"].map(
+                (status) => (
+                  <button
+                    key={status}
+                    className={`hover:underline ${
+                      activeStockStatus === status ? "font-bold" : ""}`}
+                    onClick={() => handleStockStatusFilter(status)}
+                  >
+                    {status}
+                  </button>
+                )
+              )}
             </div>
           </div>
 
@@ -261,8 +275,14 @@ function WomenCategory() {
                 ))}
               </section>
             ) : (
-              <div className="text-center h-screen text-blackV">
+              <div className="text-center h-screen text-blackV flex flex-col items-center gap-5">
                 No products match the selected filters.
+                <button
+                  className="w-20 h-9 border border-blackV font-medium"
+                  onClick={resetFilters}
+                >
+                  Reset
+                </button>
               </div>
             )}
           </div>
