@@ -135,7 +135,7 @@ function WomenCategory() {
   };
 
   const filterProducts = () => {
-    return cardData.filter((product) => {
+    const filteredProducts = cardData.filter((product) => {
       if (selectedColor && product.color !== selectedColor) {
         return false;
       }
@@ -148,13 +148,15 @@ function WomenCategory() {
 
       return true; // this indicates that Product passed all filters
     });
+
+    return filteredProducts.length > 0 ? filteredProducts : null;
   };
 
   const filteredProducts = filterProducts();
 
   return (
     <Layout>
-      <div className="flex font-DIN">
+      <div className="flex w-full h-full font-DIN ">
         <div
           className={
             mobileFilter
@@ -232,9 +234,11 @@ function WomenCategory() {
           </div>
         </div>
 
-        <div className=" w-full md:w-full h-full ">
-          <div className="m-3 md:hidden flex justify-end ">
-
+        <div className=" w-full h-full md:w-full relative ">
+          {mobileFilter && (
+            <div className="w-full h-full absolute bg-black opacity-70 z-30 duration-500 ease-in-out"></div>
+          )}
+          <div className="m-3 md:hidden flex justify-end">
             <button
               className="w-24 h-9 border-2 border-blackV hover:bg-blackV hover:text-white font-semibold "
               onClick={handleFilterButtonClick}
@@ -242,12 +246,18 @@ function WomenCategory() {
               Filter
             </button>
           </div>
-          <div className="w-full h-full py-7 px-9">
-            <section className="grid place-items-center gap-7 grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
-              {filteredProducts.map((card, index) => (
-                <Card key={index} {...card} />
-              ))}
-            </section>
+          <div className="w-full py-7 px-9 ">
+            {filteredProducts ? (
+              <section className="grid place-items-center gap-7 grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {filteredProducts.map((card, index) => (
+                  <Card key={index} {...card} />
+                ))}
+              </section>
+            ) : (
+              <div className="text-center h-screen text-blackV">
+                No products match the selected filters.
+              </div>
+            )}
           </div>
         </div>
       </div>
