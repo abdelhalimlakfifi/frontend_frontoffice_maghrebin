@@ -28,10 +28,10 @@ const WomenCards = () => {
   return (
     <>
       {/* Show swiper in mobile */}
-      <div className="">
+      <div className="px-2 md:px-9">
       <Swiper
-        slidesPerView={2}
-        spaceBetween={50}
+        slidesPerView={2.5}
+        spaceBetween={7}
         freeMode={true}
         pagination={{
           clickable: true,
@@ -42,7 +42,7 @@ const WomenCards = () => {
       >
         <section className="">
           {cardData.map((card, index) => (
-            <SwiperSlide key={index} className="swiper-background ">
+            <SwiperSlide key={index} className="swiper-background py-7 md:py-9 ">
               <Card {...card} />
             </SwiperSlide>
           ))}
@@ -53,7 +53,7 @@ const WomenCards = () => {
       
       {/* Show in Web without swiper */}
       <div className="hidden lg:block">
-      <section className="flex flex-row flex-wrap justify-center mx-10 ">
+      <section className="flex flex-row flex-wrap justify-center gap-9 py-4">
         {cardData.map((card, index) => (
           <Card key={index} {...card} />
         ))}

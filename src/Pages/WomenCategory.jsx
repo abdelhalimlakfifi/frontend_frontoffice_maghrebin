@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout/Layout";
+import { Sidebar } from "primereact/sidebar";
 import { Slider } from "primereact/slider";
 import { Card } from "../components/GlobalComponents/ProductCard";
 
@@ -111,11 +112,10 @@ function WomenCategory() {
     },
   ];
 
-  const [mobileFilter, setMobileFilter] = useState(false);
+  const [visible, setVisible] = useState(false);
 
-  const handleFilterButtonClick = (e) => {
-    setMobileFilter(!mobileFilter);
-  };
+
+ 
 
   //Filter Products
   const [selectedColor, setSelectedColor] = useState(null);
@@ -135,7 +135,7 @@ function WomenCategory() {
   };
 
   const filterProducts = () => {
-    return cardData.filter((product) => {
+    const filteredProducts = cardData.filter((product) => {
       if (selectedColor && product.color !== selectedColor) {
         return false;
       }
@@ -148,18 +148,30 @@ function WomenCategory() {
 
       return true; // this indicates that Product passed all filters
     });
+
+    return filteredProducts.length > 0 ? filteredProducts : null;
   };
 
   const filteredProducts = filterProducts();
 
   return (
     <Layout>
-      <div className="flex h-full font-DIN">
+      <div className="flex w-full h-full font-DIN ">
+            <div className="card flex justify-content-center ">
+              <Sidebar visible={visible} position="top" onHide={() => setVisible(false)} style={{ marginTop:"3rem", height:"10rem" }} >
+                <h2>Sidebar</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, con/sectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </Sidebar>
+            </div>
+     
         <div
           className={
-            mobileFilter
-              ? ` w-[85%] h-full border-r-2 border-blackV p-5 `
-              : ` hidden md:block md:w-[25%] xl:w-[15%] h-screen border-r-2 border-blackV  md:p-5 xl:p-3`
+            " hidden md:block md:w-[25%] xl:w-[15%] border-r-2 border-blackV  md:p-5 xl:p-3"
           }
         >
           <div className="mb-9 lg:mb-11">
@@ -232,22 +244,27 @@ function WomenCategory() {
           </div>
         </div>
 
-        <div className=" w-full md:w-full h-full ">
-          <div className="m-3 md:hidden flex justify-end ">
-
+        <div className=" w-full h-full md:w-full  ">
+          <div className="m-3 md:hidden flex justify-end">
             <button
               className="w-24 h-9 border-2 border-blackV hover:bg-blackV hover:text-white font-semibold "
-              onClick={handleFilterButtonClick}
+              onClick={() => setVisible(true)}
             >
               Filter
             </button>
           </div>
-          <div className="w-full h-full">
-            <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 place-items-center">
-              {filteredProducts.map((card, index) => (
-                <Card key={index} {...card} />
-              ))}
-            </section>
+          <div className="w-full h-full py-7 px-9 ">
+            {filteredProducts ? (
+              <section className="grid place-items-center gap-7 grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {filteredProducts.map((card, index) => (
+                  <Card key={index} {...card} />
+                ))}
+              </section>
+            ) : (
+              <div className="text-center h-screen text-blackV">
+                No products match the selected filters.
+              </div>
+            )}
           </div>
         </div>
       </div>

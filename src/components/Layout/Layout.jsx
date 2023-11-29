@@ -20,8 +20,8 @@ function Layout({ children }) {
   };
 
   return (
-    <div className="w-full h-screen">
-      <div className="w-full border-blackV border-b-2 ">
+    <div className="w-full h-screen ">
+      <div className="w-full border-blackV border-b-2 fixed  top-0 left-0 bg-white z-[2000]">
         <NavBar updateMenuClick={updateMenuClick} menuClick={menuClick} />
       </div>
 
@@ -34,7 +34,7 @@ function Layout({ children }) {
       ) : (
         <div className="">
           {/* call all child components */}
-          <div className="w-full ">{children}</div>
+          <div className="w-full  mt-14">{children}</div>
 
           <div className="w-full h-auto mt-auto hidden sm:block border-blackV border-t ">
             <Footer />

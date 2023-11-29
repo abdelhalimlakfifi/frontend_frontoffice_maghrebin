@@ -26,12 +26,12 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
 
         <Route path="/product" element={<ProductDetailPage />} />
-        <Route path="/Checkout" element={<CheckoutPage />} />
-        <Route path="/MyCart" element={<MyCartPage />} />
-        <Route path="/SizeGuide" element={<SizeGuidePage />} />
-        <Route path="/productDetail" element={<MainProductDetail />} />
-        <Route path="/userProfile" element={<UserProfile />} />
-        <Route path="/women" element={<WomenCategory />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/my-cart" element={<MyCartPage />} />
+        <Route path="/size-guide" element={<SizeGuidePage />} />
+        <Route path="/product-details" element={<MainProductDetail />} />
+        <Route path="/user-profile" element={<UserProfile />} />
+        <Route path="/women-products" element={<WomenCategory />} />
         <Route path="/wish-list" element={<WishListPage />} />
       </Routes>
     </PrimeReactProvider>
