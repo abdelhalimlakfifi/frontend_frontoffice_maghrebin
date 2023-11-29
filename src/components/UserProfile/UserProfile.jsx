@@ -26,7 +26,12 @@ export default function UserProfile() {
     { label: 'Last Name', placeholder: 'Last Name' },
     { label: 'Address', placeholder: 'Address' },
     { label: 'E-mail', placeholder: 'E-mail' },
-    // Add more fields as needed
+  ];
+
+  const securityFields = [
+    { label: 'Password', placeholder: 'Password' },
+    { label: '', placeholder: 'New Password' },
+    { label: '', placeholder: 'Password confirmation' },
   ];
 
   return (
@@ -38,27 +43,49 @@ export default function UserProfile() {
       </div>
 
       {/* Main Content */}
-      <div className="flex justify-center mx-56 relative">
+      <div className="flex justify-center mx-60 relative">
         {/* Personal Information Section */}
         <div className="mb-8 w-8/12 relative">
           {/* Main title */}
           <div>
-            <h1 className="uppercase font-medium text-xl mb-6">Personal information</h1>
+            <h1 className="uppercase font-medium text-lg mb-6 underline">Personal information</h1>
           </div>
 
           {/* Title and inputs */}
           {personalInfoFields.map((field, index) => (
-            <div key={field.label} className="flex items-center justify-center ml-20 mb-5">
-              <h2 className="uppercase font-medium w-1/4 text-lg mr-3">{field.label} :</h2>
-              <InputField placeholder={field.placeholder} className="w-3/4 mb-0 mr-32" />
+            <div key={field.label} className="flex justify-center ml-20">
+              <h2 className="uppercase font-medium w-1/4 text-base mr-3 mt-2">{field.label}</h2>
+              <InputField placeholder={field.placeholder} className="w-3/4 mr-10" />
             </div>
           ))}
 
           {/* Save Changes Button */}
-          <div className="flex flex-1 justify-end pr-[7.8rem]">
+          <div className="flex justify-end pr-[2.6rem]">
             <BtnGlobal
               content="Save Changes"
-              className="border px-5 py-2 bg-blackV hover:bg-black hover:bg-opacity-90 hover:border-white text-white"
+              className="uppercase font-bold tracking-wider border px-5 py-2 bg-blackV hover:bg-black hover:bg-opacity-90 hover:border-white text-white"
+            />
+          </div>
+
+          {/* -------------- */}
+
+          <div>
+            <h1 className="uppercase font-medium text-base mb-6 underline">Security</h1>
+          </div>
+
+          {/* Title and inputs */}
+          {securityFields.map((field, index) => (
+            <div key={field.label} className="flex justify-center ml-20">
+              <h2 className="uppercase font-medium w-1/4 text-base mr-3 mt-2">{field.label}</h2>
+              <InputField placeholder={field.placeholder} className="w-3/4 mr-10" />
+            </div>
+          ))}
+
+          {/* Save Changes Button */}
+          <div className="flex justify-end pr-[2.6rem]">
+            <BtnGlobal
+              content="Save Password"
+              className="uppercase font-bold tracking-wider border px-5 py-2 bg-blackV hover:bg-black hover:bg-opacity-90 hover:border-white text-white"
             />
           </div>
         </div>
