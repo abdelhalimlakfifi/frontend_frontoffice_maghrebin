@@ -12,6 +12,9 @@ export default {
   ],
   theme: {
     extend: {
+      textUnderlineOffset: {
+        3: '3px',
+      },
       backgroundImage: {
         "userProfile": "url(src/assets/MoroccanTexture-01.svg)"
       },
