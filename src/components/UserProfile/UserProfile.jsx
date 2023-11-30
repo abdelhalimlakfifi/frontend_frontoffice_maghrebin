@@ -4,6 +4,7 @@ import InputField from '../GlobalComponents/InputField';
 import BtnGlobal from '../GlobalComponents/BtnGlobal';
 import arrowIcon from '../../assets/icons/arrowIcon.svg';
 
+
 export default function UserProfile() {
   const [selectedFile, setSelectedFile] = useState(null);
   const fileInputRef = useRef(null);
@@ -39,31 +40,23 @@ export default function UserProfile() {
   const securityFields = [
     { label: 'Password', placeholder: 'Password' },
     { label: '', placeholder: 'New Password' },
-    { label: '', placeholder: 'Password confirmation' },
+    { label: '', placeholder: 'Password Confirmation' },
   ];
 
   return (
     <Layout>
       {/* Banner Section */}
-      <div className="flex justify-center items-center h-16 my-8 relative">
-        <div className="bg-userProfile absolute inset-0 opacity-70"></div>
+      <div className="flex justify-center items-center h-16 md:my-2 lg:my-20 bg-userProfile inset-0 opacity-70">
         <h1 className="uppercase font-NewYork text-4xl tracking-wide z-20">Edit profile</h1>
       </div>
 
-      {/* Main Content */}
-      <div className="flex justify-center mx-60 relative">
-        {/* Personal Information and Security Section */}
-        <div className="w-8/12 ml-8">
+      {/* Personal Information and Security Section */}
+      <div className="flex flex-col items-center lg:justify-center lg:flex lg:flex-row md:mx-10 lg:mx-60 relative gap-y-2">
+        <div className="lg:w-8/12 w-10/12 lg:ml-8 order-2 lg:order-1">
           {/* Personal Information Section */}
           <div className="mb-8 relative">
             <div className="flex">
-              <img
-                src={arrowIcon}
-                onClick={handlePersonalInfoToggle}
-                alt="arrowIcon"
-                className={`h-5 w-5 mr-3 mt-1 cursor-pointer transition-transform duration-300 transform rotate-${arrowRotation}`}
-                style={{ transform: `rotate(${arrowRotation}deg)` }}
-              />
+              <img src={arrowIcon} className={`h-6 w-6 lg:h-5 lg:w-5 md:mr-3 lg:mr-3 mt-1 cursor-pointer`} />
               <h1
                 className="uppercase font-medium text-lg mb-6 underline underline-offset-4 cursor-pointer"
                 onClick={handlePersonalInfoToggle}
@@ -72,15 +65,7 @@ export default function UserProfile() {
               </h1>
             </div>
 
-            <div
-              className="personal-info-container"
-              style={{
-                maxHeight: isPersonalInfoUnlocked ? '500px' : '0',
-                overflow: 'hidden',
-                transition: 'max-height 0.6s ease-in-out', // Added transition property
-                marginBottom: isPersonalInfoUnlocked ? '20px' : '0', // Add margin-bottom when unlocked
-              }}
-            >
+            <div>
               {personalInfoFields.map((field, index) => (
                 <div key={field.label} className="flex justify-center ml-20">
                   <h2 className="uppercase font-medium w-1/4 text-base mr-3 mt-2">{field.label}</h2>
@@ -96,6 +81,7 @@ export default function UserProfile() {
               </div>
             </div>
           </div>
+
 
           {/* Security Section */}
           <div className="mt-8 relative">
@@ -138,21 +124,23 @@ export default function UserProfile() {
         </div>
 
         {/* Change Picture Section */}
-        <div className="h-96 w-4/12 flex justify-center items-center flex-col mb-10">
-          <div className="uppercase text-2xl h-80 w-80 text-black mb-4" onClick={handleImageClick}>
+        <div className="h-96 w-4/12 flex justify-center items-center flex-col mb-10 md:mb-0 order-1 lg:order-2">
+          <div className="uppercase text-2xl h-56 w-56 text-black mb-4" onClick={handleImageClick}>
             <img
               // src={selectedFile ? URL.createObjectURL(selectedFile) : 'your-image.jpg'}
-              src="https://via.placeholder.com/208x240"
+              src="https://via.placeholder.com/150x150"
               alt="Your Image"
               className="h-full w-full object-cover cursor-pointer"
             />
           </div>
-          <input type="file" accept="image/*" onChange={handleFileChange} className="p-2 cursor-pointer hidden" ref={fileInputRef} />
-          <BtnGlobal
-            content="CHANGE IMAGE"
-            onClick={handleImageClick}
-            className="font-bold tracking-wider px-[5rem] py-3 mx-10 cursor-pointer border border-gray-300 bg-blackV hover:bg-black hover:bg-opacity-90 hover:border-white text-white"
-          />
+          <div className="w-56 flex items-center">
+            <input type="file" accept="image/*" onChange={handleFileChange} className="p-2 cursor-pointer hidden" ref={fileInputRef} />
+            <BtnGlobal
+              content="CHANGE IMAGE"
+              onClick={handleImageClick}
+              className="font-bold w-full tracking-wider py-3 cursor-pointer border border-gray-300 bg-blackV hover:bg-black hover:bg-opacity-90 hover:border-white text-white"
+            />
+          </div>
         </div>
       </div>
     </Layout>
