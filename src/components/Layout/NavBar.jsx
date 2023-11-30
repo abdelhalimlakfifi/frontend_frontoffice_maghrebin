@@ -11,6 +11,7 @@ import favIcon from '../../assets/icons/favIcon.svg'
 import cartIcon from '../../assets/icons/cartIcon.svg'
 import navLineDivider from '../../assets/icons/navLine_divider.svg'
 import userIcon from '../../assets/icons/userIcon.svg'
+import MegaMenu from "./MegaMenu";
 // import burgerMenu from '../../assets/icons/Bugermenu.svg'
 // import closeMenu from '../../assets/icons/closeMenu.svg'
 
@@ -34,16 +35,37 @@ function NavBar({updateMenuClick, menuClick}) {
     {
       path: '/men-products',
       name: 'Men',
+      subcategories: [
+        { name: 'New In', path: '/new-in-men' },
+        { name: 'View All Womenswear', path: '/men-products' },
+        { name: 'Gandoura', path: '/Gandoura' },
+        { name: 'Moroccan Djellaba', path: '/Men-Moroccan-Djellaba' },
+        { name: 'Lebssa', path: '/Men-Lebssa' },
+      ],
     },
     {
-      path: '/women-rpducts',
+      path: '/women-products',
       name: 'Women',
+      subcategories: [
+        { name: 'New In', path: '/new-in-women' },
+        { name: 'View All Womenswear', path: '/women-products' },
+        { name: 'Kaftan & Gandoura', path: '/Kaftan-Gandoura' },
+        { name: 'Moroccan Djellaba', path: '/Moroccan-Djellaba' },
+        { name: 'Takchita & Lebssa', path: '/Takchita-Lebssa' },
+      ],
     },
     {
       path: '/kids-products',
       name: 'Kids',
+      subcategories: [
+        { name: 'New In', path: '/new-in-kids' },
+        { name: 'View All Womenswear', path: '/kids-products' },
+        { name: 'Kaftan & Gandoura', path: '/kids-Kaftan-Gandoura' },
+        { name: 'Moroccan Djellaba', path: '/kids-Moroccan-Djellaba' },
+        { name: 'Lebssa', path: '/kids-Lebssa' },
+      ],
     },
-  ]
+  ];
 
   return (
     <>
@@ -54,23 +76,9 @@ function NavBar({updateMenuClick, menuClick}) {
           }
           
       </div>
-      <div className="hidden lg:block ">
-         {/* Menu div */}
-        <ul className="flex justify-between items-center md:w-72 p-4">
-          {links.map((link) => (
-            <li className="w-fit hover:underline" key={link.name}>
-              <Link
-                to={link.path}
-                className="text-neutral-900 uppercase font-normal m-0"
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
 
-      
+      {/* SHOW MEGA MENU WHEN RESPECTIVE LINK IS HOVERED */}
+      <MegaMenu links={links}/>
       
       {/* Logo div */}
         <Link
