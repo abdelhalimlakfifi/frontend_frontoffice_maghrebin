@@ -1,6 +1,7 @@
 // components/SidebarFilter.js
-import React from "react";
+import React,{useState} from "react";
 import { Sidebar } from "primereact/sidebar";
+import { Slider } from "primereact/slider";
 
 const SidebarFilter = ({
   visible,
