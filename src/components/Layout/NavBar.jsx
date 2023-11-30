@@ -28,19 +28,19 @@ function NavBar({updateMenuClick, menuClick}) {
   
   const links = [
     {
-      path: '/home',
+      path: '/',
       name: 'Home',
     },
     {
-      path: '/men',
+      path: '/men-products',
       name: 'Men',
     },
     {
-      path: '/women',
+      path: '/women-rpducts',
       name: 'Women',
     },
     {
-      path: '/kids',
+      path: '/kids-products',
       name: 'Kids',
     },
   ]
@@ -106,13 +106,13 @@ function NavBar({updateMenuClick, menuClick}) {
               className="h-6 w-8 hidden lg:block"
             />
           </Link>
-          <Link to='/'>
+          
             <img
               src={navLineDivider}
               alt='navLineDivider'
               className="h-6 w-8 hidden lg:block"
             />
-          </Link>
+
           <Link to='/user-profile'>
             <img
               src={userIcon}
