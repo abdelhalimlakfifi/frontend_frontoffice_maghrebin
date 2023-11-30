@@ -1,5 +1,6 @@
 // components/FilterBar.js
-import React from "react";
+import React, { useState } from "react";
+import { Slider } from "primereact/slider";
 
 const FilterBar = ({
   colorTypes,
@@ -11,6 +12,16 @@ const FilterBar = ({
   handleSizeButtonClick,
   handleStockStatusFilter,
 }) => {
+  const [value, setValue] = useState(null);
+
+  const sliderChange = (e) => {
+    console.log(e.value[1] - e.value[0] )
+    
+    if(e.value[1] - e.value[0] >= 10)
+    {
+      setValue(e.value)
+    }
+  }
   return (
       <div
         className={
@@ -80,7 +91,10 @@ const FilterBar = ({
           <h1 className="font-semibold text-base  border-b text-blackV border-blackV w-full">
             Price
           </h1>
-          <div className="py-7 rounded-lg flex justify-center "></div>
+          <div className="py-7 rounded-lg flex justify-center ">
+            <Slider value={value} onChange={(e) => sliderChange(e)} className="w-full" range max={2000} min={500} />
+          </div>
+          <p>{value}</p>
         </div>
       </div>
   );
