@@ -5,8 +5,9 @@ import BreadCrum from "../GlobalComponents/BreadCrum";
 import Layout from "../Layout/Layout";
 import BtnGlobal from "../GlobalComponents/BtnGlobal";
 import { Rating } from "primereact/rating";
-import { Button } from "primereact/button";
 import { Dialog } from "primereact/dialog";
+import { Editor } from 'primereact/editor';
+
 
 const MainProductDetail = () => {
   //set Stars value of rating
@@ -69,7 +70,7 @@ const MainProductDetail = () => {
               cancel={false}
             />
           </div>
-         
+
           <div className="flex justify-center">
             <BtnGlobal
               label="Show"
@@ -80,21 +81,23 @@ const MainProductDetail = () => {
           </div>
           <div className="card flex justify-content-center">
             <Dialog
-              header="Add your review"
+              header="Product Review"
               visible={visible}
               style={{ width: "50vw" }}
               onHide={() => setVisible(false)}
               footer={reviewContent}
             >
-              <p className="m-0">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                eni m ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
+              <p className="py-5">Rate the product :</p>
+              <Rating
+                value={value}
+                onChange={(e) => setValue(e.value)}
+                cancel={false}
+              />
+
+              <p className="py-5">Explain Your Rating :</p>
+              <Editor value={text} onTextChange={(e) => setText(e.htmlValue)} style={{ height: '320px' }} />
+
+
             </Dialog>
           </div>
         </div>
