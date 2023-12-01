@@ -17,6 +17,9 @@ const MainProductDetail = () => {
   const [text, setText] = useState(
     "<div>Hello There!</div><div> <b>Maghrebin</b> takes your reviews seriously</div><div><br></div>"
   );
+  //create new review card
+  const [reviews, setReviews] = useState([]);
+    
 
   const reviewContent = (
     <div>
@@ -29,12 +32,23 @@ const MainProductDetail = () => {
 
       <BtnGlobal
         label="Submit"
-        onClick={() => setVisible(false)}
+        onClick={() => {
+          // Save the new review to the state
+          const newReview = {
+            name: 'User Name', // will be replaced when I will handle authentication
+            content: text,
+            rating: value,
+          };
+
+          setReviews((prevReviews) => [...prevReviews, newReview]);
+          setVisible(false);
+        }}
         className="mr-2 text-sm font-medium border-[0.5px] border-black p-3 w-44 bg-blackV text-white"
         content="Submit"
       />
     </div>
   );
+
 
   const editorComponents = () => {
     return (
