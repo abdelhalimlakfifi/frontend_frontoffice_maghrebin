@@ -6,14 +6,18 @@ import Layout from "../Layout/Layout";
 import BtnGlobal from "../GlobalComponents/BtnGlobal";
 import { Rating } from "primereact/rating";
 import { Dialog } from "primereact/dialog";
-import { Editor } from 'primereact/editor';
-
+import { Editor } from "primereact/editor";
 
 const MainProductDetail = () => {
   //set Stars value of rating
   const [value, setValue] = useState(null);
   //set revies demo visible
   const [visible, setVisible] = useState(false);
+  //Review Editor text
+  const [text, setText] = useState(
+    "<div>Hello There!</div><div> <b>Maghrebin</b> takes your reviews seriously</div><div><br></div>"
+  );
+
   const reviewContent = (
     <div>
       <BtnGlobal
@@ -31,6 +35,17 @@ const MainProductDetail = () => {
       />
     </div>
   );
+
+  const editorComponents = () => {
+    return (
+      <span className="ql-formats">
+        <button className="ql-bold" aria-label="Bold"></button>
+        <button className="ql-italic" aria-label="Italic"></button>
+        <button className="ql-underline" aria-label="Underline"></button>
+      </span>
+    );
+  };
+  const header = editorComponents();
 
   // BreadCrum
   const items = [{ label: "Women" }, { label: "Djelaba" }];
@@ -95,9 +110,12 @@ const MainProductDetail = () => {
               />
 
               <p className="py-5">Explain Your Rating :</p>
-              <Editor value={text} onTextChange={(e) => setText(e.htmlValue)} style={{ height: '320px' }} />
-
-
+              <Editor
+                value={text}
+                onTextChange={(e) => setText(e.htmlValue)}
+                headerTemplate={header}
+                style={{ height: "320px" }}
+              />
             </Dialog>
           </div>
         </div>
