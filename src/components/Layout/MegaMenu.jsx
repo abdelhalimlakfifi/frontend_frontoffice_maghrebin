@@ -29,14 +29,15 @@ const MegaMenu = ({ links }) => {
       {activeLink &&
         links.find((link) => link.path === activeLink)?.subcategories && (
           <div
-            className="border-blackV border-t-2 bg-red-200 p-4 absolute top-full left-0 w-full h-64"
+            className="border-blackV border-t-2 border-2 bg-white  p-4 absolute top-full left-0 w-full h-64  flex flex-col px-40 py-11"
             onMouseLeave={() => setActiveLink(null)}
           >
-            <ul>
+            <h1 className="font-bold pb-1 border-black border-b-2 w-24 mb-5 ">Collections</h1>
+            <ul className="grid grid-cols-3 space-y-2">
               {links
                 .find((link) => link.path === activeLink)
                 ?.subcategories.map((subcategory) => (
-                  <li key={subcategory.path}>
+                  <li key={subcategory.path} className="hover:underline">
                     <Link to={subcategory.path}>{subcategory.name}</Link>
                   </li>
                 ))}
