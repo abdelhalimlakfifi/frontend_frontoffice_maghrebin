@@ -20,8 +20,8 @@ const App = () => {
   return (
     <PrimeReactProvider>
      <Routes>
-        <Route path="/Login" element={<Login />} />
-        <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/sign-up" element={<SignUp />} />
 
         <Route path="/" element={<LandingPage />} />
 
