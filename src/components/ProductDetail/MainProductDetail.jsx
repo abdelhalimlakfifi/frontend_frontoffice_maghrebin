@@ -85,20 +85,13 @@ const MainProductDetail = () => {
         </h1>
         {/* //each customer review here */}
         <div className=" flex flex-col gap-9 my-5">
-          <div className="flex flex-col justify-center bg-white  mx-96 p-7 gap-5 border-2">
-            <h2 className="text-lg font-semibold">user.name</h2>
-            <p className="">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias,
-              ipsa obcaecati voluptas est quos hic atque mollitia quo dolorem
-              optio nesciunt quisquam reiciendis accusantium eius distinctio
-              harum quidem? Sunt, amet.
-            </p>
-            <Rating
-              value={value}
-              onChange={(e) => setValue(e.value)}
-              cancel={false}
-            />
-          </div>
+        {reviews.map((review, index) => (
+            <div key={index} className="flex flex-col justify-center bg-white  mx-96 p-7 gap-5 border-2">
+              <h2 className="text-lg font-semibold">{review.name}</h2>
+              <p dangerouslySetInnerHTML={{ __html: review.content }} className="" />
+              <Rating value={review.rating} cancel={false} />
+            </div>
+          ))}
 
           <div className="flex justify-center">
             <BtnGlobal
