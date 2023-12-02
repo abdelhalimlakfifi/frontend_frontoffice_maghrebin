@@ -146,6 +146,7 @@ function NavBar({ updateMenuClick, menuClick }) {
         visible={visibleRight}
         position="right"
         onHide={() => setVisibleRight(false)}
+        className="lg:w-[35vw] xl:w-[27vw]"
       >
         <h2>Right Sidebar</h2>
         <p>
