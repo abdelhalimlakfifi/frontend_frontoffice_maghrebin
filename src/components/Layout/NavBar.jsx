@@ -12,6 +12,7 @@ import cartIcon from "../../assets/icons/cartIcon.svg";
 import navLineDivider from "../../assets/icons/navLine_divider.svg";
 import userIcon from "../../assets/icons/userIcon.svg";
 import MegaMenu from "./MegaMenu";
+import MyCartPage from "../../Pages/MyCartPage";
 // import burgerMenu from '../../assets/icons/Bugermenu.svg'
 // import closeMenu from '../../assets/icons/closeMenu.svg'
 
@@ -148,13 +149,7 @@ function NavBar({ updateMenuClick, menuClick }) {
         onHide={() => setVisibleRight(false)}
         className="lg:w-[35vw] xl:w-[27vw]"
       >
-        <h2>Right Sidebar</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
+        <MyCartPage/>
       </Sidebar>
     </>
   );
