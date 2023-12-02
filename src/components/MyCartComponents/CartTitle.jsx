@@ -10,16 +10,14 @@ const CartTitle = () => {
   };
 
   return (
-    <>
-      <div className="flex justify-between items-center border-b-2 border-gray-500">
-        <h2 className="text-lg font-medium">MY CART</h2>
+      <div className="flex w-full justify-between items-center border-b-2 border-blackV">
+        <h2 className="text-lg font-medium text-blackV">MY CART</h2>
         <div className="flex items-center">
           <p className="text-sm font-medium">
             {`${itemCount} `}<span className="ml-1">ITEMS</span>
           </p>
         </div>
       </div>
-    </>
   );
 };
 
