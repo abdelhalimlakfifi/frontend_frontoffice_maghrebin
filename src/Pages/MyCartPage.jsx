@@ -1,8 +1,8 @@
 import React from "react";
-import CartTitle from "./CartTitle";
-import CartProductImg from "./CartProductImg";
-import CartProductDescription from "./CartProductDescription";
-import CartTrashIcon from "./CartTrashIcon";
+import CartTitle from "../components/MyCartComponents/CartTitle"
+import CartProductImg from "../components/MyCartComponents/CartProductImg";
+import CartProductDescription from "../components/MyCartComponents/CartProductDescription";
+import CartTrashIcon from "../components/MyCartComponents/CartTrashIcon";
 // import Layout from '../components/Layout/Layout';
 
 const MyCartPage = () => {
