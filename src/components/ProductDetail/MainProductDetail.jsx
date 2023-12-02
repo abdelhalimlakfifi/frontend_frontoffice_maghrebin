@@ -86,9 +86,9 @@ const MainProductDetail = () => {
         {/* //each customer review here */}
         <div className=" flex flex-col gap-9 my-5">
         {reviews.map((review, index) => (
-            <div key={index} className="flex flex-col justify-center bg-white  mx-96 p-7 gap-5 border-2">
-              <h2 className="text-lg font-semibold">{review.name}</h2>
-              <p dangerouslySetInnerHTML={{ __html: review.content }} className="" />
+            <div key={index} className="flex flex-col justify-center bg-white  md:mx-16 lg:mx-36  xl:mx-72 p-5 gap-3 md:gap-5 border-2">
+              <h2 className="text-sm md:text-base font-semibold">{review.name}</h2>
+              <p dangerouslySetInnerHTML={{ __html: review.content }} className="text-xs md:text-sm" />
               <Rating value={review.rating} cancel={false} />
             </div>
           ))}
