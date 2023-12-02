@@ -26,7 +26,7 @@ const MainProductDetail = () => {
       <BtnGlobal
         label="Cancel"
         onClick={() => setVisible(false)}
-        className="mr-2 text-sm font-medium p-3 w-44  text-blackV"
+        className="mr-2 text-xs md:text-sm font-medium p-2 lg:p-3 md:w-28 lg:w-28 xl:w-44  text-blackV"
         content="Cancel"
       />
 
@@ -43,7 +43,7 @@ const MainProductDetail = () => {
           setReviews((prevReviews) => [...prevReviews, newReview]);
           setVisible(false);
         }}
-        className="mr-2 text-sm font-medium border-[0.5px] border-black p-3 w-44 bg-blackV text-white"
+        className="mr-2 text-xs md:text-sm font-medium border-[0.5px] border-black p-2 lg:p-3 w-20 md:w-28 lg:w-28 xl:w-44 bg-blackV text-white"
         content="Submit"
       />
     </div>
@@ -101,27 +101,27 @@ const MainProductDetail = () => {
               content="Add Review"
             />
           </div>
-          <div className="card flex justify-content-center">
+          <div className="card flex justify-content-center ">
             <Dialog
               header="Product Review"
               visible={visible}
-              style={{ width: "50vw" }}
               onHide={() => setVisible(false)}
               footer={reviewContent}
+              className="w-[70vw] h-[150vw] md:w-[65vw] lg:w-[50vw]"
             >
-              <p className="py-5">Rate the product :</p>
+              <p className="py-5 text-sm md:text-base">Rate the product :</p>
               <Rating
                 value={value}
                 onChange={(e) => setValue(e.value)}
                 cancel={false}
               />
 
-              <p className="py-5">Explain Your Rating :</p>
+              <p className="py-5 text-sm md:text-base">Explain Your Rating :</p>
               <Editor
                 value={text}
                 onTextChange={(e) => setText(e.htmlValue)}
                 headerTemplate={header}
-                style={{ height: "320px" }}
+                style={{ height: "255px" }}
               />
             </Dialog>
           </div>
