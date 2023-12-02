@@ -24,7 +24,7 @@ const CartProductDescription = () => {
           <p className="text-gray-600 text-sm lg:text-xl">{`$ ${productPrice}`}</p>
         </div>
 
-        <div className='flex'>
+        <div className="flex">
           {productColors.map((currentColor, index) => (
             <BtnGlobal
               key={index}
@@ -33,13 +33,6 @@ const CartProductDescription = () => {
               onClick={() => handleColorClick(currentColor)}
             />
           ))}
-
-          <span className='text-sm border-[0.5px] border-black p-1'>removable text{selectedColor}</span>
-        </div>
-
-        <div className='[&_p]:text-red-500 [&_h1]:text-6xl'>
-          <p>This is a test</p>
-          <h1>hehe</h1>
         </div>
 
         {/* <div className="flex flex-col items-start my-1 mt-auto">
