@@ -20,7 +20,7 @@ const MainProductDetail = () => {
   //create new review card
   const [reviews, setReviews] = useState([]);
     
-
+//the reviews don t get saved yet , will get back to it after configuring authentication
   const reviewContent = (
     <div>
       <BtnGlobal
