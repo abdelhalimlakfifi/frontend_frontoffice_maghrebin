@@ -1,18 +1,27 @@
 // FormLogin.jsx
 // ---------Should Use FormIk-----------
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../ReduxStateManagement/auth/authActions";
 import { Link } from "react-router-dom";
 import { InputSwitch } from "primereact/inputswitch";
 import InputField from "../GlobalComponents/InputField";
 import BtnGlobal from "../GlobalComponents/BtnGlobal";
 
 const FormLogin = () => {
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [checked, setChecked] = useState(false);
 
   const handleInputChange = (e, setter) => {
     setter(e.target.value);
+  };
+
+  const handleLogin = () => {
+    dispatch(login(email, password));
   };
 
   return (
@@ -46,7 +55,7 @@ const FormLogin = () => {
           </div>
         </div>
 
-        <BtnGlobal className="w-full border border-gray-500 p-2 mt-8" content="LOG IN" />
+        <BtnGlobal className="w-full border border-gray-500 p-2 mt-8" content="LOG IN" onClick={handleLogin} />
       </form>
     </div>
   );
