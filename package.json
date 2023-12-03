@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.6.2",
     "esbuild": "^0.19.5",
     "formik": "^2.4.5",
