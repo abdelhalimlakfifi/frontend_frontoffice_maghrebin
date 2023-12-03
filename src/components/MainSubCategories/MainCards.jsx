@@ -10,7 +10,7 @@ function MainCards() {
   return (
     <div className="w-full flex justify-center">
       <div className=" w-full max-w-7xl h-full">
-        <h1 className=" text-3xl font-medium flex justify-center font-NewYork text-blackV mt-11 mb-5 h-auto">
+        <h1 className="text-2xl md:text-3xl font-medium flex justify-center font-NewYork text-blackV mt-11 mb-5 h-auto">
           Explore Moroccan Traditions
         </h1>
         <div className="flex flex-col mb-11 h-full w-full  font-DIN ">
