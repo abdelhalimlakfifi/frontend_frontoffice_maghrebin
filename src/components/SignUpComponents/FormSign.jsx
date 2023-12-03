@@ -2,11 +2,17 @@
 import React, { useState, useRef } from "react";
 import { Toast } from "primereact/toast";
 import { Checkbox } from "primereact/checkbox";
+import { useDispatch, useSelector } from "react-redux";
+import { signupUser } from "../ReduxStateManagement/auth/authActions";
 import PassField from "../GlobalComponents/PassField";
 import InputField from "../GlobalComponents/InputField";
 import BtnGlobal from "../GlobalComponents/BtnGlobal";
 
 const FormSign = () => {
+  const dispatch = useDispatch();
+  const loading = useSelector((state) => state.user.loading);
+  const error = useSelector((state) => state.user.error);
+
   const [formFields, setFormFields] = useState({
     firstname: "",
     lastname: "",
@@ -71,15 +77,12 @@ const FormSign = () => {
       const data = await response.json();
 
       if (response.ok) {
-        showToast("success", "Success", data.message);
-        // Clear all fields on successful submission
-        setFormFields({
-          firstname: "",
-          lastname: "",
-          email: "",
-          password: "",
-          confirmPassword: "",
-        });
+        dispatch(signupUser({
+          first_name: firstname,
+          last_name: lastname,
+          email,
+          password,
+        }));
       } else {
         // Clear password field on error
         setFormFields({ ...formFields, password: "" });
@@ -174,8 +177,11 @@ const FormSign = () => {
           type="submit"
           className="w-full border border-gray-500 p-2 mt-4"
           content="CREATE ACCOUNT"
-          disabled={!checked}
+          disabled={!checked || loading} // Disable button during loading
         />
+        {loading && <p>Loading...</p>}
+
+{error && <p>Error: {error}</p>}
       </form>
       <Toast ref={toast} position="center" />
     </div>
