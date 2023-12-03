@@ -147,6 +147,8 @@ function NavBar({ updateMenuClick, menuClick }) {
           </span>
         </div>
       )}
+
+      {/* product cart sidebar */}
       <Sidebar
         visible={visibleRight}
         position="right"
