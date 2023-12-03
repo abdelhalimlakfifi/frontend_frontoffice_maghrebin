@@ -1,21 +1,12 @@
+// authActions.js
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const login = (email, password) => async (dispatch) => {
+export const login = createAsyncThunk("auth/login", async ({ email, password }) => {
   try {
-    // Make API request to login
-    const response = await axios.post("/api/login", { email, password});
-
-    // Dispatch success action
-    dispatch({
-      type: "LOGIN_SUCCESS",
-      payload: response.data, // You might want to store user data in the state
-    });
+    const response = await axios.post("/api/login", { email, password });
+    return response.data;
   } catch (error) {
-    // Dispatch error action
-    dispatch({
-      type: "LOGIN_FAILURE",
-      payload: error.message,
-    });
+    throw new Error(error.message);
   }
-};
-
+});
