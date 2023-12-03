@@ -75,6 +75,7 @@ const Card = ({ id, title, price, mainImg, secondaryImg }) => {
         />
         <BtnGlobal
           className=" w-1/2 lg:hidden lg:w-full border-2 border-blackV bg-blackV text-white text-base md:text-xl p-1 md:p-2 my-2 pi pi-heart rounded-sm"
+          onClick={addProductToStorage}
         />
         </div>
         
