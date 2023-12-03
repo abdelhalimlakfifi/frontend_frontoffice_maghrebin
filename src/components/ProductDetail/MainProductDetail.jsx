@@ -11,7 +11,7 @@ import { Editor } from "primereact/editor";
 const MainProductDetail = () => {
   //set Stars value of rating
   const [value, setValue] = useState(null);
-  //set revies demo visible
+  //set revise demo visible
   const [visible, setVisible] = useState(false);
   //Review Editor text
   const [text, setText] = useState(
@@ -65,11 +65,12 @@ const MainProductDetail = () => {
   const items = [{ label: "Women" }, { label: "Djelaba" }];
   return (
     // test data
-    <Layout>
-      <div className="mb-6 lg:px-20 px-12 mt-8">
+    <>
+      <div className="mb-6 mt-20 lg:mt-[5rem] lg:px-20 px-12 ">
         <BreadCrum items={items} />
       </div>
-      <section className="w-full lg:px-20 px-12 flex lg:flex-row lg:gap-12 flex-col justify-between lg:my-20  font-DIN">
+
+      <section className="px-10 md:px-12 flex font-DIN w-full flex-col justify-between lg:px-20 lg:flex-row lg:gap-12 lg:my-10">
         <Product
           title="Product Title"
           price="$00.00"
@@ -78,13 +79,17 @@ const MainProductDetail = () => {
         />
         <ProductImage />
       </section>
+
       {/* reviews section */}
-      <section className="p-11 w-full border-b-2  border-t-2 border-blackV  bg-userProfile">
-        <h1 className="font-NewYork flex justify-center text-4xl text-blackV">
+      <section className="lg:mt-20 p-5 md:p-8 lg:p-11 xl:p-11 w-full h-4/5 border-b-2  border-t-2 border-blackV  bg-userProfile">
+
+        <h1 className="uppercase -tracking-tighter font-NewYork flex justify-center text-4xl text-blackV">
           Reviews
         </h1>
+
         {/* //each customer review here */}
         <div className=" flex flex-col gap-9 my-5">
+          
         {reviews.map((review, index) => (
             <div key={index} className="flex flex-col justify-center bg-white  md:mx-16 lg:mx-36  xl:mx-72 p-5 gap-3 md:gap-5 border-2">
               <h2 className="text-sm md:text-base font-semibold">{review.name}</h2>
@@ -127,7 +132,7 @@ const MainProductDetail = () => {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 
