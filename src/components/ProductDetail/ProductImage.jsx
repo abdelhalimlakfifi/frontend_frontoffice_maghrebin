@@ -22,8 +22,8 @@ const ProductImage = () => {
   };
 
   return (
-    <div className="w-full lg:flex flex lg:order-2 h-[45rem]">
-      <div className="border-2 border-black  mr-3 ">
+    <div className="xs:w-full h-[20rem] md:w-full md:h-[40rem] lg:flex flex lg:order-2 lg:h-[45rem]">
+      <div className="border-2 border-blackV w-4/5 md:w-4/5 lg:w-4/5 mr-3 ">
         <img src={selectedImage} alt=""  className="mainImg w-full h-full object-cover"/>
       </div>
       <div className=''>
@@ -36,7 +36,7 @@ const ProductImage = () => {
         className="w-full h-full"
       >
         {imageSources.map((src, index) => (
-          <SwiperSlide key={index} className='border-2 border-black'>
+          <SwiperSlide key={index} className='border-2 border-blackV'>
             <img
               src={src}
               alt={`maghrebin-${index}`}
