@@ -37,7 +37,7 @@ const Card = ({ id, title, price, mainImg, secondaryImg }) => {
 
   return (
     <div
-      className="flex flex-col w-[8rem] md:w-[12rem] lg:w-[13rem] xl:w-[17rem]"
+      className="flex flex-col   lg:w-[13rem] xl:w-[17rem]"
     >
       <div className="relative" onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}>
@@ -49,10 +49,10 @@ const Card = ({ id, title, price, mainImg, secondaryImg }) => {
         />
         {isHovered && (
           <button
-            className="absolute p-3 lg:p-5 top-1 lg:top-3 right-1 lg:right-4 bg-white rounded-full h-3 lg:h-1 w-3 lg:w-1 flex justify-center items-center"
+            className="absolute p-5 top-3  right-4 bg-white rounded-full h-1 w-1 justify-center items-center hidden lg:flex"
             onClick={addProductToStorage}
           >
-            <i className="pi pi-heart text-blackV hover:text-pink-600 text-sm lg:text-lg  "></i>
+            <i className="pi pi-heart text-blackV hover:text-pink-600  text-lg "></i>
           </button>
         )}
       </div>
@@ -64,11 +64,22 @@ const Card = ({ id, title, price, mainImg, secondaryImg }) => {
         <BtnGlobal
           className="w-full border-2 border-blackV p-1 md:p-2 font-medium"
           content="View Details"
-        />
+        /> 
         <BtnGlobal
-          className="w-full border-2 border-blackV bg-blackV text-white font-medium p-1 md:p-2 my-2"
+          className="hidden lg:block lg:w-full border-2 border-blackV bg-blackV text-white font-medium p-2 my-2 "
           content="Add To Cart "
         />
+        <div className="flex justify-center gap-2 md:gap-5">
+        <BtnGlobal
+          className="lg:hidden w-1/2 border-2 border-blackV bg-blackV text-white text-base md:text-xl p-1 md:p-2 my-2 pi pi-shopping-bag rounded-sm"
+        />
+        <BtnGlobal
+          className=" w-1/2 lg:hidden lg:w-full border-2 border-blackV bg-blackV text-white text-base md:text-xl p-1 md:p-2 my-2 pi pi-heart rounded-sm"
+          onClick={addProductToStorage}
+        />
+        </div>
+        
+
       </div>
     </div>
   );

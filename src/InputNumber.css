@@ -1,12 +1,12 @@
 /* Default styles for all screen sizes */
 .p-inputnumber-button-down {
-  background: black;
+  background: rgb(87, 85, 85);
   border: black;
   height: 1.6rem;
 }
 
 .p-inputnumber-button-up {
-  background: black;
+  background: rgb(87, 85, 85);
   border: black;
   height: 1.6rem;
 }
@@ -31,10 +31,10 @@
 
 /* to disable violet focus */
 .p-inputtext:enabled:focus {
-  outline: 0 none;
-  outline-offset: 0;
-  box-shadow: none;
-  border-color: rgb(34, 34, 34);
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: none;
+    border-color: rgb(0, 0, 0);
 }
 
 .p-inputtext:enabled:hover {

@@ -20,14 +20,13 @@ const App = () => {
   return (
     <PrimeReactProvider>
      <Routes>
-        <Route path="/Login" element={<Login />} />
-        <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/sign-up" element={<SignUp />} />
 
         <Route path="/" element={<LandingPage />} />
 
         <Route path="/product" element={<ProductDetailPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
-        <Route path="/my-cart" element={<MyCartPage />} />
         <Route path="/size-guide" element={<SizeGuidePage />} />
         <Route path="/product-details" element={<MainProductDetail />} />
         <Route path="/user-profile" element={<UserProfile />} />
