@@ -30,6 +30,10 @@ function NavBar({ updateMenuClick, menuClick }) {
     updateMenuClick((menuClick) => !menuClick);
   };
 
+  const handleMyCartClick = () => {
+    setVisibleRight(!visibleRight)
+  }
+
   const links = [
     {
       path: "/",
@@ -112,7 +116,7 @@ function NavBar({ updateMenuClick, menuClick }) {
               src={cartIcon}
               alt="cartIcon"
               className="h-6 w-8 hidden lg:block"
-              onClick={() => setVisibleRight(true)}
+              onClick={handleMyCartClick}
             />
           </button>
 
@@ -146,7 +150,7 @@ function NavBar({ updateMenuClick, menuClick }) {
       <Sidebar
         visible={visibleRight}
         position="right"
-        onHide={() => setVisibleRight(false)}
+        onHide={handleMyCartClick}
         className="lg:w-[35vw] xl:w-[27vw]"
       >
         <MyCartPage/>
