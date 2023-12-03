@@ -5,7 +5,7 @@ import takchita from "../assets/ProductImages/jelaba/BeigeJellaba.jpg"
 
 const MyCartPage = () => {
   return (
-    <section className="flex lg:flex-col lg:w-[20rem]  ">
+    <section className="flex flex-col lg:w-[20rem]  ">
       {/* Cart Title */}
       <CartTitle />
 
