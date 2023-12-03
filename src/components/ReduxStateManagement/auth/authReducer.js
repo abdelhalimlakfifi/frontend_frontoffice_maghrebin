@@ -1,28 +1,25 @@
+import { createSlice } from "@reduxjs/toolkit";
+
 const initialState = {
-    user: null,
-    error: null,
-  };
-  
-  const authReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case "LOGIN_SUCCESS":
-        return {
-          ...state,
-          user: action.payload,
-          error: null,
-        };
-  
-      case "LOGIN_FAILURE":
-        return {
-          ...state,
-          user: null,
-          error: action.payload,
-        };
-  
-      default:
-        return state;
-    }
-  };
-  
-  export default authReducer;
-  
+  user: null,
+  error: null,
+};
+
+const authSlice = createSlice({
+  name: "auth",
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(login.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.error = null;
+      })
+      .addCase(login.rejected, (state, action) => {
+        state.user = null;
+        state.error = action.error.message;
+      });
+  },
+});
+
+export default authSlice.reducer;
