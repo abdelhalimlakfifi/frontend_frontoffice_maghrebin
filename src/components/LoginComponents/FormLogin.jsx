@@ -2,7 +2,7 @@
 // ---------Should Use FormIk-----------
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../ReduxStateManagement/auth/authActions";
+import { loginUser } from "../ReduxStateManagement/auth/authActions";
 import { Link } from "react-router-dom";
 import { InputSwitch } from "primereact/inputswitch";
 import InputField from "../GlobalComponents/InputField";
@@ -21,7 +21,7 @@ const FormLogin = () => {
   };
 
   const handleLogin = () => {
-    dispatch(login(email, password));
+    dispatch(loginUser(email, password));
   };
 
   return (
