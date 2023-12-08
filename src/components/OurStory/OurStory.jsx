@@ -4,7 +4,7 @@ import FullLogo from "../../assets/FullLogo.svg";
 
 function OurStory() {
   return (
-    <div className="w-full h-[70rem]  md:h-[64rem] lg:h-[50rem]  xl:h-[54rem] flex items-center ">
+    <div className="w-full xsm:h-[85rem]  sm:h-[80rem]  md:h-[64rem] lg:h-[50rem]  xl:h-[54rem] flex items-center xsm:-mb-44 md:-mb-32 lg:-mb-24">
       <div className="w-full h-3/4 border-t-2 border-b-2 border-blackV relative flex justify-center items-center">
       
         <img src={FullLogo} alt="Maghrebin" className="bg-white w-48 px-5 absolute -top-5   md:left-72 lg:left-14 xl:left-40 flex justify-center" />
@@ -29,7 +29,7 @@ function OurStory() {
                 experience the elegance and beauty of traditional Moroccan
                 fashion.
               </p>
-              {/* <p className="mt-4 md:mt-5 lg:mt-9 xl:mt-9 text-justify">
+              <p className="f-4 md:mt-5 lg:mt-9 xl:mt-9 text-justify">
                 We understand the value of traditional craftsmanship and the
                 importance of sustaining local communities. That's why we
                 collaborate with talented artisans, known as <b>Maalam</b> who pour
@@ -37,7 +37,7 @@ function OurStory() {
                 choosing <b>Maghrebin</b>, you not only embrace the splendor of
                 Moroccan fashion but also contribute to the preservation of this
                 remarkable heritage.
-              </p> */}
+              </p>
               
             </div>
           </div>
