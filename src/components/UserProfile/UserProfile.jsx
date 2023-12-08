@@ -4,13 +4,11 @@ import Layout from '../Layout/Layout';
 import InputField from '../GlobalComponents/InputField';
 import BtnGlobal from '../GlobalComponents/BtnGlobal';
 import arrowIcon from '../../assets/icons/arrowIcon.svg';
-import { updateProfile } from '../ReduxStateManagement/userProfile/userProfileActions';
 
 
 export default function UserProfile() {
   const dispatch = useDispatch();
-  const loading = useSelector((state) => state.userProfile.loading);
-  const error = useSelector((state) => state.userProfile.error);
+ 
 
   const [selectedFile, setSelectedFile] = useState(null);
   const fileInputRef = useRef(null);
