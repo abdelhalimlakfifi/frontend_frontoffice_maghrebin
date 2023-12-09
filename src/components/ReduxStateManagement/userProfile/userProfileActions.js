@@ -33,7 +33,9 @@ const userProfileSlice = createSlice({
     loading: false,
     error: null,
   },
-  reducers: {},
+  reducers: {
+
+  },
   extraReducers: (builder) => {
     builder
     .addCase(updatePassword.pending, (state) => {

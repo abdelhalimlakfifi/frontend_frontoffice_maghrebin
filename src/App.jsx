@@ -14,6 +14,7 @@ import UserProfile from "./components/UserProfile/UserProfile";
 import WishListPage from "./Pages/WishListPage";
 import WomenCategory from "./Pages/WomenCategory";
 import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
+import ActiveAccountCustomer from "./Pages/ActiveAccountCustomer";
 
 
 const App = () => {
@@ -32,6 +33,8 @@ const App = () => {
         <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/women-products" element={<WomenCategory />} />
         <Route path="/wish-list" element={<WishListPage />} />
+        <Route path="/activateAccount" element={<ActiveAccountCustomer />} />
+
       </Routes>
     </PrimeReactProvider>
   );
