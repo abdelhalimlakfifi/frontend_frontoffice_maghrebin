@@ -28,7 +28,7 @@ export async function post(
   url,
   token = null,
   data = null,
-  unauthorizedCallback
+  unauthorizedCallback = null
 ) {
   try {
     const response = await axios.post(url, data, {
@@ -41,6 +41,8 @@ export async function post(
 
     return response.data;
   } catch (error) {
+    console.error("Error in get request:", error);
+
     if (error?.response?.status === 401) {
       unauthorizedCallback();
     }

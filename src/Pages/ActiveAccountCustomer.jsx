@@ -6,7 +6,6 @@ const ActiveAccountCustomer = () => {
   const navigate = useNavigate();
   const queryParameters = new URLSearchParams(window.location.search);
   const token = queryParameters.get("token");
-  console.log("token ", token);
   const unauthorizedCallback = () => {
     alert("Unauthorized access! Redirecting to login.");
     navigate("/login");
@@ -19,7 +18,6 @@ const ActiveAccountCustomer = () => {
       unauthorizedCallback
     )
       .then(() => {
-        console.log("Activate Account succeeded ");
         navigate("/");
       })
       .catch((err) => {
