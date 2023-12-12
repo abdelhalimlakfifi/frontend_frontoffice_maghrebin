@@ -30,6 +30,7 @@ const MainProductDetail = () => {
   const [ShortDescription, setShortDescription] = useState("");
   const [sizes, setSizes] = useState([]);
   const [colors, setColors] = useState([]);
+  const [idProduct, setIdProduct] = useState("");
   const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
@@ -43,6 +44,7 @@ const MainProductDetail = () => {
         const filterArray = (array, condition) => {
           return array.filter(condition);
         };
+        setIdProduct(data._id);
 
         // Usage
         const imagesWithPathAndColor = filterArray(
@@ -162,11 +164,13 @@ const MainProductDetail = () => {
       </div>
       <section className="w-full lg:px-20 px-12 flex lg:flex-row lg:gap-12 flex-col justify-between lg:my-20  font-DIN">
         <Product
+          idProduct={idProduct}
           title={Titre}
           price={Price}
           description={ShortDescription}
           color={colors}
           size={sizes}
+          selectedImage={filteredImages}
         />
         <ProductImage selectedImage={filteredImages} />
       </section>

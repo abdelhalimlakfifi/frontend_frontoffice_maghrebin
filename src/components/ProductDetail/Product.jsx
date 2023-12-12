@@ -1,7 +1,10 @@
 import React from "react";
 import BtnGlobal from "../GlobalComponents/BtnGlobal";
+import { Link } from "react-router-dom";
 
-const Product = ({ title, price, description, color, size }) => {
+const Product = (Props) => {
+  const { idProduct, title, price, description, color, size, selectedImage } =
+    Props;
   // let colors = [];
 
   // // If multiple colors are provided, split them and create color circles for each
@@ -27,7 +30,8 @@ const Product = ({ title, price, description, color, size }) => {
 
   // const productColors = ["White", "Blue", "beige", "Violet"]
   const productColors = color;
-
+  const additional = { selectedImage, title, price, idProduct };
+  console.log("additional ", additional);
   return (
     <div className="w-full  order-2 lg:order-1 flex flex-col justify-between">
       <h2 className=" text-3xl font-bold text-blackV my-8 ">{title}</h2>
@@ -63,11 +67,15 @@ const Product = ({ title, price, description, color, size }) => {
           ))}
         </select>
       </div>
+      {/* const additionalData = location.stat e; */}
 
-      <BtnGlobal
-        className="w-full border border-black-border p-3 mt-28  font-semibold text-lg uppercase"
-        content=" Add to cart"
-      />
+      <Link to={"/checkout"} state={additional}>
+        <BtnGlobal
+          className="w-full border border-black-border p-3 mt-28 font-semibold text-lg uppercase"
+          content="Add to cart"
+          to="/Checkout"
+        />
+      </Link>
     </div>
   );
 };
