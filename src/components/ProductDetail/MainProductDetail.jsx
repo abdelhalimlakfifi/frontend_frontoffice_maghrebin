@@ -30,6 +30,7 @@ const MainProductDetail = () => {
   const [ShortDescription, setShortDescription] = useState("");
   const [sizes, setSizes] = useState([]);
   const [colors, setColors] = useState([]);
+  const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
     axios
@@ -46,7 +47,7 @@ const MainProductDetail = () => {
         // Usage
         const imagesWithPathAndColor = filterArray(
           data.images,
-          (image) => image.image_id && image.image_id.path
+          (image) => image.image_id.path
         );
         setFilteredImages(imagesWithPathAndColor);
 
@@ -73,20 +74,23 @@ const MainProductDetail = () => {
 
         const extractedColorNames = data.colors.map((color) => color.name);
         setColors(extractedColorNames);
+        setLoading(false);
       })
       .catch((error) => {
+        setLoading(false); // Update loading state in case of an error
+
         console.error("error", error);
       });
   }, []);
-  useEffect(() => {
-    // console.log("Categories:", categories);
-    // console.log("Subcategories:", subcategories);
-    console.log("Filtered Images:", filteredImages[0].image_id.path);
-    // console.log("Types:", types);
-    // console.log("Titre:", Titre);
-    // console.log("Sizes:", sizes);
-    // console.log("Colors:", colors);
-  }, [categories, subcategories, filteredImages, types, Titre, sizes, colors]);
+  // useEffect(() => {
+  //   // console.log("Categories:", categories);
+  //   // console.log("Subcategories:", subcategories);
+  //   console.log("Filtered Images:", filteredImages[0].image_id.path);
+  //   // console.log("Types:", types);
+  //   // console.log("Titre:", Titre);
+  //   // console.log("Sizes:", sizes);
+  //   // console.log("Colors:", colors);
+  // }, [categories, subcategories, filteredImages, types, Titre, sizes, colors]);
   //set Stars value of rating
   const [value, setValue] = useState(null);
   //set revies demo visible
@@ -146,6 +150,10 @@ const MainProductDetail = () => {
     { label: Titre },
   ];
   // const items =
+  // Render loading state
+  if (loading) {
+    return <p>Loading...</p>; // You can customize the loading UI
+  }
   return (
     // test data
     <Layout>

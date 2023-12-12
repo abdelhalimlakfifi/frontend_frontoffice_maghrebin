@@ -25,7 +25,8 @@ const imageSources = [
   Takchita,
 ];
 
-const ProductImage = ({ selectedImage }) => {
+const ProductImage = (Props) => {
+  const { selectedImage } = Props;
   const [SelectedImagePrimaire, setSelectedImagePrimaire] = useState(
     "http://localhost:3000/api/" + selectedImage[0].image_id.path
   ); // Set the initial selected image
