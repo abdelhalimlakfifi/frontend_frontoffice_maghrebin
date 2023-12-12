@@ -19,6 +19,7 @@ import amerlad_black2 from "../../../../assets/ProductImages/Men/amerlad_black2.
 import amerlad_black from "../../../../assets/ProductImages/Men/amerlad_black.avif"
 
 
+import zelija from '../../../../assets/Zelija.svg';
 
 
 
@@ -64,6 +65,11 @@ const MenCards = () => {
         {cardData.map((card, index) => (
           <Card key={index} {...card} />
         ))}
+        <img
+        src={zelija}
+        alt="zelija"
+        className="xl:right-[85.9rem] xl:top-[95.8rem] lg:h-[8rem] lg:top-[53.9rem] lg:right-[180px] h-40 absolute top-[400px] right-[165px] -z-10 opacity-20 "
+      />
       </section>
       </div>
     </>
