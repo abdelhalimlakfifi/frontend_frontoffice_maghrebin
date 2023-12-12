@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <>
-      <section className="mx-12 my-6 flex flex-col lg:flex-row justify-between items-center lg:mx-44 bg-white">
+      <section className="mx-12 my-6 flex flex-col lg:flex-row justify-between items-center lg:mx-44">
         {/* Stay in touch Section */}
         <div className=" lg:order-2">
           <div>
