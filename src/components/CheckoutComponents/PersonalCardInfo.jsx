@@ -44,7 +44,7 @@ const PersonalCardInfo = props => {
 
           {/* CARD INFORMATION */}
 
-        <div className="w-full md:border-0 border-b border-blackV my-6">
+        {/* <div className="w-full md:border-0 border-b border-blackV my-6">
           <h2 className="pb-1 md:border-b-[2px] border-blackV inline-block font-medium text-lg pr-4">CARD INFORMATION</h2>
         </div>
 
@@ -60,7 +60,7 @@ const PersonalCardInfo = props => {
         <div className="flex items-center flex-row-reverse md:flex-row mt-4 gap-2.5 md:gap-1">
           <Checkbox className="mr-2 h-5 w-5 text-indigo-600" onChange={e => setChecked(e.checked)} checked={checked}></Checkbox>
           <p className="underline">SAVE CARD INFO FOR NEXT PURCHASE</p>
-        </div>
+        </div> */}
         
       </div>
     </div>
