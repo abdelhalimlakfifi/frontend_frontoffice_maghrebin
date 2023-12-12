@@ -18,13 +18,15 @@ export default {
       'md' : '768px',
       'lg' : '1024px',
       'xl' : '1440px',
+      '2xl' : '1700px'
     },
     extend: {
       textUnderlineOffset: {
         3: '3px',
       },
       backgroundImage: {
-        "userProfile": "url(src/assets/MoroccanTexture-01.svg)"
+        "userProfile": "url(src/assets/MoroccanTexture-01.svg)",
+        "footer" : "url(src/assets/MoroccanTexture-Footer-01.svg)"
       },
 
       colors: {
