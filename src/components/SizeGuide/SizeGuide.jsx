@@ -34,8 +34,8 @@ export default function SizeGuide() {
               </li>
             ))}
           </ul>
-          <div className="h-10/12 w-10/12 lg:flex lg:items-center md:mt-20 md:mb-26 md:h-10/12 md:w-10/12 lg:w-[60%] lg:h-[550px] order-1 lg:order-2 mx-auto mt-52 my-5 lg:mt-0 lg:mb-0">
-            <img src="https://images.unsplash.com/photo-1610359028422-e5a6fa73cf91?q=80&w=3430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          <div className="h-10/12 w-10/12 lg:flex lg:items-center md:mt-20 md:mb-26 md:h-10/12 md:w-10/12 lg:w-[60%] lg:h-[550px] xl:w-[60%] xl:h-[550px] order-1 lg:order-2 mx-auto mt-52 my-5 lg:mt-0 lg:mb-0">
+            <img src="https://images.pexels.com/photos/4620607/pexels-photo-4620607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
             {/* <img src={zelijaLeft} className='hidden h-20 absolute lg:block lg:top-[365px] lg:left-[855px]'></img> */}
             {/* <img src={zelijaRight} className='hidden h-20 absolute lg:block lg:top-[805px] lg:left-[1474px]'></img> */}
           </div>
