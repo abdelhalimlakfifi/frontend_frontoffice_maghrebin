@@ -133,7 +133,7 @@ const FormSign = () => {
         <div className="flex justify-center">
           <PassField
             placeholder="Password"
-            className="border-b border-solid border-gray-500 w-8/12 sm:w-full mb-6"
+            className="border-b border-solid border-gray-500 w-8/12 sm:w-full mb-6 xs:w-10/12"
             value={formFields.password}
             onChange={e => handleInputChange(e, 'password')}
           />
@@ -141,7 +141,7 @@ const FormSign = () => {
         <div className="flex justify-center">
           <PassField
             placeholder="Confirm Password"
-            className="border-b border-solid border-gray-500 w-8/12 sm:w-full mb-6"
+            className="border-b border-solid border-gray-500 w-8/12 sm:w-full mb-6 xs:w-10/12"
             value={formFields.confirmPassword}
             onChange={e => handleInputChange(e, 'confirmPassword')}
           />
@@ -151,14 +151,14 @@ const FormSign = () => {
             <Checkbox className="mr-2 h-5 w-5 text-indigo-600" onChange={e => setChecked(e.checked)} checked={checked} />
           </div>
 
-          <label htmlFor="acceptTerms" className="border-none text-sm text-center w-auto">
+          <label htmlFor="acceptTerms" className="border-none text-sm xsm:text-[12px] text-center w-auto">
             I accept the terms and conditions
           </label>
         </div>
         <div className="flex justify-center">
           <BtnGlobal
             type="submit"
-            className="w-full xsm:w-8/12  border border-gray-500 p-2 mt-4"
+            className="w-full xsm:w-8/12 xs:w-10/12 sm:w-full border border-gray-500 p-2 mt-4 bg-blackA text-white"
             content="CREATE ACCOUNT"
             disabled={!checked}
           />
