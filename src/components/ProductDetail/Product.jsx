@@ -1,7 +1,7 @@
 import React from "react";
 import BtnGlobal from "../GlobalComponents/BtnGlobal";
 
-const Product = ({ title, price, description, color }) => {
+const Product = ({ title, price, description, color, size }) => {
   // let colors = [];
 
   // // If multiple colors are provided, split them and create color circles for each
@@ -25,45 +25,50 @@ const Product = ({ title, price, description, color }) => {
   //   );
   // }
 
-  const productColors = ["White", "Blue", "beige", "Violet"]
+  // const productColors = ["White", "Blue", "beige", "Violet"]
+  const productColors = color;
 
   return (
-      <div className="w-full  order-2 lg:order-1 flex flex-col justify-between">
-        <h2 className=" text-3xl font-bold text-blackV my-8 ">{title}</h2>
-        <p className=" text-lg font-medium text-gray-600 mb-8">{price}</p>
-        <p className=" text-base mt-2 mb-8">{description}</p>
-        <div className="text-base mb-8 flex items-center">
-
+    <div className="w-full  order-2 lg:order-1 flex flex-col justify-between">
+      <h2 className=" text-3xl font-bold text-blackV my-8 ">{title}</h2>
+      <p className=" text-lg font-medium text-gray-600 mb-8">{price}</p>
+      <p className=" text-base mt-2 mb-8">{description}</p>
+      <div className="text-base mb-8 flex items-center">
         {productColors.map((currentColor, index) => (
-        <BtnGlobal
-          key={index}
-          className="mr-2 text-sm border-[0.5px] border-black p-3 "
-          content={currentColor}
-        />
-      ))}
+          <BtnGlobal
+            key={index}
+            className="mr-2 text-sm border-[0.5px] border-black p-3 "
+            content={currentColor}
+          />
+        ))}
       </div>
 
-        <div className="flex items-center mt-2 mb-8">
-          <label htmlFor="sizeInput" className="mr-8 text-base font-medium">
-            SIZE:
-          </label>
-          <select
-            id="sizeInput"
-            className="border-b border-gray-400 cursor-pointer"
-          >
-            <option value="XXL">XXL</option>
-            <option value="XL">XL</option>
-            <option value="L">L</option>
-            <option value="M">M</option>
-            <option value="S">S</option>
-          </select>
-        </div>
-
-        <BtnGlobal
-          className="w-full border border-black-border p-3 mt-28  font-semibold text-lg uppercase"
-          content=" Add to cart"
-        />
+      <div className="flex items-center mt-2 mb-8">
+        <label htmlFor="sizeInput" className="mr-8 text-base font-medium">
+          SIZE:
+        </label>
+        <select
+          id="sizeInput"
+          className="border-b border-gray-400 cursor-pointer"
+        >
+          {/* <option value="XXL">XXL</option>
+          <option value="XL">XL</option>
+          <option value="L">L</option>
+          <option value="M">M</option>
+          <option value="S">S</option> */}
+          {size.map((s) => (
+            <option key={s.id} value={s.name}>
+              {s.name}
+            </option>
+          ))}
+        </select>
       </div>
+
+      <BtnGlobal
+        className="w-full border border-black-border p-3 mt-28  font-semibold text-lg uppercase"
+        content=" Add to cart"
+      />
+    </div>
   );
 };
 

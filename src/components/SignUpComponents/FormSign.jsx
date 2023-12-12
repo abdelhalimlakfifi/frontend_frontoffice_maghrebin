@@ -54,43 +54,30 @@ const FormSign = () => {
       return;
     }
 
-    try {
-      const response = await post(
-        `http://localhost:3000/api/customer/customer`,
-        null,
-        {
-          first_name: firstname,
-          last_name: lastname,
-          email,
-          password,
-        }
-      );
-
-      if (response.ok) {
+    const response = await post(
+      `http://localhost:3000/api/customer/customer`,
+      null,
+      {
+        first_name: firstname,
+        last_name: lastname,
+        email,
+        password,
+      }
+    )
+      .then(() => {
         showToast(
           "success",
           "Success",
           "Successfully registered!, An email has been sent for account activation."
         );
-      } else {
-        console.log("response.message ", response.errors);
-        // Clear password field on error
-        // setFormFields({ ...formFields, password: "" });
-        console.log(
-          "response.response.data.errors ",
-          response.response.data.errors
-        );
-        // response.response.data.errors.map((err) => {
-        //   showToast("error", err.attribute, err.error);
-        // });
-        // showToast("error", "Error", response.message);
-      }
-    } catch (error) {
-      console.log("error ", error);
-      // Clear password field on error
-      // setFormFields({ ...formFields, password: "" });
-      showToast("error", "Error", "Failed to make the request");
-    }
+      })
+      .catch((err) => {
+        console.log("error ", err);
+        response.errors.map((err) => {
+          showToast("error", err.field, err.message);
+        });
+      });
+
     // } finally {
     //   // Clear sensitive data after the form submission (optional)
     //   // setFormFields({ ...formFields, password: "" });

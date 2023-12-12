@@ -2,13 +2,13 @@
 // ---------Should Use FormIk-----------
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../ReduxStateManagement/auth/authActions";
 import { Link, useNavigate } from "react-router-dom";
 import { InputSwitch } from "primereact/inputswitch";
 import InputField from "../GlobalComponents/InputField";
 import BtnGlobal from "../GlobalComponents/BtnGlobal";
 import { useRef } from "react";
 import { Toast } from "primereact/toast";
+import { loginUser } from "../../ReduxStateManagement/auth/authActions";
 
 const FormLogin = () => {
   const dispatch = useDispatch();

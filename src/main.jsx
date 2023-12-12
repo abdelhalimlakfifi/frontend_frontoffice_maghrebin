@@ -9,7 +9,7 @@ import "primeicons/primeicons.css";
 //theme primereact
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import { Provider } from "react-redux";
-import store from './components/ReduxStateManagement/store';
+import store from "./ReduxStateManagement/store.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
