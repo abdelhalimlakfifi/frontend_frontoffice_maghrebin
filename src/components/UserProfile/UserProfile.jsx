@@ -124,7 +124,7 @@ export default function UserProfile() {
         </div>
 
         {/* Change Picture Section */}
-        <div className="h-96 w-4/12 flex justify-center items-center flex-col mb-10 md:mb-0 order-1 lg:order-2">
+        <div className="h-96 w-4/12 flex justify-center items-center flex-col md:mb-0 order-1 lg:order-2">
           <div className="uppercase text-2xl h-56 w-56 text-black mb-4" onClick={handleImageClick}>
             <img
               // src={selectedFile ? URL.createObjectURL(selectedFile) : 'your-image.jpg'}

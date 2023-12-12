@@ -13,11 +13,11 @@ export default function SizeGuide() {
     <section className="w-full flex justify-center">
       <div className="w-[80%]">
         {/* Upper Section... */}
-        <div className="h-[100px] lg:h-[290px] py-14">
+        <div className="h-[200px] lg:h-[290px] py-14">
           <h1 className="uppercase main-black text-2xl md:text-3xl lg:text-4xl font-semibold">SIZE GUIDE</h1>
           <h1 className="uppercase main-black md:text-xl lg:text-2xl font-semibold">Take your measurements carefully!</h1>
 
-          <div className="main-black text-left text-sm md:text-base mt-6 mx-5 lg:mx-10 lg:px-12 lg:uppercase">
+          <div className="main-black text-left text-sm md:text-base m-6 mx-5 lg:mx-10 lg:px-12 lg:uppercase">
             For accurate sizing, follow these steps: Position the tape measure as close to your body as possible, without applying pressure.
             Take measurements over lightweight clothing, like underwear, while standing straight and relaxed. If you want more precise
             measurements, consider enlisting the help of a third party.
@@ -30,23 +30,25 @@ export default function SizeGuide() {
             {heightSections.map((section, index) => (
               <li key={index} className="mb-6">
                 <h1 className="font-semibold text-xl lg:px-12">{section.title}</h1>
-                <p className="font-regular text-sm md:text-base md:tex lg:px-12 ml-10 w-[70%]">{section.content}</p>
+                <p className="font-regular text-sm md:text-base lg:px-12 ml-10 w-[70%]">{section.content}</p>
               </li>
             ))}
           </ul>
-          <div className="h-10/12 w-10/12 lg:flex lg:items-center md:mt-26 md:mb-26 md:h-10/12 md:w-10/12 lg:w-[60%] lg:h-[550px] order-1 lg:order-2 mx-auto mt-52 mb-5 lg:mt-0 lg:mb-0">
-            <img src={zelijaLeft} className='hidden h-20 absolute lg:block lg:top-[365px] lg:left-[855px]'></img>
-            <img src="https://images.unsplash.com/photo-1610359028422-e5a6fa73cf91?q=80&w=3430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-            <img src={zelijaRight} className='hidden h-20 absolute lg:block lg:top-[805px] lg:left-[1474px]'></img>
+          <div className="h-10/12 w-10/12 lg:flex lg:items-center md:mt-20 md:mb-26 md:h-10/12 md:w-10/12 lg:w-[60%] lg:h-[550px] xl:w-[60%] xl:h-[550px] order-1 lg:order-2 mx-auto mt-52 my-5 lg:mt-0 lg:mb-0">
+            <img src="https://images.pexels.com/photos/4620607/pexels-photo-4620607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+            {/* <img src={zelijaLeft} className='hidden h-20 absolute lg:block lg:top-[365px] lg:left-[855px]'></img> */}
+            {/* <img src={zelijaRight} className='hidden h-20 absolute lg:block lg:top-[805px] lg:left-[1474px]'></img> */}
           </div>
         </div>
         
 
         {/* Pre table section */}
-        <section className="mt-32 md:my-8 md:14 lg:my-0">
+        <section className="mt-[14rem] md:my-8 md:14 lg:my-0">
+
           <h1 className="mt-8 md:my-8 mb-2 bg-black text-white text-center lg:bg-transparent lg:text-black lg:text-start lg:mb-8 uppercase font-semibold text-xl">
             Special lengths for women
           </h1>
+
           {/* Desktop View */}
           <div className="hidden md:flex lg:flex justify-around mb-8">
             {womenSpecialLengths.flatMap((item, index) => [
@@ -65,7 +67,7 @@ export default function SizeGuide() {
             {/* <LogoSlider className=" absolute"/> */}
 
           {/* Mobile view */}
-          <div className="flex flex-col mb-6 md:hidden lg:hidden uppercase">
+          <div className="flex flex-col mb-6 mt-10 md:hidden lg:hidden uppercase">
 
             {/*  */}
             <div>

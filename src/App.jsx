@@ -19,7 +19,7 @@ import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 const App = () => {
   return (
     <PrimeReactProvider>
-     <Routes>
+    <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
 

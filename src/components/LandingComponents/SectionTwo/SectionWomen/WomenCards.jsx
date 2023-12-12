@@ -15,6 +15,8 @@ import JellabaBlue from "../../../../assets/ProductImages/jelaba/jellabablue.web
 import JellabaBlue2 from "../../../../assets/ProductImages/jelaba/jellabablue2.webp"
 
 
+import zelija from '../../../../assets/Zelija.svg';
+
 import { Card } from "../../../GlobalComponents/ProductCard";
 
 const WomenCards = () => {
@@ -38,7 +40,7 @@ const WomenCards = () => {
         }}
         modules={[FreeMode, Pagination]}
         className="lg:hidden"
-   
+
       >
         <section className="">
           {cardData.map((card, index) => (
@@ -53,10 +55,15 @@ const WomenCards = () => {
       
       {/* Show in Web without swiper */}
       <div className="hidden lg:block">
-      <section className="flex flex-row flex-wrap justify-center gap-9 py-4">
+      <section className="flex flex-row flex-wrap justify-center gap-9 py-4" >
         {cardData.map((card, index) => (
           <Card key={index} {...card} />
         ))}
+        <img
+        src={zelija}
+        alt="zelija"
+        className="2xl:right-[5.2rem] xl:right-[11.2rem] xl:top-[53.9rem] lg:h-[8rem] lg:top-[53.9rem] lg:right-[3.8rem] h-40 absolute top-[400px] right-[165px] -z-10 opacity-20 "
+      />
       </section>
       </div>
     </>
@@ -64,3 +71,5 @@ const WomenCards = () => {
 };
 
 export default WomenCards;
+
+

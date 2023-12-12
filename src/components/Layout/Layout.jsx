@@ -6,6 +6,8 @@ import Footer from "./Footer";
 import MobileMenu from "./MobileMenu";
 import MyCartPage from "../../Pages/MyCartPage";
 
+// import footerBG from '../../assets/MoroccanTexture-Footer-01.svg'
+
 
 const iconLinks = [
   { path: "/", icon: "/src/assets/Icons/HomeIcon.svg", alt: "HomeIcon" },
@@ -51,7 +53,7 @@ function Layout({ children }) {
           {/* call all child components */}
           <div className="w-full  mt-14">{children}</div>
 
-          <div className="w-full h-auto mt-auto hidden sm:block border-blackV border-t ">
+          <div className="hidden w-full h-auto mt-auto lg:block border-blackV border-t bg-footer">
             <Footer />
           </div>
 

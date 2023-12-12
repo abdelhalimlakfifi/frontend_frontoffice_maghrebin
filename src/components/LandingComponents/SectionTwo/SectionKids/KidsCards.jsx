@@ -8,6 +8,8 @@ import { FreeMode, Pagination } from "swiper/modules";
 import BoyKid1 from "../../../../assets/BoyKid1.jpeg";
 import BoyKid2 from "../../../../assets/BoyKid1.jpeg";
 
+import zelija from '../../../../assets/Zelija.svg';
+
 import { Card } from "../../../GlobalComponents/ProductCard";
 
 const MenCards = () => {
@@ -51,6 +53,11 @@ const MenCards = () => {
       {cardData.map((card, index) => (
         <Card key={index} {...card} />
       ))}
+      <img
+        src={zelija}
+        alt="zelija"
+        className="xl:right-[11.2rem] xl:top-[139.4rem] lg:h-[8rem] lg:top-[53.9rem] lg:right-[180px] h-40 absolute top-[400px] right-[165px] -z-10 opacity-20 "
+      />
     </section>
     </div>
   </>
