@@ -1,14 +1,12 @@
 import React from "react";
-import TrailerMaghrebin from "../../../assets/MoroccoArise.mp4"
+import TrailerMaghrebin from '../../../assets/TrailerMaghrebin.mp4';
+import ReactPlayer from 'react-player';
+
 
 const Video = () => {
   return (
     <section className="hidden w-full border-t-2 border-b-2 border-black md:flex justify-center items-center h-auto  ">
-      <video controls className="w-full" >
-        <source src={TrailerMaghrebin} type="video/mp4" />
-        Sorry, your browser doesn't support videos.
-      </video>
-
+      <ReactPlayer url={TrailerMaghrebin} playing loop muted width="100%" height="100%" />
     </section>
   );
 };
