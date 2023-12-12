@@ -16,6 +16,7 @@ const FilterBar = ({
 
   const sliderChange = (e) => {
     
+    
     if(e.value[1] - e.value[0] >= 10)
     {
       setValue(e.value)
