@@ -14,7 +14,7 @@ import BeigeJellaba from "../assets/ProductImages/jelaba/beigeJellaba.webp";
 import JellabaBlue from "../assets/ProductImages/jelaba/jellabablue.webp";
 import JellabaBlue2 from "../assets/ProductImages/jelaba/jellabablue2.webp";
 
-function WomenCategory() {
+function ProductsByType() {
   const colorTypes = [
     "bg-[#fff]",
     "bg-red-900",
@@ -227,4 +227,4 @@ function WomenCategory() {
   );
 }
 
-export default WomenCategory;
+export default ProductsByType;

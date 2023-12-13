@@ -12,7 +12,8 @@ import SizeGuidePage from "./Pages/SizeGuidePage";
 import MainProductDetail from "./components/ProductDetail/MainProductDetail";
 import UserProfile from "./components/UserProfile/UserProfile";
 import WishListPage from "./Pages/WishListPage";
-import WomenCategory from "./Pages/WomenCategory";
+import ProductList from "./Pages/ProductList";
+import ProductsByType from "./Pages/ProductsByType";
 import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 import ActiveAccountCustomer from "./Pages/ActiveAccountCustomer";
 
@@ -31,7 +32,8 @@ const App = () => {
         <Route path="/size-guide" element={<SizeGuidePage />} />
         <Route path="/product-details" element={<MainProductDetail />} />
         <Route path="/user-profile" element={<UserProfile />} />
-        <Route path="/women-products" element={<WomenCategory />} />
+        <Route path="/products-by-type" element={<ProductsByType />} />
+        <Route path="/products" element={<ProductList />} />
         <Route path="/wish-list" element={<WishListPage />} />
         <Route path="/activateAccount" element={<ActiveAccountCustomer />} />
 
