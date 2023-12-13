@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Layout from '../Layout/Layout';
 import InputField from '../GlobalComponents/InputField';
 import BtnGlobal from '../GlobalComponents/BtnGlobal';
@@ -6,6 +7,9 @@ import arrowIcon from '../../assets/icons/arrowIcon.svg';
 
 
 export default function UserProfile() {
+  const dispatch = useDispatch();
+ 
+
   const [selectedFile, setSelectedFile] = useState(null);
   const fileInputRef = useRef(null);
   const [isPersonalInfoUnlocked, setIsPersonalInfoUnlocked] = useState(false);
@@ -42,6 +46,12 @@ export default function UserProfile() {
     { label: '', placeholder: 'New Password' },
     { label: '', placeholder: 'Password Confirmation' },
   ];
+
+  const handleSavePassword = async () => {
+    // Dispatch the updatePassword action
+    dispatch(updatePassword({ currentPassword, newPassword }));
+  };
+
 
   return (
     <Layout>
@@ -116,6 +126,7 @@ export default function UserProfile() {
               <div className="flex justify-end pr-[2.6rem]">
                 <BtnGlobal
                   content="Save Password"
+                  onClick={handleSavePassword}
                   className="uppercase font-bold tracking-wider border px-5 py-2 bg-blackV hover:bg-black hover:bg-opacity-90 hover:border-white text-white"
                 />
               </div>

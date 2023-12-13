@@ -1,7 +1,32 @@
 import React from "react";
-import BtnGlobal from '../GlobalComponents/BtnGlobal';
+import BtnGlobal from "../GlobalComponents/BtnGlobal";
 
-const Review = ({ imagePath, productTitle, productPrice, shippingCost, totalPrice }) => {
+const Review = (Props) => {
+  const { imagePath, productTitle, productPrice, shippingCost, totalPrice } =
+    Props;
+    
+  // useEffect(() => {
+  //   post("http://localhost:3000/api/order/order", token, {
+  //     city,
+  //     address,
+  //     postalCode,
+  //     order_items: [
+  //       {
+  //         product_id: productId,
+  //         quantity: "1",
+  //         unit_price: Price,
+  //       },
+  //     ],
+  //   })
+  //     .then((response) => {
+  //       console.log("Response:", response.data);
+  //       // Handle success, update state, or perform other actions
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //       // Handle error, display an error message, or perform other actions
+  //     });
+  // }, []);
   return (
     <div className="lg:w-2/5 lg:pl-20 w-full px-8 my-8">
       <div className="w-full md:border-0 border-b border-blackV mb-6">
@@ -13,7 +38,8 @@ const Review = ({ imagePath, productTitle, productPrice, shippingCost, totalPric
         <div className="w-full">
           <div className="bg-slate-500 lg:h-64 h-60 lg:w-52 w-52">
             <img
-              src="https://via.placeholder.com/208x240"
+              // src="https://via.placeholder.com/208x240"
+              src={"http://localhost:3000/api/" + imagePath}
               alt="Product Image"
               className="w-full h-full object-cover"
             />
@@ -39,7 +65,10 @@ const Review = ({ imagePath, productTitle, productPrice, shippingCost, totalPric
           <span>${totalPrice}</span>
         </div>
       </div>
-      <BtnGlobal className="w-full border border-gray-500 p-3 my-6" content="SAVE AND CONTINUE" />
+      <BtnGlobal
+        className="w-full border border-gray-500 p-3 my-6"
+        content="SAVE AND CONTINUE"
+      />
     </div>
   );
 };

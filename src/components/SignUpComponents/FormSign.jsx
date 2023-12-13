@@ -1,12 +1,16 @@
 // FormSignUp.jsx
-import React, { useState, useRef } from 'react';
-import { Toast } from 'primereact/toast';
-import { Checkbox } from 'primereact/checkbox';
-import PassField from '../GlobalComponents/PassField';
-import InputField from '../GlobalComponents/InputField';
-import BtnGlobal from '../GlobalComponents/BtnGlobal';
+import { useState, useRef } from "react";
+import { Toast } from "primereact/toast";
+import { Checkbox } from "primereact/checkbox";
+import PassField from "../GlobalComponents/PassField";
+import InputField from "../GlobalComponents/InputField";
+import BtnGlobal from "../GlobalComponents/BtnGlobal";
+import { post } from "../utils/request";
 
 const FormSign = () => {
+  // const loading = useSelector((state) => state.user.loading);
+  // const error = useSelector((state) => state.user.error);
+
   const [formFields, setFormFields] = useState({
     firstname: '',
     lastname: '',
@@ -49,46 +53,34 @@ const FormSign = () => {
       return;
     }
 
-    try {
-      const response = await fetch('http://localhost:3000/api/customers/customer', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          // Authorization: `Bearer ${password}`, // Send the password in the Authorization header
-        },
-        body: JSON.stringify({
-          first_name: firstname,
-          last_name: lastname,
-          email,
-          password,
-        }),
+    const response = await post(
+      `http://localhost:3000/api/customer/customer`,
+      null,
+      {
+        first_name: firstname,
+        last_name: lastname,
+        email,
+        password,
+      }
+    )
+      .then(() => {
+        showToast(
+          "success",
+          "Success",
+          "Successfully registered!, An email has been sent for account activation."
+        );
+      })
+      .catch((err) => {
+        console.log("error ", err);
+        response.errors.map((err) => {
+          showToast("error", err.field, err.message);
+        });
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        showToast('success', 'Success', data.message);
-        // Clear all fields on successful submission
-        setFormFields({
-          firstname: '',
-          lastname: '',
-          email: '',
-          password: '',
-          confirmPassword: '',
-        });
-      } else {
-        // Clear password field on error
-        setFormFields({ ...formFields, password: '' });
-        showToast('error', 'Error', data.message);
-      }
-    } catch (error) {
-      // Clear password field on error
-      setFormFields({ ...formFields, password: '' });
-      showToast('error', 'Error', 'Failed to make the request');
-    } finally {
-      // Clear sensitive data after the form submission (optional)
-      setFormFields({ ...formFields, password: '' });
-    }
+    // } finally {
+    //   // Clear sensitive data after the form submission (optional)
+    //   // setFormFields({ ...formFields, password: "" });
+    // }
   };
 
   const showToast = (severity, summary, detail) => {
@@ -155,14 +147,16 @@ const FormSign = () => {
             I accept the terms and conditions
           </label>
         </div>
-        <div className="flex justify-center">
-          <BtnGlobal
-            type="submit"
-            className="w-full xsm:w-8/12 xs:w-10/12 sm:w-full border border-gray-500 p-2 mt-4 bg-blackA text-white"
-            content="CREATE ACCOUNT"
-            disabled={!checked}
-          />
-        </div>
+
+        <BtnGlobal
+          type="submit"
+          className="w-full border border-gray-500 p-2 mt-4"
+          content="CREATE ACCOUNT"
+          // disabled={!checked || loading} // Disable button during loading
+        />
+        {/* {loading && <p>Loading...</p>} */}
+
+        {/* {error && <p>Error: {error}</p>} */}
       </form>
       <Toast ref={toast} position="center" />
     </div>
